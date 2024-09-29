@@ -21,6 +21,69 @@ Public Class CLIENTES
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+    Private Function ValidarCampos() As Boolean
+
+        If String.IsNullOrWhiteSpace(txtNOM.Text) Then
+            MessageBox.Show("El campo de nombre es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtTEL.Text) Then
+            MessageBox.Show("El campo de teléfono es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        If String.IsNullOrWhiteSpace(txtCOR.Text) Then
+            MessageBox.Show("El campo de correo electrónico es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtID.Text) Then
+            MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(txtDIR.Text) Then
+            MessageBox.Show("El campo de Dirección es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtDIR.Focus()
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function ValidarCorreo(ByVal email As String) As Boolean
+        Dim emailR As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        If Not System.Text.RegularExpressions.Regex.IsMatch(email, emailR) Then
+            MessageBox.Show("Formato de correo electrónico no válido.")
+            Return False
+        End If
+        Return True
+    End Function
+    Private Function ValidarTelefono(ByVal telefono As String) As Boolean
+        Dim telefonoR As String = "^\d{8}$"
+        If Not System.Text.RegularExpressions.Regex.IsMatch(telefono, telefonoR) Then
+            MessageBox.Show("Número de teléfono no válido. Debe contener 8 dígitos.")
+            Return False
+        End If
+        Return True
+    End Function
+    Private Function ValidarDatos() As Boolean
+
+        If Not ValidarCampos() Then
+            Return False
+        End If
+        If Not ValidarCorreo(txtCOR.Text) Then
+            Return False
+        End If
+
+        If Not ValidarTelefono(txtTEL.Text) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+
+
 
     Private Sub CLIENTES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlconsulta.Width = 90
@@ -63,10 +126,17 @@ Public Class CLIENTES
             M1.Enabled = False
             E1.Enabled = False
         Else
+
+
+            If Not ValidarDatos() Then
+                Exit Sub
+            End If
+
             Try
                 sentenciaSQL = "INSERT INTO CLIENTE VALUES ('" & txtID.Text & "','" & txtNOM.Text & "','" & txtTEL.Text & "','" & txtDIR.Text & "','" & txtCOR.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
+
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
                 ActualizarGrid()
             Catch ex As Exception

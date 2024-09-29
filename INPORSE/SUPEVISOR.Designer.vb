@@ -41,7 +41,7 @@ Partial Class SUPEVISOR
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(1250, 39)
         Me.Label4.TabIndex = 14
-        Me.Label4.Text = """Expertos en Operar tus servicios portuarios, logísticos y de carga desde el 2002" & _
+        Me.Label4.Text = """Expertos en Operar tus servicios portuarios, logísticos y de carga desde el 2002" &
     "."""
         '
         'btnInicio
