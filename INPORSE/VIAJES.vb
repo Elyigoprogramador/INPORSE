@@ -167,8 +167,6 @@ Public Class VIAJES
             Label13.Visible = False
             Label12.Visible = False
             TID.Visible = False
-            TNombre.Visible = False
-            Ttelefono.Visible = False
         Else
             pnlconsulta.Width = pnlconsulta.Width - 5
         End If
