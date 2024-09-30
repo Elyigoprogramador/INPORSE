@@ -311,7 +311,7 @@ Partial Class CLIENTES
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.data1)
         Me.Name = "CLIENTES"
-        Me.Text = "ss"
+        Me.Text = "CLIENTES"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.data1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlconsulta.ResumeLayout(False)

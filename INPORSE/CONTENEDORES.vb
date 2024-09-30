@@ -18,19 +18,25 @@ Public Class CONTENEDORES
         End Try
     End Sub
     Private Sub CONTENEDORES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlconsulta.Width = 90
         Try
             Module1.funcionConectarBD()
             ActualizarGrid()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
+        Label4.Visible = False
+        Label5.Visible = False
+
+        TID.Visible = False
+        TTIPO.Visible = False
     End Sub
 
     Private Sub CONTENEDORES_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
     End Sub
 
-    Private Sub N_Click(sender As Object, e As EventArgs) Handles N.Click
+    Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
             txtID.Enabled = True
@@ -38,6 +44,7 @@ Public Class CONTENEDORES
             TI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
+            btnmenu.Enabled = False
             M.Enabled = False
             Eliminar.Enabled = False
         Else
@@ -56,12 +63,13 @@ Public Class CONTENEDORES
             TI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
+            btnmenu.Enabled = False
             M.Enabled = True
             Eliminar.Enabled = True
         End If
     End Sub
 
-    Private Sub M_Click(sender As Object, e As EventArgs) Handles M.Click
+    Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
         If M.Text = "MODIFICAR" Then
             M.Text = "GUARDAR"
             txtID.Enabled = True
@@ -69,6 +77,7 @@ Public Class CONTENEDORES
             TI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
+            btnmenu.Enabled = False
             N.Enabled = False
             Eliminar.Enabled = False
         Else
@@ -89,21 +98,22 @@ Public Class CONTENEDORES
             TI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
+            btnmenu.Enabled = False
             M.Enabled = True
             N.Enabled = True
             Eliminar.Enabled = True
         End If
     End Sub
 
-
-    Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
+    Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
-          txtID.Enabled = True
+            txtID.Enabled = True
             T.Enabled = True
             TI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
+            btnmenu.Enabled = False
             N.Enabled = False
             M.Enabled = False
         Else
@@ -119,24 +129,58 @@ Public Class CONTENEDORES
                 MessageBox.Show(ex.ToString)
 
             End Try
-              txtID.Enabled = False
+            txtID.Enabled = False
             T.Enabled = False
             TI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
+            btnmenu.Enabled = False
             N.Enabled = True
             M.Enabled = True
         End If
     End Sub
 
 
+    Private Sub Timercontrae_Tick(sender As Object, e As EventArgs) Handles Timercontrae.Tick
+        If pnlconsulta.Width <= 90 Then
+            Timercontrae.Enabled = False
+            Label4.Visible = False
+            Label5.Visible = False
 
-    Private Sub CONSULTA_Click(sender As Object, e As EventArgs) Handles CONSULTA.Click
+            TID.Visible = False
+            TTIPO.Visible = False
+
+        Else
+            pnlconsulta.Width = pnlconsulta.Width - 5
+        End If
+    End Sub
+
+    Private Sub Timerdespliega_Tick(sender As Object, e As EventArgs) Handles Timerdespliega.Tick
+        If pnlconsulta.Width >= 300 Then
+            Timerdespliega.Enabled = False
+            Label4.Visible = True
+            Label5.Visible = True
+
+            TID.Visible = True
+            TTIPO.Visible = True
+        Else
+            pnlconsulta.Width = pnlconsulta.Width + 5
+        End If
+    End Sub
+    Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
+        If pnlconsulta.Width = 90 Then
+            Timerdespliega.Enabled = True
+            btnmenu.Text = "-->"
+        ElseIf pnlconsulta.Width = 300 Then
+            Timercontrae.Enabled = True
+            btnmenu.Text = "CONSULTAR"
+        End If
+
         TID.Enabled = True
         TTIPO.Enabled = True
     End Sub
 
-    Private Sub TID_KeyUp(sender As Object, e As KeyEventArgs) Handles TID.KeyUp
+    Private Sub TID_KeyUp(sender As Object, e As KeyEventArgs)
         TTIPO.Clear()
         conjuntoDatos.Clear()
         If TID.Text <> "" Then
@@ -153,7 +197,7 @@ Public Class CONTENEDORES
         End If
     End Sub
 
-    Private Sub TTIPO_KeyUp(sender As Object, e As KeyEventArgs) Handles TTIPO.KeyUp
+    Private Sub TTIPO_KeyUp(sender As Object, e As KeyEventArgs)
         TID.Clear()
         conjuntoDatos.Clear()
         If TTIPO.Text <> "" Then
@@ -169,4 +213,7 @@ Public Class CONTENEDORES
             ActualizarGrid()
         End If
     End Sub
+
+
+
 End Class
