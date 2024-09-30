@@ -1,10 +1,6 @@
 ﻿Public Class Form2
 
-    Private Sub Form2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Form1.Show()
-        Me.Hide()
-    End Sub
-  
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         CLIENTES.Show()
         Me.Hide()
@@ -33,5 +29,18 @@
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Form1.Close()
+        Me.Close()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

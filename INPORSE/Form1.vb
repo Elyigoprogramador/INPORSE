@@ -27,7 +27,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        MoverLabel.Interval = 50
+        MoverLabel.Start()
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -73,5 +74,23 @@ Public Class Form1
                 MessageBox.Show("Contraseña incorrecta. No se puede proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles lblEmpresa.Click
+
+    End Sub
+
+    Private Sub MoverLabel_Tick(sender As Object, e As EventArgs) Handles MoverLabel.Tick
+
+        lblEmpresa.Left += 5
+
+
+        If lblEmpresa.Left > Me.Width Then
+            lblEmpresa.Left = -lblEmpresa.Width
+        End If
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class
