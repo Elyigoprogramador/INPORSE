@@ -249,7 +249,7 @@ Public Class CLIENTES
             TNombre.Visible = False
             Ttelefono.Visible = False
         Else
-            pnlconsulta.Width = pnlconsulta.Width - 5
+            pnlconsulta.Width = pnlconsulta.Width - 6
         End If
     End Sub
 
@@ -263,7 +263,7 @@ Public Class CLIENTES
             TNombre.Visible = True
             Ttelefono.Visible = True
         Else
-            pnlconsulta.Width = pnlconsulta.Width + 5
+            pnlconsulta.Width = pnlconsulta.Width + 6
         End If
     End Sub
    
