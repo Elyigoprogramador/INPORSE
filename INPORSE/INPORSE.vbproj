@@ -148,18 +148,6 @@
     <Compile Include="PRODUCTOS.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SUPERVISORENTRAR.Designer.vb">
-      <DependentUpon>SUPERVISORENTRAR.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SUPERVISORENTRAR.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SUPEVISOR.Designer.vb">
-      <DependentUpon>SUPEVISOR.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SUPEVISOR.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="VIAJES.Designer.vb">
       <DependentUpon>VIAJES.vb</DependentUpon>
     </Compile>
@@ -200,12 +188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTOS.resx">
       <DependentUpon>PRODUCTOS.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SUPERVISORENTRAR.resx">
-      <DependentUpon>SUPERVISORENTRAR.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SUPEVISOR.resx">
-      <DependentUpon>SUPEVISOR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIAJES.resx">
       <DependentUpon>VIAJES.vb</DependentUpon>

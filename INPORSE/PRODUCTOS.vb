@@ -20,7 +20,33 @@ Public Class PRODUCTOS
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+    Private Function ValidarCampos() As Boolean
 
+        If String.IsNullOrWhiteSpace(ID.Text) Then
+            MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(NOM.Text) Then
+            MessageBox.Show("El campo de nombre es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        If String.IsNullOrWhiteSpace(UP.Text) Then
+            MessageBox.Show("El campo de unidad de producto es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function ValidarDatos() As Boolean
+
+        If Not ValidarCampos() Then
+            Return False
+        End If
+        Return True
+    End Function
     Private Sub PRODUCTOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Module1.funcionConectarBD()
@@ -42,6 +68,9 @@ Public Class PRODUCTOS
             M.Enabled = False
             ELIMINAR.Enabled = False
         Else
+            If Not ValidarDatos() Then
+                Exit Sub
+            End If
             Try
                 sentenciaSQL = "INSERT INTO PRODUCTO VALUES ('" & ID.Text & "','" & NOM.Text & "','" & UP.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)

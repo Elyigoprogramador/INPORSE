@@ -18,8 +18,7 @@ Public Class CABEZALES
         End Try
     End Sub
     Private Sub CABEZALES_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        SUPERVISORENTRAR.Show()
-        Me.Hide()
+
     End Sub
     Private Sub CABEZALES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try

@@ -5,18 +5,27 @@ Public Class Form1
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
 
-        If txtContra.Text = "INPORSE123" Then
+        If txtContra.Text = "102421" And txtUser.Text = "Empleado" Then
             intentosFallidos = 0
             Form2.Show()
+            txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
-        ElseIf txtContra.Text = "" Then
+        ElseIf txtContra.Text = "INPORSE123" And txtUser.Text = "Administrador" Then
+            intentosFallidos = 0
+            Form2.Show()
+            txtUser.Text = ""
+            txtContra.Text = ""
+            Me.Hide()
+        ElseIf txtContra.Text = "" Or txtUser.Text = "" Then
             MsgBox("INGRESE UNA CLAVE.")
+            txtUser.Clear()
             txtContra.Clear()
         Else
-            MessageBox.Show("Clave incorrecta. Intente de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Clave o Usuario incorrecto. Intente de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             intentosFallidos += 1
             txtContra.Clear()
+            txtUser.Clear()
 
             If intentosFallidos >= 3 Then
                 MessageBox.Show("Demasiados intentos, El ingreso se bloqueara.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

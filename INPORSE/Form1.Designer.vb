@@ -39,8 +39,13 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.MoverLabel = New System.Windows.Forms.Timer(Me.components)
+        Me.txtUser = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -68,26 +73,26 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(552, 176)
+        Me.Label2.Location = New System.Drawing.Point(515, 150)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(256, 39)
+        Me.Label2.Size = New System.Drawing.Size(319, 39)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "CONTRASEÑA"
+        Me.Label2.Text = "INICIO DE SESIÓN"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(586, 227)
+        Me.Label3.Location = New System.Drawing.Point(592, 226)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(201, 17)
+        Me.Label3.Size = New System.Drawing.Size(165, 17)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "INGRESA LA CONTRASEÑA..."
+        Me.Label3.Text = "INGRESA LOS DATOS..."
         '
         'txtContra
         '
         Me.txtContra.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContra.Location = New System.Drawing.Point(559, 269)
+        Me.txtContra.Location = New System.Drawing.Point(559, 372)
         Me.txtContra.Name = "txtContra"
         Me.txtContra.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContra.Size = New System.Drawing.Size(249, 45)
@@ -96,7 +101,7 @@ Partial Class Form1
         'btnInicio
         '
         Me.btnInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInicio.Location = New System.Drawing.Point(559, 357)
+        Me.btnInicio.Location = New System.Drawing.Point(559, 457)
         Me.btnInicio.Name = "btnInicio"
         Me.btnInicio.Size = New System.Drawing.Size(249, 41)
         Me.btnInicio.TabIndex = 6
@@ -107,7 +112,7 @@ Partial Class Form1
         '
         Me.lblEmpresa.AutoSize = True
         Me.lblEmpresa.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmpresa.Location = New System.Drawing.Point(10, 646)
+        Me.lblEmpresa.Location = New System.Drawing.Point(3, 633)
         Me.lblEmpresa.Name = "lblEmpresa"
         Me.lblEmpresa.Size = New System.Drawing.Size(831, 27)
         Me.lblEmpresa.TabIndex = 7
@@ -117,7 +122,7 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(510, 281)
+        Me.PictureBox1.Location = New System.Drawing.Point(522, 384)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(31, 33)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -127,7 +132,7 @@ Partial Class Form1
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(605, 332)
+        Me.LinkLabel1.Location = New System.Drawing.Point(605, 429)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(152, 13)
         Me.LinkLabel1.TabIndex = 9
@@ -206,6 +211,45 @@ Partial Class Form1
         'MoverLabel
         '
         '
+        'txtUser
+        '
+        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUser.Location = New System.Drawing.Point(559, 296)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtUser.Size = New System.Drawing.Size(249, 45)
+        Me.txtUser.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(554, 268)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 25)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Usuario"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(522, 308)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(31, 33)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 13
+        Me.PictureBox2.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(554, 344)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(114, 25)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Contraseña"
+        '
         'Form1
         '
         Me.AcceptButton = Me.btnInicio
@@ -213,6 +257,10 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1370, 682)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.lblEmpresa)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Panel2)
@@ -233,6 +281,7 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,4 +301,9 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents MoverLabel As Timer
+    Friend WithEvents txtUser As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents fondo As Timer
 End Class

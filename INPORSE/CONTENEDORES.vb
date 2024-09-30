@@ -27,8 +27,7 @@ Public Class CONTENEDORES
     End Sub
 
     Private Sub CONTENEDORES_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        SUPERVISORENTRAR.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub N_Click(sender As Object, e As EventArgs) Handles N.Click
