@@ -17,13 +17,19 @@ Public Class CON
         End Try
     End Sub
     Private Sub MOTORISTAS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlconsulta.Width = 90
         Try
             Module1.funcionConectarBD()
             ActualizarGrid()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
-
+        Label11.Visible = False
+        Label10.Visible = False
+        Label9.Visible = False
+        tID.Visible = False
+        Tnombre.Visible = False
+        Tlicencia.Visible = False
     End Sub
 
     Private Sub MOTORISTAS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -31,7 +37,7 @@ Public Class CON
         Me.Hide()
     End Sub
 
-    Private Sub N_Click(sender As Object, e As EventArgs) Handles N.Click
+    Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
             txtID.Enabled = True
@@ -43,6 +49,7 @@ Public Class CON
             DIREC.Enabled = True
             SB.Enabled = True
             M.Enabled = False
+            btnmenu.Enabled = False
             Eliminar.Enabled = False
         Else
             Try
@@ -63,12 +70,13 @@ Public Class CON
             TEL.Enabled = False
             DIREC.Enabled = False
             SB.Enabled = False
+            btnmenu.Enabled = False
             M.Enabled = True
             Eliminar.Enabled = True
         End If
     End Sub
 
-    Private Sub M_Click(sender As Object, e As EventArgs) Handles M.Click
+    Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
         If M.Text = "MODIFICAR" Then
             M.Text = "GUARDAR"
             txtID.Enabled = True
@@ -80,6 +88,7 @@ Public Class CON
             DIREC.Enabled = True
             SB.Enabled = True
             N.Enabled = False
+            btnmenu.Enabled = False
             Eliminar.Enabled = False
         Else
             Try
@@ -103,12 +112,13 @@ Public Class CON
             TEL.Enabled = False
             DIREC.Enabled = False
             SB.Enabled = False
+            btnmenu.Enabled = False
             N.Enabled = True
             Eliminar.Enabled = True
         End If
     End Sub
 
-    Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
+    Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
             txtID.Enabled = True
@@ -120,6 +130,7 @@ Public Class CON
             DIREC.Enabled = True
             SB.Enabled = True
             N.Enabled = False
+            btnmenu.Enabled = False
             M.Enabled = False
         Else
             Dim CodigoEliminar As String
@@ -142,18 +153,54 @@ Public Class CON
             TEL.Enabled = False
             DIREC.Enabled = False
             SB.Enabled = False
+            btnmenu.Enabled = False
             N.Enabled = True
             M.Enabled = True
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Timercontrae_Tick(sender As Object, e As EventArgs) Handles Timercontrae.Tick
+        If pnlconsulta.Width <= 90 Then
+            Timercontrae.Enabled = False
+            Label11.Visible = False
+            Label10.Visible = False
+            Label9.Visible = False
+            tID.Visible = False
+            Tnombre.Visible = False
+            Tlicencia.Visible = False
+        Else
+            pnlconsulta.Width = pnlconsulta.Width - 5
+        End If
+    End Sub
+
+    Private Sub Timerdespliega_Tick(sender As Object, e As EventArgs) Handles Timerdespliega.Tick
+        If pnlconsulta.Width >= 300 Then
+            Timerdespliega.Enabled = False
+            Label11.Visible = True
+            Label10.Visible = True
+            Label9.Visible = True
+            tID.Visible = True
+            Tnombre.Visible = True
+            Tlicencia.Visible = True
+        Else
+            pnlconsulta.Width = pnlconsulta.Width + 5
+        End If
+    End Sub
+
+    Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
+        If pnlconsulta.Width = 90 Then
+            Timerdespliega.Enabled = True
+            btnmenu.Text = "-->"
+        ElseIf pnlconsulta.Width = 300 Then
+            Timercontrae.Enabled = True
+            btnmenu.Text = "CONSULTAR"
+        End If
         tID.Enabled = True
         Tnombre.Enabled = True
         Tlicencia.Enabled = True
     End Sub
 
-    Private Sub tID_KeyUp(sender As Object, e As KeyEventArgs) Handles tID.KeyUp
+    Private Sub tID_KeyUp(sender As Object, e As KeyEventArgs)
         conjuntoDatos.Clear()
         If tID.Text <> "" Then
             Try
@@ -169,7 +216,7 @@ Public Class CON
         End If
     End Sub
 
-    Private Sub Tnombre_KeyUp(sender As Object, e As KeyEventArgs) Handles Tnombre.KeyUp
+    Private Sub Tnombre_KeyUp(sender As Object, e As KeyEventArgs)
         conjuntoDatos.Clear()
         If Tnombre.Text <> "" Then
             Try
@@ -185,7 +232,7 @@ Public Class CON
         End If
     End Sub
 
-    Private Sub Tlicencia_KeyUp(sender As Object, e As KeyEventArgs) Handles Tlicencia.KeyUp
+    Private Sub Tlicencia_KeyUp(sender As Object, e As KeyEventArgs)
         conjuntoDatos.Clear()
         If Tlicencia.Text <> "" Then
             Try
@@ -200,4 +247,6 @@ Public Class CON
             ActualizarGrid()
         End If
     End Sub
+
+
 End Class
