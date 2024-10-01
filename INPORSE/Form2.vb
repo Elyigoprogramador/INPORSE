@@ -103,17 +103,24 @@
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        btnMaximizar.Visible = False
+    End Sub
+    Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
+        Me.WindowState = FormWindowState.Normal
+        btnRestaurar.Visible = False
+        btnMaximizar.Visible = True
     End Sub
 
+    Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
+        Me.WindowState = FormWindowState.Maximized
+        btnRestaurar.Visible = True
+        btnMaximizar.Visible = False
+    End Sub
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
         Form1.Close()
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Me.WindowState = FormWindowState.Maximized
-    End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Me.WindowState = FormWindowState.Minimized
@@ -122,4 +129,6 @@
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
+
+
 End Class
