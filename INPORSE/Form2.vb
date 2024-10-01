@@ -92,7 +92,23 @@
 
         CABEZALES.Show()
     End Sub
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim MOTORISTAS As New CON()
 
+
+        MOTORISTAS.TopLevel = False
+
+        MOTORISTAS.FormBorderStyle = FormBorderStyle.None
+
+
+        Panel3.Controls.Add(MOTORISTAS)
+
+
+        MOTORISTAS.Dock = DockStyle.Fill
+
+
+        MOTORISTAS.Show()
+    End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs)
         Me.Hide()
     End Sub

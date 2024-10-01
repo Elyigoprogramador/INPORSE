@@ -7,12 +7,16 @@ Public Class Form1
 
         If txtContra.Text = "102421" And txtUser.Text = "Empleado" Then
             intentosFallidos = 0
+            Form2.Button3.Visible = False
+            Form2.Button3.Enabled = False
             Form2.Show()
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
         ElseIf txtContra.Text = "INPORSE123" And txtUser.Text = "Administrador" Then
             intentosFallidos = 0
+            Form2.Button3.Visible = True
+            Form2.Button3.Enabled = True
             Form2.Show()
             txtUser.Text = ""
             txtContra.Text = ""
