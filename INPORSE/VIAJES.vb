@@ -10,7 +10,6 @@ Public Class VIAJES
         Me.Hide()
     End Sub
 
-
     Private Sub ActualizarGrid()
         Try
             conjuntoDatos.Clear()
@@ -22,7 +21,14 @@ Public Class VIAJES
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+    Private Function ValidarDatos() As Boolean
 
+        If Not ValidarCampos() Then
+            Return False
+        End If
+
+        Return True
+    End Function
     Private Function ValidarCampos() As Boolean
 
         If String.IsNullOrWhiteSpace(IDV.Text) Then
@@ -34,7 +40,6 @@ Public Class VIAJES
             MessageBox.Show("El campo de id del cliente es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
-
 
         If String.IsNullOrWhiteSpace(R.Text) Then
             MessageBox.Show("El campo de ruta es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -62,7 +67,7 @@ Public Class VIAJES
             Return False
         End If
         If String.IsNullOrWhiteSpace(EST.Text) Then
-            MessageBox.Show("El campo de Dirección es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("El campo de estado es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
         If String.IsNullOrWhiteSpace(COBRO.Text) Then
@@ -106,6 +111,9 @@ Public Class VIAJES
             M.Enabled = False
             ELIMINAR.Enabled = False
         Else
+            If Not ValidarDatos() Then
+                Exit Sub
+            End If
             Try
                 sentenciaSQL = "INSERT INTO VIAJES VALUES ('" & IDV.Text & "','" & IDC.Text & "','" & R.Text & "','" & CAB.Text & "','" & EST.Text & "','" & COBRO.Text & "','" & IDCON.Text & "','" & IDP.Text & "','" & CANTIDAD.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
