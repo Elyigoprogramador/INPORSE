@@ -17,6 +17,37 @@ Public Class CONTENEDORES
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+
+    Private Function ValidarCampos() As Boolean
+
+        If String.IsNullOrWhiteSpace(txtID.Text) Then
+            MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(T.Text) Then
+            MessageBox.Show("El campo de Tamaño es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        If String.IsNullOrWhiteSpace(TI.Text) Then
+            MessageBox.Show("El campo de Tipo es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        Return True
+    End Function
+
+    Private Function ValidarDatos() As Boolean
+
+        If Not ValidarCampos() Then
+            Return False
+        End If
+
+        Return True
+    End Function
     Private Sub CONTENEDORES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlconsulta.Width = 90
         Try
@@ -48,6 +79,9 @@ Public Class CONTENEDORES
             M.Enabled = False
             Eliminar.Enabled = False
         Else
+            If Not ValidarDatos() Then
+                Exit Sub
+            End If
             Try
                 sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & T.Text & "','" & TI.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
@@ -86,7 +120,7 @@ Public Class CONTENEDORES
                 sentenciaSQL = "UPDATE CONTENEDOR SET TAMANYO='" & T.Text & "', TIPO='" & TI.Text & "' WHERE ID_CONTENEDOR='" & txtID.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
-                MessageBox.Show("El registro a sido modificado.", "Informacion", MessageBoxButtons.OK)
+                MessageBox.Show("El registro ha sido modificado.", "Informacion", MessageBoxButtons.OK)
                 conjuntoDatos.Clear()
                 ActualizarGrid()
             Catch ex As Exception

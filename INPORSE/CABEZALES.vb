@@ -17,6 +17,40 @@ Public Class CABEZALES
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+    Private Function ValidarCampos() As Boolean
+
+        If String.IsNullOrWhiteSpace(P.Text) Then
+            MessageBox.Show("El campo de placa es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(MEN.Text) Then
+            MessageBox.Show("El campo de motorista es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        If String.IsNullOrWhiteSpace(MR.Text) Then
+            MessageBox.Show("El campo de marca es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(CC.Text) Then
+            MessageBox.Show("El campo de capacidad es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Function ValidarDatos() As Boolean
+
+        If Not ValidarCampos() Then
+            Return False
+        End If
+
+        Return True
+    End Function
     Private Sub CABEZALES_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
     End Sub
@@ -50,6 +84,9 @@ Public Class CABEZALES
             btnmenu.Enabled = False
             Eliminar.Enabled = False
         Else
+            If Not ValidarDatos() Then
+                Exit Sub
+            End If
             Try
                 sentenciaSQL = "INSERT INTO CABEZAL VALUES ('" & P.Text & "','" & MEN.Text & "','" & MR.Text & "','" & CC.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)

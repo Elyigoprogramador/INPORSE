@@ -52,9 +52,10 @@ Partial Class Form1
         '
         Me.Panel2.BackgroundImage = Global.INPORSE.My.Resources.Resources.LOGO_INPORSE1
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(0, 41)
+        Me.Panel2.Location = New System.Drawing.Point(0, 44)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(91, 84)
+        Me.Panel2.Size = New System.Drawing.Size(121, 103)
         Me.Panel2.TabIndex = 1
         '
         'Label1
@@ -63,9 +64,10 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 59.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(328, 41)
+        Me.Label1.Location = New System.Drawing.Point(437, 50)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(704, 90)
+        Me.Label1.Size = New System.Drawing.Size(881, 113)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "GRUPO INPORSE"
         '
@@ -73,9 +75,10 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(515, 150)
+        Me.Label2.Location = New System.Drawing.Point(687, 185)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(319, 39)
+        Me.Label2.Size = New System.Drawing.Size(388, 48)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "INICIO DE SESIÓN"
         '
@@ -83,27 +86,30 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(592, 226)
+        Me.Label3.Location = New System.Drawing.Point(789, 278)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(165, 17)
+        Me.Label3.Size = New System.Drawing.Size(197, 20)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "INGRESA LOS DATOS..."
         '
         'txtContra
         '
         Me.txtContra.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContra.Location = New System.Drawing.Point(559, 372)
+        Me.txtContra.Location = New System.Drawing.Point(745, 458)
+        Me.txtContra.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtContra.Name = "txtContra"
         Me.txtContra.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContra.Size = New System.Drawing.Size(249, 45)
+        Me.txtContra.Size = New System.Drawing.Size(331, 55)
         Me.txtContra.TabIndex = 5
         '
         'btnInicio
         '
         Me.btnInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInicio.Location = New System.Drawing.Point(559, 457)
+        Me.btnInicio.Location = New System.Drawing.Point(745, 562)
+        Me.btnInicio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(249, 41)
+        Me.btnInicio.Size = New System.Drawing.Size(332, 50)
         Me.btnInicio.TabIndex = 6
         Me.btnInicio.Text = "SIGUIENTE"
         Me.btnInicio.UseVisualStyleBackColor = True
@@ -112,9 +118,10 @@ Partial Class Form1
         '
         Me.lblEmpresa.AutoSize = True
         Me.lblEmpresa.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmpresa.Location = New System.Drawing.Point(3, 633)
+        Me.lblEmpresa.Location = New System.Drawing.Point(4, 779)
+        Me.lblEmpresa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblEmpresa.Name = "lblEmpresa"
-        Me.lblEmpresa.Size = New System.Drawing.Size(831, 27)
+        Me.lblEmpresa.Size = New System.Drawing.Size(1033, 33)
         Me.lblEmpresa.TabIndex = 7
         Me.lblEmpresa.Text = """Expertos en Operar tus servicios portuarios, logísticos y de carga desde el 2002" &
     "."""
@@ -122,9 +129,10 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(522, 384)
+        Me.PictureBox1.Location = New System.Drawing.Point(696, 473)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(31, 33)
+        Me.PictureBox1.Size = New System.Drawing.Size(41, 41)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -132,9 +140,10 @@ Partial Class Form1
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(605, 429)
+        Me.LinkLabel1.Location = New System.Drawing.Point(807, 528)
+        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(152, 13)
+        Me.LinkLabel1.Size = New System.Drawing.Size(195, 16)
         Me.LinkLabel1.TabIndex = 9
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Solicitar codigo de desbloqueo"
@@ -148,8 +157,9 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1370, 35)
+        Me.Panel1.Size = New System.Drawing.Size(1827, 43)
         Me.Panel1.TabIndex = 10
         '
         'Button3
@@ -161,9 +171,10 @@ Partial Class Form1
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(1250, 0)
+        Me.Button3.Location = New System.Drawing.Point(1668, 0)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(40, 35)
+        Me.Button3.Size = New System.Drawing.Size(53, 43)
         Me.Button3.TabIndex = 14
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -172,9 +183,10 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Rockwell", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(12, 9)
+        Me.Label5.Location = New System.Drawing.Point(16, 11)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(110, 16)
+        Me.Label5.Size = New System.Drawing.Size(148, 20)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "GRUPO INPORSE "
         '
@@ -187,9 +199,10 @@ Partial Class Form1
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(1290, 0)
+        Me.Button2.Location = New System.Drawing.Point(1721, 0)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(40, 35)
+        Me.Button2.Size = New System.Drawing.Size(53, 43)
         Me.Button2.TabIndex = 12
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -202,9 +215,10 @@ Partial Class Form1
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCerrar.Location = New System.Drawing.Point(1330, 0)
+        Me.btnCerrar.Location = New System.Drawing.Point(1774, 0)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(40, 35)
+        Me.btnCerrar.Size = New System.Drawing.Size(53, 43)
         Me.btnCerrar.TabIndex = 11
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
@@ -214,28 +228,31 @@ Partial Class Form1
         'txtUser
         '
         Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUser.Location = New System.Drawing.Point(559, 296)
+        Me.txtUser.Location = New System.Drawing.Point(745, 364)
+        Me.txtUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtUser.Size = New System.Drawing.Size(249, 45)
+        Me.txtUser.Size = New System.Drawing.Size(331, 55)
         Me.txtUser.TabIndex = 11
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(554, 268)
+        Me.Label4.Location = New System.Drawing.Point(739, 330)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 25)
+        Me.Label4.Size = New System.Drawing.Size(100, 29)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Usuario"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(522, 308)
+        Me.PictureBox2.Location = New System.Drawing.Point(696, 379)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(31, 33)
+        Me.PictureBox2.Size = New System.Drawing.Size(41, 41)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 13
         Me.PictureBox2.TabStop = False
@@ -244,19 +261,20 @@ Partial Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(554, 344)
+        Me.Label6.Location = New System.Drawing.Point(739, 423)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(114, 25)
+        Me.Label6.Size = New System.Drawing.Size(143, 29)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Contraseña"
         '
         'Form1
         '
         Me.AcceptButton = Me.btnInicio
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1370, 682)
+        Me.ClientSize = New System.Drawing.Size(1827, 839)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label4)
@@ -275,6 +293,7 @@ Partial Class Form1
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Text = "Industrias INPORSE"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

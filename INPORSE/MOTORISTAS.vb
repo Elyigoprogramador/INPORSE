@@ -16,6 +16,63 @@ Public Class CON
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+    Private Function ValidarCampos() As Boolean
+
+        If String.IsNullOrWhiteSpace(txtNOM.Text) Then
+            MessageBox.Show("El campo de nombre es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtID.Text) Then
+            MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        If String.IsNullOrWhiteSpace(NL.Text) Then
+            MessageBox.Show("El campo de licencia es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtID.Text) Then
+            MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(DISPO.Text) Then
+            MessageBox.Show("El campo de Disponibilidad es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(DUI.Text) Then
+            MessageBox.Show("El campo de Dui es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(TEL.Text) Then
+            MessageBox.Show("El campo de Telefono es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(DIREC.Text) Then
+            MessageBox.Show("El campo de Dirección es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(SB.Text) Then
+            MessageBox.Show("El campo de sueldo base es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function ValidarDatos() As Boolean
+
+        If Not ValidarCampos() Then
+            Return False
+        End If
+
+        Return True
+    End Function
     Private Sub MOTORISTAS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlconsulta.Width = 90
         Try
@@ -51,6 +108,9 @@ Public Class CON
             btnmenu.Enabled = False
             Eliminar.Enabled = False
         Else
+            If Not ValidarDatos() Then
+                Exit Sub
+            End If
             Try
                 sentenciaSQL = "INSERT INTO MOTORISTAS VALUES ('" & txtID.Text & "','" & txtNOM.Text & "','" & NL.Text & "','" & DISPO.Text & "','" & DUI.Text & "','" & TEL.Text & "','" & DIREC.Text & "','" & SB.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
