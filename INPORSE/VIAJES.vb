@@ -23,7 +23,54 @@ Public Class VIAJES
         End Try
     End Sub
 
+    Private Function ValidarCampos() As Boolean
 
+        If String.IsNullOrWhiteSpace(IDV.Text) Then
+            MessageBox.Show("El campo de id del viaje es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(IDC.Text) Then
+            MessageBox.Show("El campo de id del cliente es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+
+        If String.IsNullOrWhiteSpace(R.Text) Then
+            MessageBox.Show("El campo de ruta es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(IDCON.Text) Then
+            MessageBox.Show("El campo de id del contenedor es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(IDP.Text) Then
+            MessageBox.Show("El campo de id del producto es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(CANTIDAD.Text) Then
+            MessageBox.Show("El campo de cantidad es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(CAB.Text) Then
+            MessageBox.Show("El campo de cabezal es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(EST.Text) Then
+            MessageBox.Show("El campo de Dirección es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If String.IsNullOrWhiteSpace(COBRO.Text) Then
+            MessageBox.Show("El campo de cobro es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        Return True
+    End Function
     Private Sub VIAJES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlconsulta.Width = 90
         Try
