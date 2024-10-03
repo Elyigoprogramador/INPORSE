@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports MySql.Data
+Imports System.IO
 Public Class CLIENTES
     Dim conjuntoDatos As New DataSet
     Dim adaptadorDatos As New MySqlClient.MySqlDataAdapter
@@ -139,6 +140,21 @@ Public Class CLIENTES
 
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
                 ActualizarGrid()
+
+                Dim accion As String = "agregar"
+                Dim descripcion As String = "Se agregó un cliente con ID: " & txtID.Text & " y nombre: " & txtNOM.Text
+
+                ' Ruta del archivo donde se guarda el historial
+                Dim logFilePath As String = "C:\rutahistorial\historial.txt"
+                Dim logEntry As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") & " - Acción: " & accion & " - Descripción: " & descripcion
+
+
+                Using writer As New StreamWriter(logFilePath, True)
+                    writer.WriteLine(logEntry)
+                End Using
+
+                ' Mostrar el historial en el ListBox
+                HISTORIAL.Items.Add(logEntry)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
@@ -238,7 +254,7 @@ Public Class CLIENTES
 
     End Sub
 
-  
+
     Private Sub Timercontrae_Tick(sender As Object, e As EventArgs) Handles Timercontrae.Tick
         If pnlconsulta.Width <= 90 Then
             Timercontrae.Enabled = False
@@ -266,7 +282,7 @@ Public Class CLIENTES
             pnlconsulta.Width = pnlconsulta.Width + 5
         End If
     End Sub
-   
+
     Private Sub CON_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
@@ -332,8 +348,8 @@ Public Class CLIENTES
         End If
     End Sub
 
-  
 
-    
-    
+
+
+
 End Class
