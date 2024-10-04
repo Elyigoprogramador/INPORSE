@@ -144,7 +144,7 @@ Public Class CLIENTES
                 Dim accion As String = "agregar"
                 Dim descripcion As String = "Se agregó un cliente con ID: " & txtID.Text & " y nombre: " & txtNOM.Text
 
-                ' Ruta del archivo donde se guarda el historial
+
                 Dim logFilePath As String = "C:\rutahistorial\historial.txt"
                 Dim logEntry As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") & " - Acción: " & accion & " - Descripción: " & descripcion
 
@@ -153,7 +153,7 @@ Public Class CLIENTES
                     writer.WriteLine(logEntry)
                 End Using
 
-                ' Mostrar el historial en el ListBox
+
                 HISTORIAL.Items.Add(logEntry)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)

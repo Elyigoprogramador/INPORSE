@@ -43,6 +43,8 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +55,7 @@ Partial Class Form1
         Me.Panel2.BackgroundImage = Global.INPORSE.My.Resources.Resources.LOGO_INPORSE1
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Location = New System.Drawing.Point(0, 44)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(121, 103)
         Me.Panel2.TabIndex = 1
@@ -95,9 +97,10 @@ Partial Class Form1
         '
         'txtContra
         '
+        Me.txtContra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtContra.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContra.Location = New System.Drawing.Point(745, 458)
-        Me.txtContra.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtContra.Margin = New System.Windows.Forms.Padding(4)
         Me.txtContra.Name = "txtContra"
         Me.txtContra.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContra.Size = New System.Drawing.Size(331, 55)
@@ -107,7 +110,7 @@ Partial Class Form1
         '
         Me.btnInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInicio.Location = New System.Drawing.Point(745, 562)
-        Me.btnInicio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnInicio.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInicio.Name = "btnInicio"
         Me.btnInicio.Size = New System.Drawing.Size(332, 50)
         Me.btnInicio.TabIndex = 6
@@ -130,7 +133,7 @@ Partial Class Form1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(696, 473)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(41, 41)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -157,7 +160,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1827, 43)
         Me.Panel1.TabIndex = 10
@@ -172,7 +175,7 @@ Partial Class Form1
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button3.Location = New System.Drawing.Point(1668, 0)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(53, 43)
         Me.Button3.TabIndex = 14
@@ -200,7 +203,7 @@ Partial Class Form1
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button2.Location = New System.Drawing.Point(1721, 0)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(53, 43)
         Me.Button2.TabIndex = 12
@@ -216,7 +219,7 @@ Partial Class Form1
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnCerrar.Location = New System.Drawing.Point(1774, 0)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(53, 43)
         Me.btnCerrar.TabIndex = 11
@@ -227,9 +230,10 @@ Partial Class Form1
         '
         'txtUser
         '
+        Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUser.Location = New System.Drawing.Point(745, 364)
-        Me.txtUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUser.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtUser.Size = New System.Drawing.Size(331, 55)
@@ -250,7 +254,7 @@ Partial Class Form1
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(696, 379)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(41, 41)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -267,6 +271,18 @@ Partial Class Form1
         Me.Label6.Size = New System.Drawing.Size(143, 29)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Contraseña"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(61, 4)
         '
         'Form1
         '
@@ -293,7 +309,7 @@ Partial Class Form1
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Industrias INPORSE"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -325,4 +341,6 @@ Partial Class Form1
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents fondo As Timer
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
 End Class
