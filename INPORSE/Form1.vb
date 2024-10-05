@@ -1,5 +1,8 @@
 ﻿
 Public Class Form1
+    Private isFormBeingDragged As Boolean = False
+    Private X As Integer
+    Private Y As Integer
 
     Private intentosFallidos As Integer = 0
 
@@ -40,6 +43,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         MoverLabel.Interval = 50
         MoverLabel.Start()
     End Sub
@@ -48,11 +52,11 @@ Public Class Form1
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
     Private Function GenerarCodigoDesbloqueo() As String
@@ -89,7 +93,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles lblEmpresa.Click
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -103,6 +107,25 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Form1_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+        If e.Button = MouseButtons.Left Then
+            isFormBeingDragged = True
+            X = e.X
+            Y = e.Y
+        End If
+    End Sub
 
+    Private Sub Form1_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
+        If isFormBeingDragged Then
+            Dim newX As Integer = Me.Left + (e.X - X)
+            Dim newY As Integer = Me.Top + (e.Y - Y)
+            Me.SetDesktopLocation(newX, newY)
+        End If
+    End Sub
 
+    Private Sub Form1_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
+        If e.Button = MouseButtons.Left Then
+            isFormBeingDragged = False
+        End If
+    End Sub
 End Class
