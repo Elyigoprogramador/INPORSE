@@ -2,6 +2,7 @@
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        lblE.Text = "REGISTRO DE CLIENTES"
         Dim CLIENTES As New CLIENTES()
 
 
@@ -21,6 +22,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnViajes.Click
+        lblE.Text = "REGISTRO DE VIAJES"
         Dim VIAJES As New VIAJES()
 
 
@@ -40,6 +42,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnProd.Click
+        lblE.Text = "REGISTRO DE PRODUCTOS"
         Dim PRODUCTOS As New PRODUCTOS()
 
 
@@ -58,6 +61,7 @@
     End Sub
 
     Private Sub btnCont_Click(sender As Object, e As EventArgs) Handles btnCont.Click
+        lblE.Text = "REGISTRO DE CONTENEDORES"
         Dim CONTENEDORES As New CONTENEDORES()
 
 
@@ -76,6 +80,7 @@
     End Sub
 
     Private Sub btnCab_Click(sender As Object, e As EventArgs) Handles btnCab.Click
+        lblE.Text = "REGISTRO DE CABEZALES"
         Dim CABEZALES As New CABEZALES()
 
 
@@ -93,6 +98,7 @@
         CABEZALES.Show()
     End Sub
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        lblE.Text = "REGISTRO DE MOTORISTAS"
         Dim MOTORISTAS As New CON()
 
 
@@ -142,7 +148,7 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblE.Click
 
     End Sub
 

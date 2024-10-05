@@ -39,7 +39,7 @@ Partial Class Form2
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnCab = New System.Windows.Forms.Button()
         Me.btnCont = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblE = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -252,15 +252,15 @@ Partial Class Form2
         Me.btnCont.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnCont.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblE
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Sylfaen", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(626, 35)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(389, 52)
-        Me.Label1.TabIndex = 15
-        Me.Label1.Text = "EDICION DE DATOS"
+        Me.lblE.AutoSize = True
+        Me.lblE.Font = New System.Drawing.Font("Sylfaen", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblE.Location = New System.Drawing.Point(626, 35)
+        Me.lblE.Name = "lblE"
+        Me.lblE.Size = New System.Drawing.Size(389, 52)
+        Me.lblE.TabIndex = 15
+        Me.lblE.Text = "EDICION DE DATOS"
         '
         'Panel3
         '
@@ -276,7 +276,7 @@ Partial Class Form2
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1386, 738)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblE)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -305,7 +305,7 @@ Partial Class Form2
     Friend WithEvents btnCab As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblE As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button3 As Button
     Friend WithEvents btnMaximizar As Button
