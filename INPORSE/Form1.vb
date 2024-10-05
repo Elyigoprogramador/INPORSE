@@ -1,4 +1,6 @@
 ﻿
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
 Public Class Form1
     Private isFormBeingDragged As Boolean = False
     Private X As Integer
@@ -43,9 +45,16 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtContra.BorderStyle = BorderStyle.None
+        txtContra.BackColor = Me.BackColor ' Cambia esto al color del fondo de tu formulario
+        txtContra.ForeColor = Color.White
+        txtUser.BorderStyle = BorderStyle.None
+        txtUser.BackColor = Me.BackColor ' Cambia esto al color del fondo de tu formulario
+        txtUser.ForeColor = Color.White
 
-        MoverLabel.Interval = 50
-        MoverLabel.Start()
+
+
+
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -99,10 +108,10 @@ Public Class Form1
 
     Private Sub MoverLabel_Tick(sender As Object, e As EventArgs) Handles MoverLabel.Tick
 
-        lblEmpresa.Left += 5
+        lblEmpresa.Left += 7
 
 
-        If lblEmpresa.Left > Me.Width Then
+        If lblEmpresa.Left > Panel4.Width Then
             lblEmpresa.Left = -lblEmpresa.Width
         End If
     End Sub
@@ -127,5 +136,20 @@ Public Class Form1
         If e.Button = MouseButtons.Left Then
             isFormBeingDragged = False
         End If
+    End Sub
+
+
+    Private Sub btnInicio_MouseEnter(sender As Object, e As EventArgs) Handles btnInicio.MouseEnter
+        btnInicio.BackColor = Color.LightGray
+    End Sub
+
+    Private Sub btnInicio_MouseLeave(sender As Object, e As EventArgs) Handles btnInicio.MouseLeave
+        btnInicio.BackColor = Color.Black
+    End Sub
+
+    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
+
+        MoverLabel.Interval = 50
+        MoverLabel.Start()
     End Sub
 End Class
