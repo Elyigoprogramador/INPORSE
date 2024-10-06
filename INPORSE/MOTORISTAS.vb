@@ -38,11 +38,6 @@ Public Class CON
             MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
-        If String.IsNullOrWhiteSpace(DISPO.Text) Then
-            MessageBox.Show("El campo de Disponibilidad es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-            Return False
-        End If
 
         If String.IsNullOrWhiteSpace(DUI.Text) Then
             MessageBox.Show("El campo de Dui es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)

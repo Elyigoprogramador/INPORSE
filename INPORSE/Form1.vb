@@ -7,9 +7,10 @@ Public Class Form1
     Private Y As Integer
 
     Private intentosFallidos As Integer = 0
-
+    Public Shared NombreUsuario As String
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
 
+        'EN CASO DE QUE CUALQUIER DE LOS DOS SEA CORRECTO
         If txtContra.Text = "102421" And txtUser.Text = "Empleado" Then
             intentosFallidos = 0
             Form2.Button3.Visible = False
@@ -26,21 +27,45 @@ Public Class Form1
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
+
+            'AMBOS LOGIN
         ElseIf txtContra.Text = "" Or txtUser.Text = "" Then
             MsgBox("INGRESE UNA CLAVE.")
             txtUser.Clear()
             txtContra.Clear()
-        Else
-            MessageBox.Show("Clave o Usuario incorrecto. Intente de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            'PARA LOGIN DE ADMINISTRADOR
+        ElseIf txtContra.Text <> "INPORSE123" And txtUser.Text = "Administrador" Then
+            lblpassw.Visible = True
             intentosFallidos += 1
             txtContra.Clear()
+        ElseIf txtContra.Text = "INPORSE123" And txtUser.Text <> "Administrador" Then
+            lbluser.Visible = True
             txtUser.Clear()
-
+        ElseIf txtContra.Text <> "INPORSE123" And txtUser.Text <> "Administrador" Then
+            lbluser.Visible = True
+            lblpassw.Visible = True
+            txtUser.Clear()
+            txtContra.Clear()
+            'PARA LOGIN DE EMPLEADO
+        ElseIf txtContra.Text <> "102421" And txtUser.Text = "Empleado" Then
+            lblpassw.Visible = True
+            intentosFallidos += 1
+            txtContra.Clear()
+        ElseIf txtContra.Text = "102421" And txtUser.Text <> "Empleado" Then
+            lbluser.Visible = True
+            txtUser.Clear()
+        ElseIf txtContra.Text <> "102421" And txtUser.Text <> "Empleado" Then
+            lbluser.Visible = True
+            lblpassw.Visible = True
+            txtUser.Clear()
+            txtContra.Clear()
             If intentosFallidos >= 3 Then
                 MessageBox.Show("Demasiados intentos, El ingreso se bloqueara.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 btnInicio.Enabled = False
             End If
         End If
+
 
     End Sub
 
@@ -151,5 +176,13 @@ Public Class Form1
 
         MoverLabel.Interval = 50
         MoverLabel.Start()
+    End Sub
+
+    Private Sub btnCerrar_MouseEnter(sender As Object, e As EventArgs) Handles btnCerrar.MouseEnter
+        btnCerrar.BackColor = Color.LightGray
+    End Sub
+
+    Private Sub btnCerrar_MouseLeave(sender As Object, e As EventArgs) Handles btnCerrar.MouseLeave
+        btnCerrar.BackColor = Color.White
     End Sub
 End Class

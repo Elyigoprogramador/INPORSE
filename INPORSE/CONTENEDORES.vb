@@ -31,10 +31,7 @@ Public Class CONTENEDORES
         End If
 
 
-        If String.IsNullOrWhiteSpace(TI.Text) Then
-            MessageBox.Show("El campo de Tipo es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return False
-        End If
+
 
 
         Return True
@@ -83,7 +80,7 @@ Public Class CONTENEDORES
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & T.Text & "','" & TI.Text & "')"
+                sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & T.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
