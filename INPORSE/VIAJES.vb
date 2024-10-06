@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports MySql.Data
+Imports System.IO
 Public Class VIAJES
     Dim conjuntoDatos As New DataSet
     Dim adaptadorDatos As New MySqlClient.MySqlDataAdapter
@@ -120,6 +121,11 @@ Public Class VIAJES
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
                 ActualizarGrid()
+
+
+
+
+
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
