@@ -47,13 +47,14 @@ Partial Class Form2
         '
         'btnClientes
         '
-        Me.btnClientes.BackColor = System.Drawing.Color.White
+        Me.btnClientes.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClientes.ForeColor = System.Drawing.Color.White
         Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
         Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnClientes.Location = New System.Drawing.Point(12, 135)
         Me.btnClientes.Name = "btnClientes"
-        Me.btnClientes.Size = New System.Drawing.Size(223, 43)
+        Me.btnClientes.Size = New System.Drawing.Size(223, 48)
         Me.btnClientes.TabIndex = 3
         Me.btnClientes.Text = "CLIENTES"
         Me.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -61,30 +62,34 @@ Partial Class Form2
         '
         'btnViajes
         '
+        Me.btnViajes.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnViajes.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViajes.ForeColor = System.Drawing.Color.White
         Me.btnViajes.Image = CType(resources.GetObject("btnViajes.Image"), System.Drawing.Image)
         Me.btnViajes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnViajes.Location = New System.Drawing.Point(15, 194)
+        Me.btnViajes.Location = New System.Drawing.Point(15, 200)
         Me.btnViajes.Name = "btnViajes"
-        Me.btnViajes.Size = New System.Drawing.Size(166, 42)
+        Me.btnViajes.Size = New System.Drawing.Size(167, 48)
         Me.btnViajes.TabIndex = 4
         Me.btnViajes.Text = "VIAJES"
         Me.btnViajes.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnViajes.UseVisualStyleBackColor = True
+        Me.btnViajes.UseVisualStyleBackColor = False
         '
         'btnProd
         '
+        Me.btnProd.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProd.ForeColor = System.Drawing.Color.White
         Me.btnProd.Image = CType(resources.GetObject("btnProd.Image"), System.Drawing.Image)
         Me.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnProd.Location = New System.Drawing.Point(12, 254)
+        Me.btnProd.Location = New System.Drawing.Point(12, 265)
         Me.btnProd.Name = "btnProd"
-        Me.btnProd.Size = New System.Drawing.Size(272, 52)
+        Me.btnProd.Size = New System.Drawing.Size(272, 48)
         Me.btnProd.TabIndex = 5
         Me.btnProd.Text = "PRODUCTOS"
         Me.btnProd.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnProd.UseVisualStyleBackColor = True
+        Me.btnProd.UseVisualStyleBackColor = False
         '
         'Button5
         '
@@ -98,13 +103,14 @@ Partial Class Form2
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(1, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.MidnightBlue
         Me.Panel4.Controls.Add(Me.btnMaximizar)
         Me.Panel4.Controls.Add(Me.Button6)
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.btnRestaurar)
         Me.Panel4.Controls.Add(Me.btnCerrar)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.ForeColor = System.Drawing.Color.White
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1386, 35)
@@ -172,7 +178,7 @@ Partial Class Form2
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
         Me.btnCerrar.Location = New System.Drawing.Point(1346, 0)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(40, 35)
@@ -181,6 +187,8 @@ Partial Class Form2
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -198,26 +206,30 @@ Partial Class Form2
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.Location = New System.Drawing.Point(12, 474)
+        Me.Button3.Location = New System.Drawing.Point(12, 460)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(272, 48)
         Me.Button3.TabIndex = 15
         Me.Button3.Text = "MOTORISTAS"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Sylfaen", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(-8, 33)
+        Me.Label2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(-4, 33)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(394, 44)
+        Me.Label2.Size = New System.Drawing.Size(392, 37)
         Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Ventana de acceso a tablas"
+        Me.Label2.Text = "Ventana De Aceso A Tablas"
         '
         'Panel2
         '
@@ -228,52 +240,58 @@ Partial Class Form2
         '
         'btnCab
         '
+        Me.btnCab.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnCab.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCab.ForeColor = System.Drawing.Color.White
         Me.btnCab.Image = CType(resources.GetObject("btnCab.Image"), System.Drawing.Image)
         Me.btnCab.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCab.Location = New System.Drawing.Point(12, 401)
+        Me.btnCab.Location = New System.Drawing.Point(12, 395)
         Me.btnCab.Name = "btnCab"
-        Me.btnCab.Size = New System.Drawing.Size(258, 50)
+        Me.btnCab.Size = New System.Drawing.Size(258, 48)
         Me.btnCab.TabIndex = 11
         Me.btnCab.Text = "CABEZALES"
         Me.btnCab.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnCab.UseVisualStyleBackColor = True
+        Me.btnCab.UseVisualStyleBackColor = False
         '
         'btnCont
         '
+        Me.btnCont.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnCont.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCont.ForeColor = System.Drawing.Color.White
         Me.btnCont.Image = CType(resources.GetObject("btnCont.Image"), System.Drawing.Image)
         Me.btnCont.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCont.Location = New System.Drawing.Point(12, 324)
+        Me.btnCont.Location = New System.Drawing.Point(12, 330)
         Me.btnCont.Name = "btnCont"
-        Me.btnCont.Size = New System.Drawing.Size(339, 46)
+        Me.btnCont.Size = New System.Drawing.Size(339, 48)
         Me.btnCont.TabIndex = 10
         Me.btnCont.Text = "CONTENEDORES"
         Me.btnCont.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnCont.UseVisualStyleBackColor = True
+        Me.btnCont.UseVisualStyleBackColor = False
         '
         'lblE
         '
         Me.lblE.AutoSize = True
-        Me.lblE.Font = New System.Drawing.Font("Sylfaen", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblE.Font = New System.Drawing.Font("Sylfaen", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblE.ForeColor = System.Drawing.Color.White
         Me.lblE.Location = New System.Drawing.Point(626, 35)
         Me.lblE.Name = "lblE"
-        Me.lblE.Size = New System.Drawing.Size(389, 52)
+        Me.lblE.Size = New System.Drawing.Size(405, 52)
         Me.lblE.TabIndex = 15
         Me.lblE.Text = "EDICION DE DATOS"
         '
         'Panel3
         '
-        Me.Panel3.Location = New System.Drawing.Point(395, 90)
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Location = New System.Drawing.Point(392, 90)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1141, 636)
+        Me.Panel3.Size = New System.Drawing.Size(1144, 648)
         Me.Panel3.TabIndex = 16
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1386, 738)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.lblE)

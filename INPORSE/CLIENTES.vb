@@ -348,8 +348,9 @@ Public Class CLIENTES
         End If
     End Sub
 
+    Private Sub pnlconsulta_Paint(sender As Object, e As PaintEventArgs) Handles pnlconsulta.Paint
 
-
+    End Sub
 
 
 End Class

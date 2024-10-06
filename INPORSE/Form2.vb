@@ -1,6 +1,18 @@
-﻿Public Class Form2
+﻿Imports System.Runtime.InteropServices
+Public Class Form2
+
+    <DllImport("User32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
 
 
+    <DllImport("User32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+    Private Sub Panel4_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel4.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         lblE.Text = "REGISTRO DE CLIENTES"
         Dim CLIENTES As New CLIENTES()
