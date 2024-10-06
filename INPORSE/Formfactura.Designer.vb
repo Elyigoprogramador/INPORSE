@@ -44,6 +44,7 @@ Partial Class Formfactura
         Me.lblt = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.npPP = New System.Windows.Forms.NumericUpDown()
+        Me.DateTime1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         CType(Me.npPP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -195,7 +196,7 @@ Partial Class Formfactura
         Me.btnFactura.Name = "btnFactura"
         Me.btnFactura.Size = New System.Drawing.Size(164, 51)
         Me.btnFactura.TabIndex = 23
-        Me.btnFactura.Text = "Generar factura"
+        Me.btnFactura.Text = "Generar factura PDF"
         Me.btnFactura.UseVisualStyleBackColor = True
         '
         'txtcobro
@@ -251,11 +252,19 @@ Partial Class Formfactura
         Me.npPP.Size = New System.Drawing.Size(180, 22)
         Me.npPP.TabIndex = 31
         '
+        'DateTime1
+        '
+        Me.DateTime1.Location = New System.Drawing.Point(419, 63)
+        Me.DateTime1.Name = "DateTime1"
+        Me.DateTime1.Size = New System.Drawing.Size(280, 22)
+        Me.DateTime1.TabIndex = 32
+        '
         'Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(711, 592)
+        Me.Controls.Add(Me.DateTime1)
         Me.Controls.Add(Me.npPP)
         Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.lblt)
@@ -307,4 +316,5 @@ Partial Class Formfactura
     Friend WithEvents lblt As Label
     Friend WithEvents lbltotal As Label
     Friend WithEvents npPP As NumericUpDown
+    Friend WithEvents DateTime1 As DateTimePicker
 End Class
