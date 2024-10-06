@@ -61,7 +61,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1333, 52)
         Me.Panel1.TabIndex = 10
@@ -88,7 +88,7 @@ Partial Class Form1
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnCerrar.Location = New System.Drawing.Point(1258, 0)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(71, 48)
         Me.btnCerrar.TabIndex = 11
@@ -252,6 +252,7 @@ Partial Class Form1
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(331, 55)
         Me.txtUser.TabIndex = 11
+        Me.txtUser.UseSystemPasswordChar = True
         '
         'Panel2
         '
@@ -326,7 +327,7 @@ Partial Class Form1
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Opacity = 0.98R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

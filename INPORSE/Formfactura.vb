@@ -99,7 +99,7 @@ Public Class Formfactura
                         $"Cliente1: {txtasesor.Text}" & vbCrLf &
                         $"Destino1: {cmbDestino.Text}" & vbCrLf &
                         $"Cobro del viaje: {txtcobro.Text:C}" & vbCrLf &
-                        $"Peso del producto: {txtPP.Text} kg" & vbCrLf &
+                        $"Peso del producto: {npPP.Value} kg" & vbCrLf &
                         $"Quién realizó la factura: {txtasesor.Text}" & vbCrLf &
                         $"Total: {lblt:C}" & vbCrLf &
                         $"Cabezal: {cmbCabezal}" & vbCrLf &
@@ -112,7 +112,7 @@ Public Class Formfactura
         cobroViaje = Decimal.Parse(txtcobro.Text)
         cabezal = cmbCabezal.SelectedItem.ToString()
         motorista = cmbMotorista.SelectedItem.ToString()
-        pesoProducto = Decimal.Parse(txtPP.Text)
+        pesoProducto = Decimal.Parse(npPP.Value.ToString())
         total = cobroViaje
 
 
