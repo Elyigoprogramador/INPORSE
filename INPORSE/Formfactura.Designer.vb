@@ -47,6 +47,10 @@ Partial Class Formfactura
         Me.DateTime1 = New System.Windows.Forms.DateTimePicker()
         Me.cmbDui = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmbProducto = New System.Windows.Forms.ComboBox()
+        Me.lblProducto = New System.Windows.Forms.Label()
+        Me.cmbContenedor = New System.Windows.Forms.ComboBox()
+        Me.lblContenedor = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.npPP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,7 +65,7 @@ Partial Class Formfactura
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(750, 43)
+        Me.Panel1.Size = New System.Drawing.Size(852, 43)
         Me.Panel1.TabIndex = 11
         '
         'Label5
@@ -85,7 +89,7 @@ Partial Class Formfactura
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCerrar.Location = New System.Drawing.Point(693, 0)
+        Me.btnCerrar.Location = New System.Drawing.Point(795, 0)
         Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(53, 39)
@@ -203,7 +207,7 @@ Partial Class Formfactura
         '
         'txtcobro
         '
-        Me.txtcobro.Location = New System.Drawing.Point(209, 428)
+        Me.txtcobro.Location = New System.Drawing.Point(218, 474)
         Me.txtcobro.Name = "txtcobro"
         Me.txtcobro.Size = New System.Drawing.Size(241, 22)
         Me.txtcobro.TabIndex = 25
@@ -212,7 +216,7 @@ Partial Class Formfactura
         '
         Me.lblcobro.AutoSize = True
         Me.lblcobro.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblcobro.Location = New System.Drawing.Point(-2, 420)
+        Me.lblcobro.Location = New System.Drawing.Point(7, 466)
         Me.lblcobro.Name = "lblcobro"
         Me.lblcobro.Size = New System.Drawing.Size(205, 29)
         Me.lblcobro.TabIndex = 24
@@ -222,7 +226,7 @@ Partial Class Formfactura
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 507)
+        Me.Label1.Location = New System.Drawing.Point(16, 553)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(242, 29)
         Me.Label1.TabIndex = 26
@@ -250,7 +254,7 @@ Partial Class Formfactura
         'npPP
         '
         Me.npPP.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.npPP.Location = New System.Drawing.Point(255, 516)
+        Me.npPP.Location = New System.Drawing.Point(264, 562)
         Me.npPP.Name = "npPP"
         Me.npPP.Size = New System.Drawing.Size(180, 18)
         Me.npPP.TabIndex = 31
@@ -278,13 +282,53 @@ Partial Class Formfactura
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(62, 29)
         Me.Label2.TabIndex = 33
-        Me.Label2.Text = "Dui;"
+        Me.Label2.Text = "Dui:"
+        '
+        'cmbProducto
+        '
+        Me.cmbProducto.FormattingEnabled = True
+        Me.cmbProducto.Location = New System.Drawing.Point(535, 210)
+        Me.cmbProducto.Name = "cmbProducto"
+        Me.cmbProducto.Size = New System.Drawing.Size(241, 24)
+        Me.cmbProducto.TabIndex = 36
+        '
+        'lblProducto
+        '
+        Me.lblProducto.AutoSize = True
+        Me.lblProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProducto.Location = New System.Drawing.Point(374, 210)
+        Me.lblProducto.Name = "lblProducto"
+        Me.lblProducto.Size = New System.Drawing.Size(130, 29)
+        Me.lblProducto.TabIndex = 35
+        Me.lblProducto.Text = "Producto:"
+        '
+        'cmbContenedor
+        '
+        Me.cmbContenedor.FormattingEnabled = True
+        Me.cmbContenedor.Location = New System.Drawing.Point(184, 425)
+        Me.cmbContenedor.Name = "cmbContenedor"
+        Me.cmbContenedor.Size = New System.Drawing.Size(241, 24)
+        Me.cmbContenedor.TabIndex = 38
+        '
+        'lblContenedor
+        '
+        Me.lblContenedor.AutoSize = True
+        Me.lblContenedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContenedor.Location = New System.Drawing.Point(18, 417)
+        Me.lblContenedor.Name = "lblContenedor"
+        Me.lblContenedor.Size = New System.Drawing.Size(162, 29)
+        Me.lblContenedor.TabIndex = 37
+        Me.lblContenedor.Text = "Contenedor:"
         '
         'Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(750, 696)
+        Me.ClientSize = New System.Drawing.Size(852, 696)
+        Me.Controls.Add(Me.cmbContenedor)
+        Me.Controls.Add(Me.lblContenedor)
+        Me.Controls.Add(Me.cmbProducto)
+        Me.Controls.Add(Me.lblProducto)
         Me.Controls.Add(Me.cmbDui)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DateTime1)
@@ -342,4 +386,8 @@ Partial Class Formfactura
     Friend WithEvents DateTime1 As DateTimePicker
     Friend WithEvents cmbDui As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents cmbProducto As ComboBox
+    Friend WithEvents lblProducto As Label
+    Friend WithEvents cmbContenedor As ComboBox
+    Friend WithEvents lblContenedor As Label
 End Class

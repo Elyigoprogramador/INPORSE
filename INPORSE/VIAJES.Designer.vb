@@ -87,9 +87,10 @@ Partial Class VIAJES
         Me.pnlconsulta.Controls.Add(Me.RUTA)
         Me.pnlconsulta.Controls.Add(Me.CABEZAL)
         Me.pnlconsulta.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlconsulta.Location = New System.Drawing.Point(1115, 0)
+        Me.pnlconsulta.Location = New System.Drawing.Point(1487, 0)
+        Me.pnlconsulta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlconsulta.Name = "pnlconsulta"
-        Me.pnlconsulta.Size = New System.Drawing.Size(255, 749)
+        Me.pnlconsulta.Size = New System.Drawing.Size(340, 922)
         Me.pnlconsulta.TabIndex = 77
         '
         'Label11
@@ -97,9 +98,10 @@ Partial Class VIAJES
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(29, 294)
+        Me.Label11.Location = New System.Drawing.Point(39, 362)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(37, 16)
+        Me.Label11.Size = New System.Drawing.Size(45, 19)
         Me.Label11.TabIndex = 55
         Me.Label11.Text = "RUTA:"
         '
@@ -108,9 +110,10 @@ Partial Class VIAJES
         Me.btnmenu.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
-        Me.btnmenu.Location = New System.Drawing.Point(3, 3)
+        Me.btnmenu.Location = New System.Drawing.Point(4, 4)
+        Me.btnmenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnmenu.Name = "btnmenu"
-        Me.btnmenu.Size = New System.Drawing.Size(83, 29)
+        Me.btnmenu.Size = New System.Drawing.Size(111, 36)
         Me.btnmenu.TabIndex = 19
         Me.btnmenu.Text = "CONSULTAR"
         Me.btnmenu.UseVisualStyleBackColor = False
@@ -120,9 +123,10 @@ Partial Class VIAJES
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(19, 398)
+        Me.Label12.Location = New System.Drawing.Point(25, 490)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(52, 16)
+        Me.Label12.Size = New System.Drawing.Size(64, 19)
         Me.Label12.TabIndex = 54
         Me.Label12.Text = "ESTADO:"
         '
@@ -132,9 +136,10 @@ Partial Class VIAJES
         Me.TID.Enabled = False
         Me.TID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TID.ForeColor = System.Drawing.Color.White
-        Me.TID.Location = New System.Drawing.Point(110, 250)
+        Me.TID.Location = New System.Drawing.Point(147, 308)
+        Me.TID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TID.Name = "TID"
-        Me.TID.Size = New System.Drawing.Size(141, 21)
+        Me.TID.Size = New System.Drawing.Size(187, 24)
         Me.TID.TabIndex = 47
         '
         'ESTADO
@@ -143,9 +148,10 @@ Partial Class VIAJES
         Me.ESTADO.Enabled = False
         Me.ESTADO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ESTADO.ForeColor = System.Drawing.Color.White
-        Me.ESTADO.Location = New System.Drawing.Point(110, 397)
+        Me.ESTADO.Location = New System.Drawing.Point(147, 489)
+        Me.ESTADO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ESTADO.Name = "ESTADO"
-        Me.ESTADO.Size = New System.Drawing.Size(141, 21)
+        Me.ESTADO.Size = New System.Drawing.Size(187, 24)
         Me.ESTADO.TabIndex = 53
         '
         'Label10
@@ -153,9 +159,10 @@ Partial Class VIAJES
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(19, 250)
+        Me.Label10.Location = New System.Drawing.Point(25, 308)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(74, 16)
+        Me.Label10.Size = New System.Drawing.Size(94, 19)
         Me.Label10.TabIndex = 48
         Me.Label10.Text = "ID DEL VIAJE:"
         '
@@ -164,9 +171,10 @@ Partial Class VIAJES
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(19, 345)
+        Me.Label13.Location = New System.Drawing.Point(25, 425)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(56, 16)
+        Me.Label13.Size = New System.Drawing.Size(71, 19)
         Me.Label13.TabIndex = 52
         Me.Label13.Text = "CABEZAL:"
         '
@@ -176,9 +184,10 @@ Partial Class VIAJES
         Me.RUTA.Enabled = False
         Me.RUTA.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RUTA.ForeColor = System.Drawing.Color.White
-        Me.RUTA.Location = New System.Drawing.Point(110, 299)
+        Me.RUTA.Location = New System.Drawing.Point(147, 368)
+        Me.RUTA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RUTA.Name = "RUTA"
-        Me.RUTA.Size = New System.Drawing.Size(141, 21)
+        Me.RUTA.Size = New System.Drawing.Size(187, 24)
         Me.RUTA.TabIndex = 49
         '
         'CABEZAL
@@ -187,9 +196,10 @@ Partial Class VIAJES
         Me.CABEZAL.Enabled = False
         Me.CABEZAL.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CABEZAL.ForeColor = System.Drawing.Color.White
-        Me.CABEZAL.Location = New System.Drawing.Point(110, 348)
+        Me.CABEZAL.Location = New System.Drawing.Point(147, 428)
+        Me.CABEZAL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CABEZAL.Name = "CABEZAL"
-        Me.CABEZAL.Size = New System.Drawing.Size(141, 21)
+        Me.CABEZAL.Size = New System.Drawing.Size(187, 24)
         Me.CABEZAL.TabIndex = 51
         '
         'N
@@ -197,9 +207,10 @@ Partial Class VIAJES
         Me.N.BackColor = System.Drawing.Color.DarkSlateGray
         Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.N.ForeColor = System.Drawing.Color.White
-        Me.N.Location = New System.Drawing.Point(586, 339)
+        Me.N.Location = New System.Drawing.Point(781, 417)
+        Me.N.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.N.Name = "N"
-        Me.N.Size = New System.Drawing.Size(131, 46)
+        Me.N.Size = New System.Drawing.Size(175, 57)
         Me.N.TabIndex = 76
         Me.N.Text = "NUEVO"
         Me.N.UseVisualStyleBackColor = False
@@ -208,9 +219,10 @@ Partial Class VIAJES
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(27, 573)
+        Me.Label6.Location = New System.Drawing.Point(36, 705)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 13)
+        Me.Label6.Size = New System.Drawing.Size(79, 16)
         Me.Label6.TabIndex = 75
         Me.Label6.Text = "CANTIDAD:"
         '
@@ -219,9 +231,10 @@ Partial Class VIAJES
         Me.CANTIDAD.BackColor = System.Drawing.Color.DarkSlateGray
         Me.CANTIDAD.Enabled = False
         Me.CANTIDAD.ForeColor = System.Drawing.Color.White
-        Me.CANTIDAD.Location = New System.Drawing.Point(133, 566)
+        Me.CANTIDAD.Location = New System.Drawing.Point(177, 697)
+        Me.CANTIDAD.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CANTIDAD.Name = "CANTIDAD"
-        Me.CANTIDAD.Size = New System.Drawing.Size(141, 20)
+        Me.CANTIDAD.Size = New System.Drawing.Size(187, 22)
         Me.CANTIDAD.TabIndex = 74
         '
         'Label7
@@ -229,9 +242,10 @@ Partial Class VIAJES
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(3, 513)
+        Me.Label7.Location = New System.Drawing.Point(4, 631)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(109, 13)
+        Me.Label7.Size = New System.Drawing.Size(139, 17)
         Me.Label7.TabIndex = 73
         Me.Label7.Text = "ID DEL PRODUCTO:"
         '
@@ -241,9 +255,10 @@ Partial Class VIAJES
         Me.IDP.Enabled = False
         Me.IDP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDP.ForeColor = System.Drawing.Color.White
-        Me.IDP.Location = New System.Drawing.Point(133, 519)
+        Me.IDP.Location = New System.Drawing.Point(177, 639)
+        Me.IDP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.IDP.Name = "IDP"
-        Me.IDP.Size = New System.Drawing.Size(141, 20)
+        Me.IDP.Size = New System.Drawing.Size(187, 23)
         Me.IDP.TabIndex = 72
         '
         'Label8
@@ -251,9 +266,10 @@ Partial Class VIAJES
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(3, 466)
+        Me.Label8.Location = New System.Drawing.Point(4, 574)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(124, 13)
+        Me.Label8.Size = New System.Drawing.Size(158, 17)
         Me.Label8.TabIndex = 71
         Me.Label8.Text = "ID DEL CONTENEDOR:"
         '
@@ -263,9 +279,10 @@ Partial Class VIAJES
         Me.IDCON.Enabled = False
         Me.IDCON.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDCON.ForeColor = System.Drawing.Color.White
-        Me.IDCON.Location = New System.Drawing.Point(133, 472)
+        Me.IDCON.Location = New System.Drawing.Point(177, 581)
+        Me.IDCON.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.IDCON.Name = "IDCON"
-        Me.IDCON.Size = New System.Drawing.Size(141, 20)
+        Me.IDCON.Size = New System.Drawing.Size(187, 23)
         Me.IDCON.TabIndex = 70
         '
         'Label9
@@ -273,9 +290,10 @@ Partial Class VIAJES
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(322, 429)
+        Me.Label9.Location = New System.Drawing.Point(429, 528)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 13)
+        Me.Label9.Size = New System.Drawing.Size(67, 17)
         Me.Label9.TabIndex = 69
         Me.Label9.Text = "COBRO*:"
         '
@@ -285,9 +303,10 @@ Partial Class VIAJES
         Me.COBRO.Enabled = False
         Me.COBRO.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.COBRO.ForeColor = System.Drawing.Color.White
-        Me.COBRO.Location = New System.Drawing.Point(413, 425)
+        Me.COBRO.Location = New System.Drawing.Point(551, 523)
+        Me.COBRO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.COBRO.Name = "COBRO"
-        Me.COBRO.Size = New System.Drawing.Size(141, 20)
+        Me.COBRO.Size = New System.Drawing.Size(187, 23)
         Me.COBRO.TabIndex = 68
         '
         'Label5
@@ -295,9 +314,10 @@ Partial Class VIAJES
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(322, 381)
+        Me.Label5.Location = New System.Drawing.Point(429, 469)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(54, 13)
+        Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 67
         Me.Label5.Text = "ESTADO:"
         '
@@ -307,9 +327,10 @@ Partial Class VIAJES
         Me.EST.Enabled = False
         Me.EST.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EST.ForeColor = System.Drawing.Color.White
-        Me.EST.Location = New System.Drawing.Point(413, 378)
+        Me.EST.Location = New System.Drawing.Point(551, 465)
+        Me.EST.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.EST.Name = "EST"
-        Me.EST.Size = New System.Drawing.Size(141, 20)
+        Me.EST.Size = New System.Drawing.Size(187, 23)
         Me.EST.TabIndex = 66
         '
         'Label4
@@ -317,9 +338,10 @@ Partial Class VIAJES
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(322, 331)
+        Me.Label4.Location = New System.Drawing.Point(429, 407)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.Size = New System.Drawing.Size(74, 17)
         Me.Label4.TabIndex = 65
         Me.Label4.Text = "CABEZAL:"
         '
@@ -329,9 +351,10 @@ Partial Class VIAJES
         Me.CAB.Enabled = False
         Me.CAB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CAB.ForeColor = System.Drawing.Color.White
-        Me.CAB.Location = New System.Drawing.Point(413, 331)
+        Me.CAB.Location = New System.Drawing.Point(551, 407)
+        Me.CAB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CAB.Name = "CAB"
-        Me.CAB.Size = New System.Drawing.Size(141, 20)
+        Me.CAB.Size = New System.Drawing.Size(187, 23)
         Me.CAB.TabIndex = 64
         '
         'Label3
@@ -339,9 +362,10 @@ Partial Class VIAJES
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(23, 423)
+        Me.Label3.Location = New System.Drawing.Point(31, 521)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 13)
+        Me.Label3.Size = New System.Drawing.Size(50, 17)
         Me.Label3.TabIndex = 63
         Me.Label3.Text = "RUTA:"
         '
@@ -351,9 +375,10 @@ Partial Class VIAJES
         Me.R.Enabled = False
         Me.R.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.R.ForeColor = System.Drawing.Color.White
-        Me.R.Location = New System.Drawing.Point(133, 425)
+        Me.R.Location = New System.Drawing.Point(177, 523)
+        Me.R.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.R.Name = "R"
-        Me.R.Size = New System.Drawing.Size(141, 20)
+        Me.R.Size = New System.Drawing.Size(187, 23)
         Me.R.TabIndex = 62
         '
         'Label2
@@ -361,9 +386,10 @@ Partial Class VIAJES
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(23, 373)
+        Me.Label2.Location = New System.Drawing.Point(31, 459)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 13)
+        Me.Label2.Size = New System.Drawing.Size(117, 17)
         Me.Label2.TabIndex = 61
         Me.Label2.Text = "ID DEL CLIENTE:"
         '
@@ -373,9 +399,10 @@ Partial Class VIAJES
         Me.IDC.Enabled = False
         Me.IDC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDC.ForeColor = System.Drawing.Color.White
-        Me.IDC.Location = New System.Drawing.Point(133, 378)
+        Me.IDC.Location = New System.Drawing.Point(177, 465)
+        Me.IDC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.IDC.Name = "IDC"
-        Me.IDC.Size = New System.Drawing.Size(141, 20)
+        Me.IDC.Size = New System.Drawing.Size(187, 23)
         Me.IDC.TabIndex = 60
         '
         'Label1
@@ -383,9 +410,10 @@ Partial Class VIAJES
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(23, 331)
+        Me.Label1.Location = New System.Drawing.Point(31, 407)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 13)
+        Me.Label1.Size = New System.Drawing.Size(97, 17)
         Me.Label1.TabIndex = 59
         Me.Label1.Text = "ID DEL VIAJE:"
         '
@@ -395,9 +423,10 @@ Partial Class VIAJES
         Me.IDV.Enabled = False
         Me.IDV.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDV.ForeColor = System.Drawing.Color.White
-        Me.IDV.Location = New System.Drawing.Point(133, 331)
+        Me.IDV.Location = New System.Drawing.Point(177, 407)
+        Me.IDV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.IDV.Name = "IDV"
-        Me.IDV.Size = New System.Drawing.Size(141, 20)
+        Me.IDV.Size = New System.Drawing.Size(187, 23)
         Me.IDV.TabIndex = 58
         '
         'M
@@ -405,9 +434,10 @@ Partial Class VIAJES
         Me.M.BackColor = System.Drawing.Color.DarkSlateGray
         Me.M.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.M.ForeColor = System.Drawing.Color.White
-        Me.M.Location = New System.Drawing.Point(586, 405)
+        Me.M.Location = New System.Drawing.Point(781, 498)
+        Me.M.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.M.Name = "M"
-        Me.M.Size = New System.Drawing.Size(131, 46)
+        Me.M.Size = New System.Drawing.Size(175, 57)
         Me.M.TabIndex = 57
         Me.M.Text = "MODIFICAR"
         Me.M.UseVisualStyleBackColor = False
@@ -434,6 +464,7 @@ Partial Class VIAJES
         Me.data1.EnableHeadersVisualStyles = False
         Me.data1.GridColor = System.Drawing.Color.SteelBlue
         Me.data1.Location = New System.Drawing.Point(1, 2)
+        Me.data1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.data1.Name = "data1"
         Me.data1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -444,86 +475,97 @@ Partial Class VIAJES
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.data1.RowHeadersWidth = 51
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateGray
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.data1.Size = New System.Drawing.Size(744, 323)
+        Me.data1.Size = New System.Drawing.Size(992, 398)
         Me.data1.TabIndex = 56
         '
         'Column1
         '
         Me.Column1.DataPropertyName = "ID_VIAJE"
         Me.Column1.HeaderText = "ID DEL VIAJE"
+        Me.Column1.MinimumWidth = 6
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 109
+        Me.Column1.Width = 143
         '
         'Column10
         '
         Me.Column10.DataPropertyName = "CANTIDAD"
         Me.Column10.HeaderText = "CANTIDAD DEL PRODUCTO"
+        Me.Column10.MinimumWidth = 6
         Me.Column10.Name = "Column10"
-        Me.Column10.Width = 201
+        Me.Column10.Width = 266
         '
         'Column9
         '
         Me.Column9.DataPropertyName = "ID_PRODUCTOS"
         Me.Column9.HeaderText = "ID DEL PRODUCTO"
+        Me.Column9.MinimumWidth = 6
         Me.Column9.Name = "Column9"
-        Me.Column9.Width = 147
+        Me.Column9.Width = 192
         '
         'Column8
         '
         Me.Column8.DataPropertyName = "ID_CONTENEDOR"
         Me.Column8.HeaderText = "ID DEL CONTENEDOR"
+        Me.Column8.MinimumWidth = 6
         Me.Column8.Name = "Column8"
-        Me.Column8.Width = 165
+        Me.Column8.Width = 214
         '
         'Column7
         '
         Me.Column7.DataPropertyName = "COBRO_VIAJE"
         Me.Column7.HeaderText = "SUELDO"
+        Me.Column7.MinimumWidth = 6
         Me.Column7.Name = "Column7"
-        Me.Column7.Width = 79
+        Me.Column7.Width = 102
         '
         'Column5
         '
         Me.Column5.DataPropertyName = "ESTADO"
         Me.Column5.HeaderText = "ESTADO"
+        Me.Column5.MinimumWidth = 6
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 79
+        Me.Column5.Width = 103
         '
         'Column4
         '
         Me.Column4.DataPropertyName = "CABEZAL"
         Me.Column4.HeaderText = "CABEZAL"
+        Me.Column4.MinimumWidth = 6
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 86
+        Me.Column4.Width = 112
         '
         'Column3
         '
         Me.Column3.DataPropertyName = "RUTA"
         Me.Column3.HeaderText = "RUTA"
+        Me.Column3.MinimumWidth = 6
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 61
+        Me.Column3.Width = 80
         '
         'Column2
         '
         Me.Column2.DataPropertyName = "ID_CLIENTE"
         Me.Column2.HeaderText = "ID DEL CLIENTE"
+        Me.Column2.MinimumWidth = 6
         Me.Column2.Name = "Column2"
-        Me.Column2.Width = 124
+        Me.Column2.Width = 161
         '
         'ELIMINAR
         '
         Me.ELIMINAR.BackColor = System.Drawing.Color.DarkSlateGray
         Me.ELIMINAR.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ELIMINAR.ForeColor = System.Drawing.Color.White
-        Me.ELIMINAR.Location = New System.Drawing.Point(586, 471)
+        Me.ELIMINAR.Location = New System.Drawing.Point(781, 580)
+        Me.ELIMINAR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ELIMINAR.Name = "ELIMINAR"
-        Me.ELIMINAR.Size = New System.Drawing.Size(131, 46)
+        Me.ELIMINAR.Size = New System.Drawing.Size(175, 57)
         Me.ELIMINAR.TabIndex = 78
         Me.ELIMINAR.Text = "ELIMINAR"
         Me.ELIMINAR.UseVisualStyleBackColor = False
@@ -540,11 +582,11 @@ Partial Class VIAJES
         '
         Me.HISTORIAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HISTORIAL.FormattingEnabled = True
-        Me.HISTORIAL.ItemHeight = 7
-        Me.HISTORIAL.Location = New System.Drawing.Point(750, 70)
-        Me.HISTORIAL.Margin = New System.Windows.Forms.Padding(2)
+        Me.HISTORIAL.ItemHeight = 9
+        Me.HISTORIAL.Location = New System.Drawing.Point(1000, 86)
+        Me.HISTORIAL.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.HISTORIAL.Name = "HISTORIAL"
-        Me.HISTORIAL.Size = New System.Drawing.Size(280, 676)
+        Me.HISTORIAL.Size = New System.Drawing.Size(372, 823)
         Me.HISTORIAL.TabIndex = 79
         '
         'Label14
@@ -552,18 +594,19 @@ Partial Class VIAJES
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(753, 30)
+        Me.Label14.Location = New System.Drawing.Point(1004, 37)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(277, 25)
+        Me.Label14.Size = New System.Drawing.Size(342, 29)
         Me.Label14.TabIndex = 80
         Me.Label14.Text = "HISTORIAL DE REGISTRO"
         '
         'VIAJES
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1370, 749)
+        Me.ClientSize = New System.Drawing.Size(1827, 922)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.HISTORIAL)
         Me.Controls.Add(Me.ELIMINAR)
@@ -589,6 +632,7 @@ Partial Class VIAJES
         Me.Controls.Add(Me.IDV)
         Me.Controls.Add(Me.M)
         Me.Controls.Add(Me.data1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "VIAJES"
         Me.Text = "VIAJES"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

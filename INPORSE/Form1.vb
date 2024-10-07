@@ -27,7 +27,8 @@ Public Class Form1
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
 
         'EN CASO DE QUE CUALQUIER DE LOS DOS SEA CORRECTO
-        If txtContra.Text = "102421" And txtUser.Text = "Empleado" Then
+        If txtContra.Text = "102421" And txtUser.Text = "Mario Escalante" Then
+            NombreUsuario = "Mario Escalante"
             intentosFallidos = 0
             Form2.Button3.Visible = False
             Form2.Button3.Enabled = False
@@ -35,7 +36,27 @@ Public Class Form1
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
-        ElseIf txtContra.Text = "INPORSE123" And txtUser.Text = "Administrador" Then
+        ElseIf txtContra.Text = "200618" And txtUser.Text = "Rodrigo Hernandez" Then
+            NombreUsuario = "Rodrigo Hernandez"
+            intentosFallidos = 0
+            Form2.Button3.Visible = True
+            Form2.Button3.Enabled = True
+            Form2.Show()
+            txtUser.Text = ""
+            txtContra.Text = ""
+            Me.Hide()
+
+        ElseIf txtContra.Text = "200618" And txtUser.Text = "Anna Shantall" Then
+            NombreUsuario = "Anna Alegria"
+            intentosFallidos = 0
+            ' Form2.Button3.Visible = True
+            'Form2.Button3.Enabled = True
+            Formfactura.Show()
+            txtUser.Text = ""
+            txtContra.Text = ""
+            Me.Hide()
+        ElseIf txtContra.Text = "200618" And txtUser.Text = "Cesar Lemus" Then
+            NombreUsuario = "Cesar Lemus"
             intentosFallidos = 0
             Form2.Button3.Visible = True
             Form2.Button3.Enabled = True

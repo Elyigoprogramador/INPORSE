@@ -4,6 +4,7 @@ Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
 Imports iTextSharp.text.pdf.draw
+Imports iTextSharp.tool.xml
 Public Class Formfactura
     Private cliente1 As String
     Private destino1 As String
@@ -151,12 +152,12 @@ Public Class Formfactura
         logoCell.Border = PdfPCell.NO_BORDER
         logoCell.VerticalAlignment = Element.ALIGN_MIDDLE
 
-
-        Dim codigoFac = GenerarCodigoFactura()
+        Dim codigoFac = GenerarCodigoFactura() ' Generar el número de factura aleatorio
         Dim fechaFactura As DateTime = DateTime1.Value
+        Dim fechahora As String = DateTime.Now.ToString("yyyyMMdd_HHmmss")
 
-        ' Ruta donde se guardará el archivo PDF
-        Dim rutaPDF As String = "C:\INPORSE1\FACTURAPDF\factura_" & cmbCliente.Text & "_" & fechaFactura.ToString("yyyyMMdd") & ".pdf"
+        ' Ruta donde se guardará el archivo PDF (incluyendo el número de factura)
+        Dim rutaPDF As String = "C:\INPORSE1\FACTURAPDF\factura_" & codigoFac.ToString & "_" & cmbCliente.Text & "_" & fechahora & ".pdf"
 
         ' Crear el documento PDF
         Dim doc As New Document(PageSize.A4, 25, 25, 10, 30)
@@ -176,6 +177,7 @@ Public Class Formfactura
         Dim fuenteSubTitulo As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)
         Dim fuenteNormal As Font = FontFactory.GetFont(FontFactory.HELVETICA, 12)
         Dim fuentePequena As Font = FontFactory.GetFont(FontFactory.HELVETICA, 10)
+        Dim FuenteDetalle As Font = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 15)
 
         ' Encabezado de la factura
         Dim titulo As New Paragraph("Grupo INPORSE", fuenteTitulo)
@@ -206,34 +208,37 @@ Public Class Formfactura
         Dim cuadro As New PdfPTable(2) With {.WidthPercentage = 100}
         cuadro.SetWidths(New Single() {1, 1})
 
-        cuadro.AddCell(New Phrase("Cliente:", fuenteNormal))
-        cuadro.AddCell(New Phrase(cmbCliente.Text, fuenteNormal))
+        cuadro.AddCell(New Phrase("Cliente:" & cmbCliente.Text, fuenteNormal))
+        '   cuadro.AddCell(New Phrase(cmbCliente.Text, fuenteNormal))
 
-        cuadro.AddCell(New Phrase("Dui:", fuenteNormal))
-        cuadro.AddCell(New Phrase(cmbCliente.Text, fuenteNormal))
+        cuadro.AddCell(New Phrase("Dui:" & cmbCliente.Text, fuenteNormal))
+        ' cuadro.AddCell(New Phrase(cmbCliente.Text, fuenteNormal))
 
-        cuadro.AddCell(New Phrase("Destino:", fuenteNormal))
-        cuadro.AddCell(New Phrase(cmbDestino.Text, fuenteNormal))
+        cuadro.AddCell(New Phrase("Destino:" & cmbDestino.Text, fuenteNormal))
+        ' cuadro.AddCell(New Phrase(cmbDestino.Text, fuenteNormal))
 
-        cuadro.AddCell(New Phrase("Motorista:", fuenteNormal))
-        cuadro.AddCell(New Phrase(cmbMotorista.Text, fuenteNormal))
+        cuadro.AddCell(New Phrase("Motorista:" & cmbMotorista.Text, fuenteNormal))
+        ' cuadro.AddCell(New Phrase(cmbMotorista.Text, fuenteNormal))
 
-        cuadro.AddCell(New Phrase("Cabezal utilizado:", fuenteNormal))
-        cuadro.AddCell(New Phrase(cmbCabezal.Text, fuenteNormal))
+        cuadro.AddCell(New Phrase("Cabezal utilizado:" & cmbCabezal.Text, fuenteNormal))
+        ' cuadro.AddCell(New Phrase(cmbCabezal.Text, fuenteNormal))
 
         ' Asegurarse de que haya suficiente espacio
-        cuadro.SpacingBefore = 10
-        cuadro.SpacingAfter = 10
+        cuadro.SpacingBefore = 5
+        cuadro.SpacingAfter = 5
 
         doc.Add(cuadro)
 
         ' Línea divisoria
         doc.Add(New Chunk(New LineSeparator(1.0F, 100%, BaseColor.BLACK, Element.ALIGN_CENTER, -1)))
         doc.Add(New Paragraph(" "))
-
+        Dim linea As New LineSeparator(1.0F, 55%, BaseColor.BLACK, Element.ALIGN_CENTER, 17)
         ' Detalle de Cobro
-        doc.Add(New Paragraph("Detalle de Cobro", fuenteSubTitulo))
+        doc.Add(New Paragraph("Detalle de Cobro", FuenteDetalle))
         doc.Add(New Paragraph("Cobro del viaje: $" & txtcobro.Text, fuenteNormal))
+        doc.Add(New Chunk(linea))
+
+        doc.Add(New Paragraph(" "))
         doc.Add(New Paragraph("Total a pagar: $" & lbltotal.Text, fuenteNormal))
         doc.Add(New Paragraph("Quien realizó la factura: " & txtasesor.Text, fuenteNormal))
         doc.Add(New Paragraph(" ", fuenteNormal))
@@ -242,8 +247,8 @@ Public Class Formfactura
         doc.Add(New Paragraph("info@grupoinporse.com", fuentePequena) With {.Alignment = Element.ALIGN_RIGHT})
 
         ' Sección de agradecimiento
-        Dim espacio As New Paragraph(New Paragraph("¡Gracias por utilizar nuestros servicios de transporte!", fuenteNormal) With {.Alignment = Element.ALIGN_CENTER})
-        espacio.SpacingAfter = 40
+        doc.Add(New Paragraph("¡Gracias por utilizar nuestros servicios de transporte!", fuenteNormal) With {.Alignment = Element.ALIGN_CENTER})
+
         ' Mensaje final
         doc.Add(New Paragraph("Expertos en Operar tus servicios portuarios, logísticos y de carga desde el 2002.", fuentePequena) With {.Alignment = Element.ALIGN_CENTER})
 
