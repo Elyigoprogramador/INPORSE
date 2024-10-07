@@ -45,6 +45,8 @@ Partial Class Formfactura
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.npPP = New System.Windows.Forms.NumericUpDown()
         Me.DateTime1 = New System.Windows.Forms.DateTimePicker()
+        Me.cmbDui = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.npPP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class Formfactura
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(711, 43)
+        Me.Panel1.Size = New System.Drawing.Size(750, 43)
         Me.Panel1.TabIndex = 11
         '
         'Label5
@@ -83,7 +85,7 @@ Partial Class Formfactura
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCerrar.Location = New System.Drawing.Point(654, 0)
+        Me.btnCerrar.Location = New System.Drawing.Point(693, 0)
         Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(53, 39)
@@ -104,7 +106,7 @@ Partial Class Formfactura
         '
         Me.cliente.AutoSize = True
         Me.cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cliente.Location = New System.Drawing.Point(7, 151)
+        Me.cliente.Location = New System.Drawing.Point(7, 129)
         Me.cliente.Name = "cliente"
         Me.cliente.Size = New System.Drawing.Size(107, 29)
         Me.cliente.TabIndex = 13
@@ -113,7 +115,7 @@ Partial Class Formfactura
         'cmbCliente
         '
         Me.cmbCliente.FormattingEnabled = True
-        Me.cmbCliente.Location = New System.Drawing.Point(123, 151)
+        Me.cmbCliente.Location = New System.Drawing.Point(120, 134)
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(241, 24)
         Me.cmbCliente.TabIndex = 14
@@ -122,7 +124,7 @@ Partial Class Formfactura
         '
         Me.Destino.AutoSize = True
         Me.Destino.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Destino.Location = New System.Drawing.Point(7, 211)
+        Me.Destino.Location = New System.Drawing.Point(7, 178)
         Me.Destino.Name = "Destino"
         Me.Destino.Size = New System.Drawing.Size(114, 29)
         Me.Destino.TabIndex = 15
@@ -131,7 +133,7 @@ Partial Class Formfactura
         'cmbDestino
         '
         Me.cmbDestino.FormattingEnabled = True
-        Me.cmbDestino.Location = New System.Drawing.Point(123, 219)
+        Me.cmbDestino.Location = New System.Drawing.Point(127, 186)
         Me.cmbDestino.Name = "cmbDestino"
         Me.cmbDestino.Size = New System.Drawing.Size(241, 24)
         Me.cmbDestino.TabIndex = 16
@@ -140,7 +142,7 @@ Partial Class Formfactura
         '
         Me.lblasesor.AutoSize = True
         Me.lblasesor.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblasesor.Location = New System.Drawing.Point(7, 270)
+        Me.lblasesor.Location = New System.Drawing.Point(7, 241)
         Me.lblasesor.Name = "lblasesor"
         Me.lblasesor.Size = New System.Drawing.Size(106, 29)
         Me.lblasesor.TabIndex = 17
@@ -148,7 +150,7 @@ Partial Class Formfactura
         '
         'txtasesor
         '
-        Me.txtasesor.Location = New System.Drawing.Point(123, 270)
+        Me.txtasesor.Location = New System.Drawing.Point(127, 249)
         Me.txtasesor.Name = "txtasesor"
         Me.txtasesor.Size = New System.Drawing.Size(241, 22)
         Me.txtasesor.TabIndex = 18
@@ -157,7 +159,7 @@ Partial Class Formfactura
         '
         Me.lblcabezal.AutoSize = True
         Me.lblcabezal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblcabezal.Location = New System.Drawing.Point(7, 335)
+        Me.lblcabezal.Location = New System.Drawing.Point(-5, 301)
         Me.lblcabezal.Name = "lblcabezal"
         Me.lblcabezal.Size = New System.Drawing.Size(121, 29)
         Me.lblcabezal.TabIndex = 19
@@ -166,7 +168,7 @@ Partial Class Formfactura
         'cmbCabezal
         '
         Me.cmbCabezal.FormattingEnabled = True
-        Me.cmbCabezal.Location = New System.Drawing.Point(123, 335)
+        Me.cmbCabezal.Location = New System.Drawing.Point(127, 306)
         Me.cmbCabezal.Name = "cmbCabezal"
         Me.cmbCabezal.Size = New System.Drawing.Size(241, 24)
         Me.cmbCabezal.TabIndex = 20
@@ -175,7 +177,7 @@ Partial Class Formfactura
         '
         Me.lblMotorista.AutoSize = True
         Me.lblMotorista.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMotorista.Location = New System.Drawing.Point(7, 403)
+        Me.lblMotorista.Location = New System.Drawing.Point(-2, 357)
         Me.lblMotorista.Name = "lblMotorista"
         Me.lblMotorista.Size = New System.Drawing.Size(134, 29)
         Me.lblMotorista.TabIndex = 21
@@ -184,7 +186,7 @@ Partial Class Formfactura
         'cmbMotorista
         '
         Me.cmbMotorista.FormattingEnabled = True
-        Me.cmbMotorista.Location = New System.Drawing.Point(142, 403)
+        Me.cmbMotorista.Location = New System.Drawing.Point(138, 365)
         Me.cmbMotorista.Name = "cmbMotorista"
         Me.cmbMotorista.Size = New System.Drawing.Size(241, 24)
         Me.cmbMotorista.TabIndex = 22
@@ -201,7 +203,7 @@ Partial Class Formfactura
         '
         'txtcobro
         '
-        Me.txtcobro.Location = New System.Drawing.Point(206, 456)
+        Me.txtcobro.Location = New System.Drawing.Point(209, 428)
         Me.txtcobro.Name = "txtcobro"
         Me.txtcobro.Size = New System.Drawing.Size(241, 22)
         Me.txtcobro.TabIndex = 25
@@ -210,7 +212,7 @@ Partial Class Formfactura
         '
         Me.lblcobro.AutoSize = True
         Me.lblcobro.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblcobro.Location = New System.Drawing.Point(-5, 456)
+        Me.lblcobro.Location = New System.Drawing.Point(-2, 420)
         Me.lblcobro.Name = "lblcobro"
         Me.lblcobro.Size = New System.Drawing.Size(205, 29)
         Me.lblcobro.TabIndex = 24
@@ -230,7 +232,7 @@ Partial Class Formfactura
         '
         Me.lblt.AutoSize = True
         Me.lblt.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblt.Location = New System.Drawing.Point(25, 550)
+        Me.lblt.Location = New System.Drawing.Point(7, 613)
         Me.lblt.Name = "lblt"
         Me.lblt.Size = New System.Drawing.Size(74, 29)
         Me.lblt.TabIndex = 28
@@ -240,16 +242,17 @@ Partial Class Formfactura
         '
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotal.Location = New System.Drawing.Point(150, 550)
+        Me.lbltotal.Location = New System.Drawing.Point(132, 613)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(0, 29)
         Me.lbltotal.TabIndex = 29
         '
         'npPP
         '
+        Me.npPP.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.npPP.Location = New System.Drawing.Point(255, 516)
         Me.npPP.Name = "npPP"
-        Me.npPP.Size = New System.Drawing.Size(180, 22)
+        Me.npPP.Size = New System.Drawing.Size(180, 18)
         Me.npPP.TabIndex = 31
         '
         'DateTime1
@@ -259,11 +262,31 @@ Partial Class Formfactura
         Me.DateTime1.Size = New System.Drawing.Size(280, 22)
         Me.DateTime1.TabIndex = 32
         '
+        'cmbDui
+        '
+        Me.cmbDui.FormattingEnabled = True
+        Me.cmbDui.Location = New System.Drawing.Point(476, 137)
+        Me.cmbDui.Name = "cmbDui"
+        Me.cmbDui.Size = New System.Drawing.Size(241, 24)
+        Me.cmbDui.TabIndex = 34
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(363, 132)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(62, 29)
+        Me.Label2.TabIndex = 33
+        Me.Label2.Text = "Dui;"
+        '
         'Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(711, 592)
+        Me.ClientSize = New System.Drawing.Size(750, 696)
+        Me.Controls.Add(Me.cmbDui)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DateTime1)
         Me.Controls.Add(Me.npPP)
         Me.Controls.Add(Me.lbltotal)
@@ -317,4 +340,6 @@ Partial Class Formfactura
     Friend WithEvents lbltotal As Label
     Friend WithEvents npPP As NumericUpDown
     Friend WithEvents DateTime1 As DateTimePicker
+    Friend WithEvents cmbDui As ComboBox
+    Friend WithEvents Label2 As Label
 End Class
