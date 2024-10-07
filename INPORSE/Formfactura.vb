@@ -127,7 +127,6 @@ Public Class Formfactura
         ' Crear el escritor de PDF y asociarlo al archivo donde se guardará el PDF
         Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(rutaPDF, FileMode.Create))
 
-        ' Abrir el documento para escribir en él
         doc.Open()
 
         ' Fuente para el texto del documento
