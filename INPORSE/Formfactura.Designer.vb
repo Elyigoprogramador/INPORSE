@@ -38,7 +38,6 @@ Partial Class Formfactura
         Me.lblMotorista = New System.Windows.Forms.Label()
         Me.cmbMotorista = New System.Windows.Forms.ComboBox()
         Me.btnFactura = New System.Windows.Forms.Button()
-        Me.txtcobro = New System.Windows.Forms.TextBox()
         Me.lblcobro = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblt = New System.Windows.Forms.Label()
@@ -51,8 +50,10 @@ Partial Class Formfactura
         Me.lblProducto = New System.Windows.Forms.Label()
         Me.cmbContenedor = New System.Windows.Forms.ComboBox()
         Me.lblContenedor = New System.Windows.Forms.Label()
+        Me.npCobro = New System.Windows.Forms.NumericUpDown()
         Me.Panel1.SuspendLayout()
         CType(Me.npPP, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.npCobro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -200,17 +201,10 @@ Partial Class Formfactura
         Me.btnFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFactura.Location = New System.Drawing.Point(535, 515)
         Me.btnFactura.Name = "btnFactura"
-        Me.btnFactura.Size = New System.Drawing.Size(164, 51)
+        Me.btnFactura.Size = New System.Drawing.Size(164, 65)
         Me.btnFactura.TabIndex = 23
         Me.btnFactura.Text = "Generar factura PDF"
         Me.btnFactura.UseVisualStyleBackColor = True
-        '
-        'txtcobro
-        '
-        Me.txtcobro.Location = New System.Drawing.Point(218, 474)
-        Me.txtcobro.Name = "txtcobro"
-        Me.txtcobro.Size = New System.Drawing.Size(241, 22)
-        Me.txtcobro.TabIndex = 25
         '
         'lblcobro
         '
@@ -320,11 +314,20 @@ Partial Class Formfactura
         Me.lblContenedor.TabIndex = 37
         Me.lblContenedor.Text = "Contenedor:"
         '
+        'npCobro
+        '
+        Me.npCobro.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.npCobro.Location = New System.Drawing.Point(218, 477)
+        Me.npCobro.Name = "npCobro"
+        Me.npCobro.Size = New System.Drawing.Size(180, 18)
+        Me.npCobro.TabIndex = 39
+        '
         'Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(852, 696)
+        Me.Controls.Add(Me.npCobro)
         Me.Controls.Add(Me.cmbContenedor)
         Me.Controls.Add(Me.lblContenedor)
         Me.Controls.Add(Me.cmbProducto)
@@ -336,7 +339,6 @@ Partial Class Formfactura
         Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.lblt)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtcobro)
         Me.Controls.Add(Me.lblcobro)
         Me.Controls.Add(Me.btnFactura)
         Me.Controls.Add(Me.cmbMotorista)
@@ -357,6 +359,7 @@ Partial Class Formfactura
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.npPP, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.npCobro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -377,7 +380,6 @@ Partial Class Formfactura
     Friend WithEvents lblMotorista As Label
     Friend WithEvents cmbMotorista As ComboBox
     Friend WithEvents btnFactura As Button
-    Friend WithEvents txtcobro As TextBox
     Friend WithEvents lblcobro As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lblt As Label
@@ -390,4 +392,5 @@ Partial Class Formfactura
     Friend WithEvents lblProducto As Label
     Friend WithEvents cmbContenedor As ComboBox
     Friend WithEvents lblContenedor As Label
+    Friend WithEvents npCobro As NumericUpDown
 End Class

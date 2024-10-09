@@ -4,7 +4,6 @@ Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
 Imports iTextSharp.text.pdf.draw
-Imports iTextSharp.tool.xml
 Public Class Formfactura
     Private cliente1 As String
     Private destino1 As String
@@ -103,6 +102,40 @@ Public Class Formfactura
         End Try
     End Sub
 
+    Private Sub CargarContenedor()
+        Try
+            Dim comando As New MySqlCommand("SELECT TIPO FROM CONTENEDOR", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbDui.Items.Clear()
+
+            While reader.Read()
+                cmbDui.Items.Add(reader("TIPO").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar contenedores: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub CargarProducto()
+        Try
+            Dim comando As New MySqlCommand("SELECT NOMBRE FROM PRODUCTO", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbDui.Items.Clear()
+
+            While reader.Read()
+                cmbDui.Items.Add(reader("NOMBRE").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar productos: " & ex.Message)
+        End Try
+    End Sub
+
     Private Sub Formfactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtasesor.Text = Form1.NombreUsuario
 
@@ -120,18 +153,10 @@ Public Class Formfactura
 
 
     End Sub
-    Private Sub MostrarFactura()
-        MessageBox.Show($"Factura generada:" & vbCrLf &
-                        $"Cliente1: {txtasesor.Text}" & vbCrLf &
-                        $"Destino1: {cmbDestino.Text}" & vbCrLf &
-                        $"Cobro del viaje: {txtcobro.Text:C}" & vbCrLf &
-                        $"Peso del producto: {npPP.Value} kg" & vbCrLf &
-                        $"Quién realizó la factura: {txtasesor.Text}" & vbCrLf &
-                        $"Total: {lblt:C}" & vbCrLf &
-                        $"Cabezal: {cmbCabezal}" & vbCrLf &
-                        $"Motorista: {cmbMotorista}")
-    End Sub
     Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
+        Dim total As Double = lbltotal.Text
+        Dim cobro As Double = npCobro.Value
+        Dim PesoP As Double = npPP.Value
 
         Dim logo As iTextSharp.text.Image
 
@@ -223,7 +248,8 @@ Public Class Formfactura
         cuadro.AddCell(New Phrase("Cabezal utilizado:" & cmbCabezal.Text, fuenteNormal))
         ' cuadro.AddCell(New Phrase(cmbCabezal.Text, fuenteNormal))
         cuadro.AddCell(New Phrase("Contenedor Utilizado:" & cmbContenedor.Text, fuenteNormal))
-
+        cuadro.AddCell(New Phrase("Producto transportado:" & cmbProducto.Text, fuenteNormal))
+        cuadro.AddCell(New Phrase("Peso del producto:" & npCobro.Value.ToString("F2"), fuenteNormal))
         cuadro.SpacingBefore = 5
         cuadro.SpacingAfter = 5
 
@@ -235,7 +261,7 @@ Public Class Formfactura
         Dim linea As New LineSeparator(1.0F, 55%, BaseColor.BLACK, Element.ALIGN_CENTER, 17)
 
         doc.Add(New Paragraph("Detalle de Cobro", FuenteDetalle))
-        doc.Add(New Paragraph("Cobro del viaje: $" & txtcobro.Text, fuenteNormal))
+        doc.Add(New Paragraph("Cobro del viaje: $" & npCobro.Value, fuenteNormal))
         doc.Add(New Chunk(linea))
 
         doc.Add(New Paragraph(" "))
@@ -247,7 +273,7 @@ Public Class Formfactura
         doc.Add(New Paragraph("info@grupoinporse.com", fuentePequena) With {.Alignment = Element.ALIGN_RIGHT})
 
 
-        doc.Add(New Paragraph("¡Gracias por utilizar nuestros servicios de transporte!", fuenteNormal) With {.Alignment = Element.ALIGN_CENTER})
+        doc.Add(New Paragraph("¡Gracias por utilizar nuestros servicios portuarios y de transporte!", fuenteNormal) With {.Alignment = Element.ALIGN_CENTER})
 
 
         doc.Add(New Paragraph("Expertos en Operar tus servicios portuarios, logísticos y de carga desde el 2002.", fuentePequena) With {.Alignment = Element.ALIGN_CENTER})
