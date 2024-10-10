@@ -1,5 +1,7 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.Net.NetworkInformation
+Imports System.Runtime.InteropServices
 Imports System.Xml
+Imports Microsoft.VisualBasic.ApplicationServices
 Imports Org.BouncyCastle.Crypto.Digests
 Public Class Form2
 
@@ -16,6 +18,7 @@ Public Class Form2
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+
         lblE.Text = "REGISTRO DE CLIENTES"
         Dim CLIENTES As New CLIENTES()
 
@@ -139,6 +142,13 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblusuario.Text = Form1.NombreUsuario
+        btnClientes.FlatAppearance.BorderSize = 0
+        btnViajes.FlatAppearance.BorderSize = 0
+        btnProd.FlatAppearance.BorderSize = 0
+        btnCont.FlatAppearance.BorderSize = 0
+        btnCab.FlatAppearance.BorderSize = 0
+        Button3.FlatAppearance.BorderSize = 0
         btnMaximizar.Visible = False
     End Sub
     Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
@@ -162,67 +172,5 @@ Public Class Form2
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblE.Click
 
-    End Sub
-
-    Private Sub btnClientes_MouseMove(sender As Object, e As MouseEventArgs) Handles btnClientes.MouseMove
-        btnClientes.BackColor = Color.White
-        btnClientes.ForeColor = Color.DarkSlateGray
-    End Sub
-
-    Private Sub btnClientes_MouseLeave(sender As Object, e As EventArgs) Handles btnClientes.MouseLeave
-        btnClientes.BackColor = Color.DarkSlateGray
-        btnClientes.ForeColor = Color.White
-    End Sub
-
-    Private Sub btnViajes_MouseMove(sender As Object, e As MouseEventArgs) Handles btnViajes.MouseMove
-        btnViajes.BackColor = Color.White
-        btnViajes.ForeColor = Color.DarkSlateGray
-    End Sub
-
-    Private Sub btnViajes_MouseLeave(sender As Object, e As EventArgs) Handles btnViajes.MouseLeave
-        btnViajes.BackColor = Color.DarkSlateGray
-        btnViajes.ForeColor = Color.White
-    End Sub
-
-    Private Sub btnProd_MouseMove(sender As Object, e As MouseEventArgs) Handles btnProd.MouseMove
-        btnProd.BackColor = Color.White
-        btnProd.ForeColor = Color.DarkSlateGray
-    End Sub
-
-    Private Sub btnProd_MouseLeave(sender As Object, e As EventArgs) Handles btnProd.MouseLeave
-        btnProd.BackColor = Color.DarkSlateGray
-        btnProd.ForeColor = Color.White
-    End Sub
-
-    Private Sub btnCont_MouseMove(sender As Object, e As MouseEventArgs) Handles btnCont.MouseMove
-        btnCont.BackColor = Color.White
-        btnCont.ForeColor = Color.DarkSlateGray
-    End Sub
-
-    Private Sub btnCont_MouseLeave(sender As Object, e As EventArgs) Handles btnCont.MouseLeave
-        btnCont.BackColor = Color.DarkSlateGray
-        btnCont.ForeColor = Color.White
-    End Sub
-
-    Private Sub btnCab_MouseMove(sender As Object, e As MouseEventArgs) Handles btnCab.MouseMove
-        btnCab.BackColor = Color.White
-        btnCab.ForeColor = Color.DarkSlateGray
-    End Sub
-
-    Private Sub btnCab_MouseLeave(sender As Object, e As EventArgs) Handles btnCab.MouseLeave
-        btnCab.BackColor = Color.DarkSlateGray
-        btnCab.ForeColor = Color.White
-    End Sub
-
-    Private Sub Button3_MouseMove(sender As Object, e As MouseEventArgs) Handles Button3.MouseMove
-        Button3.BackColor = Color.White
-        Button3.ForeColor = Color.DarkSlateGray
-    End Sub
-
-    Private Sub Button3_MouseLeave(sender As Object, e As EventArgs) Handles Button3.MouseLeave
-        Button3.BackColor = Color.DarkSlateGray
-        Button3.ForeColor = Color.White
-    End Sub
 End Class
