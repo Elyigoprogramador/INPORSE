@@ -370,9 +370,13 @@ Public Class VIAJES
         ESTADO.Enabled = True
     End Sub
 
-
-    Private Sub TID_KeyUp(sender As Object, e As KeyEventArgs)
+    'nuevo
+    Private Sub TID_KeyUp_1(sender As Object, e As KeyEventArgs) Handles TID.KeyUp
         conjuntoDatos.Clear()
+        RUTA.Clear()
+        CABEZAL.Clear()
+        ESTADO.Clear()
+
         If TID.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM VIAJES WHERE ID_VIAJE like '%" & TID.Text & "%'"
@@ -387,8 +391,12 @@ Public Class VIAJES
         End If
     End Sub
 
-    Private Sub RUTA_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub RUTA_KeyUp_1(sender As Object, e As KeyEventArgs) Handles RUTA.KeyUp
         conjuntoDatos.Clear()
+        TID.Clear()
+        CABEZAL.Clear()
+        ESTADO.Clear()
+
         If RUTA.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM VIAJES WHERE RUTA like '%" & RUTA.Text & "%'"
@@ -403,8 +411,12 @@ Public Class VIAJES
         End If
     End Sub
 
-    Private Sub CABEZAL_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub CABEZAL_KeyUp_1(sender As Object, e As KeyEventArgs) Handles CABEZAL.KeyUp
         conjuntoDatos.Clear()
+        TID.Clear()
+        RUTA.Clear()
+        ESTADO.Clear()
+
         If CABEZAL.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM VIAJES WHERE CABEZAL like '%" & CABEZAL.Text & "%'"
@@ -419,7 +431,24 @@ Public Class VIAJES
         End If
     End Sub
 
+    Private Sub ESTADO_KeyUp(sender As Object, e As KeyEventArgs) Handles ESTADO.KeyUp
+        conjuntoDatos.Clear()
+        TID.Clear()
+        RUTA.Clear()
+        CABEZAL.Clear()
 
+        If ESTADO.Text <> "" Then
+            Try
+                sentenciaSQL = "SELECT * FROM VIAJES WHERE ESTADO like '%" & ESTADO.Text & "%'"
+                adaptadorDatos = New MySqlDataAdapter(sentenciaSQL, mysqlconexion)
+                adaptadorDatos.Fill(conjuntoDatos, "VIAJES")
+                data1.DataSource = conjuntoDatos.Tables("VIAJES")
+            Catch ex As Exception
 
+            End Try
+        Else
+            ActualizarGrid()
+        End If
+    End Sub
 
 End Class

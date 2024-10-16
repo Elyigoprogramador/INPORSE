@@ -211,7 +211,8 @@ Public Class CONTENEDORES
         TTIPO.Enabled = True
     End Sub
 
-    Private Sub TID_KeyUp(sender As Object, e As KeyEventArgs)
+    'nuevo
+    Private Sub TID_KeyUp_1(sender As Object, e As KeyEventArgs) Handles TID.KeyUp
         TTIPO.Clear()
         conjuntoDatos.Clear()
         If TID.Text <> "" Then
@@ -228,7 +229,8 @@ Public Class CONTENEDORES
         End If
     End Sub
 
-    Private Sub TTIPO_KeyUp(sender As Object, e As KeyEventArgs)
+
+    Private Sub TTIPO_KeyUp_1(sender As Object, e As KeyEventArgs) Handles TTIPO.KeyUp
         TID.Clear()
         conjuntoDatos.Clear()
         If TTIPO.Text <> "" Then
@@ -244,7 +246,4 @@ Public Class CONTENEDORES
             ActualizarGrid()
         End If
     End Sub
-
-
-
 End Class
