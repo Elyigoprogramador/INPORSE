@@ -23,10 +23,10 @@ Partial Class CON
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlconsulta = New System.Windows.Forms.Panel()
         Me.btnmenu = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -80,7 +80,7 @@ Partial Class CON
         '
         'btnmenu
         '
-        Me.btnmenu.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnmenu.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
         Me.btnmenu.Location = New System.Drawing.Point(3, 3)
@@ -93,9 +93,9 @@ Partial Class CON
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Black
+        Me.Label9.BackColor = System.Drawing.Color.LavenderBlush
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(10, 309)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(130, 16)
@@ -104,10 +104,10 @@ Partial Class CON
         '
         'tID
         '
-        Me.tID.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.tID.BackColor = System.Drawing.Color.LavenderBlush
         Me.tID.Enabled = False
         Me.tID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tID.ForeColor = System.Drawing.Color.White
+        Me.tID.ForeColor = System.Drawing.Color.Black
         Me.tID.Location = New System.Drawing.Point(207, 211)
         Me.tID.Name = "tID"
         Me.tID.Size = New System.Drawing.Size(141, 21)
@@ -115,10 +115,10 @@ Partial Class CON
         '
         'Tlicencia
         '
-        Me.Tlicencia.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Tlicencia.BackColor = System.Drawing.Color.LavenderBlush
         Me.Tlicencia.Enabled = False
         Me.Tlicencia.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tlicencia.ForeColor = System.Drawing.Color.White
+        Me.Tlicencia.ForeColor = System.Drawing.Color.Black
         Me.Tlicencia.Location = New System.Drawing.Point(207, 309)
         Me.Tlicencia.Name = "Tlicencia"
         Me.Tlicencia.Size = New System.Drawing.Size(141, 21)
@@ -127,9 +127,9 @@ Partial Class CON
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Black
+        Me.Label11.BackColor = System.Drawing.Color.LavenderBlush
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(116, 211)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(21, 16)
@@ -139,9 +139,9 @@ Partial Class CON
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Black
+        Me.Label10.BackColor = System.Drawing.Color.LavenderBlush
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.ForeColor = System.Drawing.Color.Black
         Me.Label10.Location = New System.Drawing.Point(80, 253)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(58, 16)
@@ -150,10 +150,10 @@ Partial Class CON
         '
         'Tnombre
         '
-        Me.Tnombre.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Tnombre.BackColor = System.Drawing.Color.LavenderBlush
         Me.Tnombre.Enabled = False
         Me.Tnombre.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnombre.ForeColor = System.Drawing.Color.White
+        Me.Tnombre.ForeColor = System.Drawing.Color.Black
         Me.Tnombre.Location = New System.Drawing.Point(207, 260)
         Me.Tnombre.Name = "Tnombre"
         Me.Tnombre.Size = New System.Drawing.Size(141, 21)
@@ -171,7 +171,7 @@ Partial Class CON
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(356, 349)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(81, 16)
@@ -180,7 +180,7 @@ Partial Class CON
         '
         'SB
         '
-        Me.SB.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.SB.BackColor = System.Drawing.Color.LavenderBlush
         Me.SB.Enabled = False
         Me.SB.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SB.ForeColor = System.Drawing.Color.White
@@ -193,7 +193,7 @@ Partial Class CON
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(83, 621)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(73, 16)
@@ -202,10 +202,10 @@ Partial Class CON
         '
         'DIREC
         '
-        Me.DIREC.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.DIREC.BackColor = System.Drawing.Color.LavenderBlush
         Me.DIREC.Enabled = False
         Me.DIREC.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DIREC.ForeColor = System.Drawing.Color.White
+        Me.DIREC.ForeColor = System.Drawing.Color.Black
         Me.DIREC.Location = New System.Drawing.Point(196, 615)
         Me.DIREC.Name = "DIREC"
         Me.DIREC.Size = New System.Drawing.Size(144, 21)
@@ -215,7 +215,7 @@ Partial Class CON
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(85, 574)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 16)
@@ -224,10 +224,10 @@ Partial Class CON
         '
         'TEL
         '
-        Me.TEL.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.TEL.BackColor = System.Drawing.Color.LavenderBlush
         Me.TEL.Enabled = False
         Me.TEL.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TEL.ForeColor = System.Drawing.Color.White
+        Me.TEL.ForeColor = System.Drawing.Color.Black
         Me.TEL.Location = New System.Drawing.Point(199, 569)
         Me.TEL.Name = "TEL"
         Me.TEL.Size = New System.Drawing.Size(141, 21)
@@ -237,7 +237,7 @@ Partial Class CON
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(108, 527)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(29, 16)
@@ -246,10 +246,10 @@ Partial Class CON
         '
         'DUI
         '
-        Me.DUI.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.DUI.BackColor = System.Drawing.Color.LavenderBlush
         Me.DUI.Enabled = False
         Me.DUI.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DUI.ForeColor = System.Drawing.Color.White
+        Me.DUI.ForeColor = System.Drawing.Color.Black
         Me.DUI.Location = New System.Drawing.Point(199, 523)
         Me.DUI.Name = "DUI"
         Me.DUI.Size = New System.Drawing.Size(141, 21)
@@ -259,7 +259,7 @@ Partial Class CON
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(44, 480)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 16)
@@ -268,10 +268,10 @@ Partial Class CON
         '
         'DISPO
         '
-        Me.DISPO.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.DISPO.BackColor = System.Drawing.Color.LavenderBlush
         Me.DISPO.Enabled = False
         Me.DISPO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DISPO.ForeColor = System.Drawing.Color.White
+        Me.DISPO.ForeColor = System.Drawing.Color.Black
         Me.DISPO.Location = New System.Drawing.Point(199, 477)
         Me.DISPO.Name = "DISPO"
         Me.DISPO.Size = New System.Drawing.Size(141, 21)
@@ -281,7 +281,7 @@ Partial Class CON
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(23, 433)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(130, 16)
@@ -290,10 +290,10 @@ Partial Class CON
         '
         'NL
         '
-        Me.NL.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.NL.BackColor = System.Drawing.Color.LavenderBlush
         Me.NL.Enabled = False
         Me.NL.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NL.ForeColor = System.Drawing.Color.White
+        Me.NL.ForeColor = System.Drawing.Color.Black
         Me.NL.Location = New System.Drawing.Point(199, 431)
         Me.NL.Name = "NL"
         Me.NL.Size = New System.Drawing.Size(141, 21)
@@ -303,7 +303,7 @@ Partial Class CON
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(93, 386)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 16)
@@ -312,10 +312,10 @@ Partial Class CON
         '
         'txtNOM
         '
-        Me.txtNOM.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.txtNOM.BackColor = System.Drawing.Color.LavenderBlush
         Me.txtNOM.Enabled = False
         Me.txtNOM.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNOM.ForeColor = System.Drawing.Color.White
+        Me.txtNOM.ForeColor = System.Drawing.Color.Black
         Me.txtNOM.Location = New System.Drawing.Point(199, 385)
         Me.txtNOM.Name = "txtNOM"
         Me.txtNOM.Size = New System.Drawing.Size(141, 21)
@@ -325,7 +325,7 @@ Partial Class CON
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(129, 339)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 16)
@@ -334,10 +334,10 @@ Partial Class CON
         '
         'txtID
         '
-        Me.txtID.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.txtID.BackColor = System.Drawing.Color.LavenderBlush
         Me.txtID.Enabled = False
         Me.txtID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.ForeColor = System.Drawing.Color.White
+        Me.txtID.ForeColor = System.Drawing.Color.Black
         Me.txtID.Location = New System.Drawing.Point(199, 339)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(141, 21)
@@ -345,7 +345,7 @@ Partial Class CON
         '
         'Eliminar
         '
-        Me.Eliminar.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Eliminar.BackColor = System.Drawing.Color.MidnightBlue
         Me.Eliminar.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Eliminar.ForeColor = System.Drawing.Color.White
         Me.Eliminar.Location = New System.Drawing.Point(503, 576)
@@ -357,7 +357,7 @@ Partial Class CON
         '
         'M
         '
-        Me.M.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.M.BackColor = System.Drawing.Color.MidnightBlue
         Me.M.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.M.ForeColor = System.Drawing.Color.White
         Me.M.Location = New System.Drawing.Point(503, 486)
@@ -369,7 +369,7 @@ Partial Class CON
         '
         'N
         '
-        Me.N.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.N.BackColor = System.Drawing.Color.MidnightBlue
         Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.N.ForeColor = System.Drawing.Color.White
         Me.N.Location = New System.Drawing.Point(503, 396)
@@ -383,46 +383,46 @@ Partial Class CON
         '
         Me.data1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.data1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.data1.BackgroundColor = System.Drawing.Color.Black
+        Me.data1.BackgroundColor = System.Drawing.Color.LavenderBlush
         Me.data1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.HotTrack
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.data1.ColumnHeadersHeight = 30
         Me.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.data1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.data1.DefaultCellStyle = DataGridViewCellStyle10
         Me.data1.EnableHeadersVisualStyles = False
         Me.data1.GridColor = System.Drawing.Color.SteelBlue
         Me.data1.Location = New System.Drawing.Point(11, 12)
         Me.data1.Name = "data1"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.CadetBlue
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.CadetBlue
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.data1.Size = New System.Drawing.Size(685, 321)
         Me.data1.TabIndex = 49
         '
@@ -441,7 +441,7 @@ Partial Class CON
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.ForeColor = System.Drawing.Color.Black
         Me.Label12.Location = New System.Drawing.Point(704, 23)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(277, 25)
@@ -452,7 +452,7 @@ Partial Class CON
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1370, 669)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.HISTORIAL)

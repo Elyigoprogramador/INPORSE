@@ -87,6 +87,8 @@ Public Class CLIENTES
 
 
     Private Sub CLIENTES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
         pnlconsulta.Width = 90
 
         Try
@@ -103,19 +105,10 @@ Public Class CLIENTES
         Label6.Visible = False
     End Sub
 
-    Private Sub data1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data1.CellContentClick
-        Dim fila As Integer
-        fila = e.RowIndex
-        txtID.Text = data1.Rows(fila).Cells(0).Value.ToString
-        txtNOM.Text = data1.Rows(fila).Cells(1).Value.ToString
-        txtTEL.Text = data1.Rows(fila).Cells(2).Value.ToString
-        txtDIR.Text = data1.Rows(fila).Cells(3).Value.ToString
-        txtCOR.Text = data1.Rows(fila).Cells(4).Value.ToString
-    End Sub
-
     Private Sub N1_Click(sender As Object, e As EventArgs) Handles N1.Click
         If N1.Text = "NUEVO" Then
             N1.Text = "GUARDAR"
+
             txtID.Enabled = True
             txtDIR.Enabled = True
             txtCOR.Enabled = True
@@ -170,11 +163,12 @@ Public Class CLIENTES
             M1.Enabled = True
             E1.Enabled = True
         End If
+        N1 = AcceptButton
 
     End Sub
 
     Private Sub M1_Click(sender As Object, e As EventArgs) Handles M1.Click
-        If M1.Text = "MODIFICAR" Then
+        If M1.Text = "EDITAR" Then
             M1.Text = "GUARDAR"
             txtID.Enabled = True
             txtDIR.Enabled = True
@@ -198,7 +192,7 @@ Public Class CLIENTES
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
-            M1.Text = "MODIFICAR"
+            M1.Text = "EDITAR"
             txtID.Enabled = False
             txtDIR.Enabled = False
             txtCOR.Enabled = False
@@ -209,13 +203,32 @@ Public Class CLIENTES
             Ttelefono.Enabled = False
             N1.Enabled = True
             E1.Enabled = True
-        End If
 
+        End If
+        M1 = AcceptButton
+        txtID.Clear()
+        txtDIR.Clear()
+        txtCOR.Clear()
+        txtNOM.Clear()
+        txtTEL.Clear()
+    End Sub
+
+
+    Private Sub data1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data1.CellContentClick
+        Dim fila As Integer
+        fila = e.RowIndex
+        txtID.Text = data1.Rows(fila).Cells(0).Value.ToString
+        txtNOM.Text = data1.Rows(fila).Cells(1).Value.ToString
+        txtTEL.Text = data1.Rows(fila).Cells(2).Value.ToString
+        txtDIR.Text = data1.Rows(fila).Cells(3).Value.ToString
+        txtCOR.Text = data1.Rows(fila).Cells(4).Value.ToString
     End Sub
 
     Private Sub E1_Click(sender As Object, e As EventArgs) Handles E1.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
+
+
             txtID.Text = True
             txtNOM.Text = True
             txtTEL.Text = True
@@ -251,8 +264,14 @@ Public Class CLIENTES
             N1.Enabled = True
             M1.Enabled = True
         End If
-
+        E1 = AcceptButton
+        txtID.Clear()
+        txtDIR.Clear()
+        txtCOR.Clear()
+        txtNOM.Clear()
+        txtTEL.Clear()
     End Sub
+
 
 
     Private Sub Timercontrae_Tick(sender As Object, e As EventArgs) Handles Timercontrae.Tick
@@ -348,9 +367,7 @@ Public Class CLIENTES
         End If
     End Sub
 
-    Private Sub pnlconsulta_Paint(sender As Object, e As PaintEventArgs) Handles pnlconsulta.Paint
 
-    End Sub
 
 
 End Class

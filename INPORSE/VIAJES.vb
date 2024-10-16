@@ -37,21 +37,21 @@ Public Class VIAJES
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(IDC.Text) Then
+        If String.IsNullOrWhiteSpace(cmbc.Text) Then
             MessageBox.Show("El campo de id del cliente es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(R.Text) Then
+        If String.IsNullOrWhiteSpace(cmbR.Text) Then
             MessageBox.Show("El campo de ruta es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(IDCON.Text) Then
+        If String.IsNullOrWhiteSpace(cmbcon.Text) Then
             MessageBox.Show("El campo de id del contenedor es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
-        If String.IsNullOrWhiteSpace(IDP.Text) Then
+        If String.IsNullOrWhiteSpace(cmbp.Text) Then
             MessageBox.Show("El campo de id del producto es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             Return False
@@ -62,7 +62,7 @@ Public Class VIAJES
 
             Return False
         End If
-        If String.IsNullOrWhiteSpace(CAB.Text) Then
+        If String.IsNullOrWhiteSpace(cmbcab.Text) Then
             MessageBox.Show("El campo de cabezal es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             Return False
@@ -77,11 +77,104 @@ Public Class VIAJES
         End If
         Return True
     End Function
+    Private Sub CargarIdContenedor()
+        Try
+            Dim comando As New MySqlCommand("SELECT ID_CONTENEDOR FROM CONTENEDOR", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbcon.Items.Clear()
+
+            While reader.Read()
+                cmbcon.Items.Add(reader("ID_CONTENEDOR").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar productos: " & ex.Message)
+        End Try
+    End Sub
+    Private Sub CargarIdCabezales()
+        Try
+            Dim comando As New MySqlCommand("SELECT PLACA FROM CABEZAL", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbcab.Items.Clear()
+
+            While reader.Read()
+                cmbcab.Items.Add(reader("PLACA").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar productos: " & ex.Message)
+        End Try
+    End Sub
+    Private Sub CargarIdClientes()
+        Try
+            Dim comando As New MySqlCommand("SELECT ID_CLIENTE FROM CLEINTE", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbc.Items.Clear()
+
+            While reader.Read()
+                cmbc.Items.Add(reader("ID_CLIENTE").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar productos: " & ex.Message)
+        End Try
+    End Sub
+    Private Sub CargarIdProductos()
+        Try
+            Dim comando As New MySqlCommand("SELECT ID_PRODUCTO FROM PRODUCTO", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbp.Items.Clear()
+
+            While reader.Read()
+                cmbp.Items.Add(reader("ID_PRODUCTO").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar productos: " & ex.Message)
+        End Try
+    End Sub
+    Private Sub CargarDestinos()
+        Try
+            Dim comando As New MySqlCommand("SELECT Nombre FROM Destinos", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbR.Items.Clear()
+
+            While reader.Read()
+                cmbR.Items.Add(reader("Nombre").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar productos: " & ex.Message)
+        End Try
+    End Sub
+    Private Function GenerarIdViajes() As String
+
+        Dim random As New Random()
+        Return random.Next(10000, 99999).ToString()
+    End Function
     Private Sub VIAJES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        N.FlatAppearance.BorderColor = Color.LightGreen
+        M.FlatAppearance.BorderColor = Color.LightGreen
+        ELIMINAR.FlatAppearance.BorderColor = Color.LightGreen
         pnlconsulta.Width = 90
         Try
             Module1.funcionConectarBD()
             ActualizarGrid()
+            CargarDestinos()
+            CargarIdClientes()
+            CargarIdProductos()
+            CargarIdCabezales()
+            CargarIdContenedor()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -99,14 +192,15 @@ Public Class VIAJES
     Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
-            IDV.Enabled = True
-            IDC.Enabled = True
-            R.Enabled = True
-            CAB.Enabled = True
+            IDV.Enabled = False
+            IDV.Text = GenerarIdViajes()
+            cmbc.Enabled = True
+            cmbR.Enabled = True
+            cmbcab.Enabled = True
             EST.Enabled = True
             COBRO.Enabled = True
-            IDCON.Enabled = True
-            IDP.Enabled = True
+            cmbcon.Enabled = True
+            cmbp.Enabled = True
             CANTIDAD.Enabled = True
             btnmenu.Enabled = False
             M.Enabled = False
@@ -116,7 +210,7 @@ Public Class VIAJES
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO VIAJES VALUES ('" & IDV.Text & "','" & IDC.Text & "','" & R.Text & "','" & CAB.Text & "','" & EST.Text & "','" & COBRO.Text & "','" & IDCON.Text & "','" & IDP.Text & "','" & CANTIDAD.Text & "')"
+                sentenciaSQL = "INSERT INTO VIAJES VALUES ('" & IDV.Text & "','" & cmbc.Text & "','" & cmbR.Text & "','" & cmbcab.Text & "','" & EST.Text & "','" & COBRO.Text & "','" & cmbcon.Text & "','" & cmbp.Text & "','" & CANTIDAD.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
@@ -131,13 +225,13 @@ Public Class VIAJES
             End Try
             N.Text = "NUEVO"
             IDV.Enabled = False
-            IDC.Enabled = False
-            R.Enabled = False
-            CAB.Enabled = False
+            cmbc.Enabled = False
+            cmbR.Enabled = False
+            cmbcab.Enabled = False
             EST.Enabled = False
             COBRO.Enabled = False
-            IDCON.Enabled = False
-            IDP.Enabled = False
+            cmbcon.Enabled = False
+            cmbp.Enabled = False
             CANTIDAD.Enabled = False
             btnmenu.Enabled = False
             M.Enabled = True
@@ -146,16 +240,16 @@ Public Class VIAJES
     End Sub
 
     Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
-        If M.Text = "MODIFICAR" Then
+        If M.Text = "EDITAR" Then
             M.Text = "GUARDAR"
             IDV.Enabled = True
-            IDC.Enabled = True
-            R.Enabled = True
-            CAB.Enabled = True
+            cmbc.Enabled = True
+            cmbR.Enabled = True
+            cmbcab.Enabled = True
             EST.Enabled = True
             COBRO.Enabled = True
-            IDCON.Enabled = True
-            IDP.Enabled = True
+            cmbcon.Enabled = True
+            cmbp.Enabled = True
             CANTIDAD.Enabled = True
             btnmenu.Enabled = False
             N.Enabled = False
@@ -163,7 +257,7 @@ Public Class VIAJES
         Else
             Try
 
-                sentenciaSQL = "UPDATE VIAJES SET ID_CLIENTE='" & IDC.Text & "', RUTA='" & R.Text & "', CABEZAL='" & CAB.Text & "', ESTADO='" & EST.Text & "', COBRO_VIAJE='" & COBRO.Text & "', ID_CONTENEDOR='" & IDCON.Text & "', ID_PRODUCTOS='" & IDP.Text & "', CANTIDAD='" & CANTIDAD.Text & "' WHERE ID_VIAJE='" & IDV.Text & "'"
+                sentenciaSQL = "UPDATE VIAJES SET ID_CLIENTE='" & cmbc.Text & "', RUTA='" & cmbR.Text & "', CABEZAL='" & cmbcab.Text & "', ESTADO='" & EST.Text & "', COBRO_VIAJE='" & COBRO.Text & "', ID_CONTENEDOR='" & cmbcon.Text & "', ID_PRODUCTOS='" & cmbp.Text & "', CANTIDAD='" & CANTIDAD.Text & "' WHERE ID_VIAJE='" & IDV.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro a sido modificado.", "Informacion", MessageBoxButtons.OK)
@@ -172,15 +266,15 @@ Public Class VIAJES
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
-            M.Text = "MODIFICAR"
+            M.Text = "EDITAR"
             IDV.Enabled = False
-            IDC.Enabled = False
-            R.Enabled = False
-            CAB.Enabled = False
+            cmbc.Enabled = False
+            cmbR.Enabled = False
+            cmbcab.Enabled = False
             EST.Enabled = False
             COBRO.Enabled = False
-            IDCON.Enabled = False
-            IDP.Enabled = False
+            cmbcon.Enabled = False
+            cmbp.Enabled = False
             CANTIDAD.Enabled = False
             N.Enabled = True
             btnmenu.Enabled = False
@@ -192,13 +286,13 @@ Public Class VIAJES
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
             IDV.Enabled = True
-            IDC.Enabled = True
-            R.Enabled = True
-            CAB.Enabled = True
+            cmbc.Enabled = True
+            cmbR.Enabled = True
+            cmbcab.Enabled = True
             EST.Enabled = True
             COBRO.Enabled = True
-            IDCON.Enabled = True
-            IDP.Enabled = True
+            cmbcon.Enabled = True
+            cmbp.Enabled = True
             btnmenu.Enabled = False
             CANTIDAD.Enabled = True
             M.Enabled = False
@@ -218,13 +312,13 @@ Public Class VIAJES
             End Try
 
             IDV.Enabled = False
-            IDC.Enabled = False
-            R.Enabled = False
-            CAB.Enabled = False
+            cmbc.Enabled = False
+            cmbR.Enabled = False
+            cmbcab.Enabled = False
             EST.Enabled = False
             COBRO.Enabled = False
-            IDCON.Enabled = False
-            IDP.Enabled = False
+            cmbcon.Enabled = False
+            cmbp.Enabled = False
             CANTIDAD.Enabled = False
             btnmenu.Enabled = False
             M.Enabled = True
@@ -277,7 +371,7 @@ Public Class VIAJES
     End Sub
 
 
-    Private Sub TID_KeyUp(sender As Object, e As KeyEventArgs) 
+    Private Sub TID_KeyUp(sender As Object, e As KeyEventArgs)
         conjuntoDatos.Clear()
         If TID.Text <> "" Then
             Try
@@ -293,7 +387,7 @@ Public Class VIAJES
         End If
     End Sub
 
-    Private Sub RUTA_KeyUp(sender As Object, e As KeyEventArgs) 
+    Private Sub RUTA_KeyUp(sender As Object, e As KeyEventArgs)
         conjuntoDatos.Clear()
         If RUTA.Text <> "" Then
             Try
@@ -309,7 +403,7 @@ Public Class VIAJES
         End If
     End Sub
 
-    Private Sub CABEZAL_KeyUp(sender As Object, e As KeyEventArgs) 
+    Private Sub CABEZAL_KeyUp(sender As Object, e As KeyEventArgs)
         conjuntoDatos.Clear()
         If CABEZAL.Text <> "" Then
             Try
@@ -324,6 +418,8 @@ Public Class VIAJES
             ActualizarGrid()
         End If
     End Sub
+
+
 
 
 End Class

@@ -172,5 +172,62 @@ Public Class Form2
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub btnClientes_MouseMove(sender As Object, e As MouseEventArgs) Handles btnClientes.MouseMove
+        btnClientes.BackColor = Color.Silver
+    End Sub
+
+    Private Sub btnClientes_MouseLeave(sender As Object, e As EventArgs) Handles btnClientes.MouseLeave
+        btnClientes.BackColor = Color.Black
+    End Sub
+
+    Private Sub btnViajes_MouseMove(sender As Object, e As MouseEventArgs) Handles btnViajes.MouseMove
+        btnViajes.BackColor = Color.Silver
+    End Sub
+
+    Private Sub btnViajes_MouseLeave(sender As Object, e As EventArgs) Handles btnViajes.MouseLeave
+        btnViajes.BackColor = Color.Black
+    End Sub
+
+    Private Sub btnProd_MouseMove(sender As Object, e As MouseEventArgs) Handles btnProd.MouseMove
+        btnProd.BackColor = Color.Silver
+
+    End Sub
+
+    Private Sub btnProd_MouseLeave(sender As Object, e As EventArgs) Handles btnProd.MouseLeave
+        btnProd.BackColor = Color.Black
+    End Sub
+
+    Private Sub btnCont_MouseMove(sender As Object, e As MouseEventArgs) Handles btnCont.MouseMove
+        btnCont.BackColor = Color.Silver
+    End Sub
+
+    Private Sub btnCont_MouseLeave(sender As Object, e As EventArgs) Handles btnCont.MouseLeave
+        btnCont.BackColor = Color.Black
+    End Sub
+
+    Private Sub btnCab_MouseMove(sender As Object, e As MouseEventArgs) Handles btnCab.MouseMove
+        btnCab.BackColor = Color.Silver
+    End Sub
+
+    Private Sub btnCab_MouseLeave(sender As Object, e As EventArgs) Handles btnCab.MouseLeave
+        btnCab.BackColor = Color.Black
+    End Sub
+
+    Private Sub Button3_MouseMove(sender As Object, e As MouseEventArgs) Handles Button3.MouseMove
+        Button3.BackColor = Color.Silver
+    End Sub
+
+    Private Sub Button3_MouseLeave(sender As Object, e As EventArgs) Handles Button3.MouseLeave
+        Button3.BackColor = Color.Black
+    End Sub
+
+    Private Sub Button5_MouseMove(sender As Object, e As MouseEventArgs) Handles Button5.MouseMove
+        Button5.BackColor = Color.Silver
+    End Sub
+
+    Private Sub Button5_MouseLeave(sender As Object, e As EventArgs) Handles Button5.MouseLeave
+        Button5.BackColor = Color.Black
+    End Sub
+
 
 End Class

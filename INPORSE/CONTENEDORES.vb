@@ -80,7 +80,7 @@ Public Class CONTENEDORES
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & T.Text & "')"
+                sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & T.Text & "','" & TTIPO.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)

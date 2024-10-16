@@ -76,10 +76,10 @@ Partial Class CABEZALES
         '
         'PLACA
         '
-        Me.PLACA.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PLACA.BackColor = System.Drawing.Color.LavenderBlush
         Me.PLACA.Enabled = False
         Me.PLACA.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PLACA.ForeColor = System.Drawing.Color.White
+        Me.PLACA.ForeColor = System.Drawing.Color.Black
         Me.PLACA.Location = New System.Drawing.Point(195, 289)
         Me.PLACA.Name = "PLACA"
         Me.PLACA.Size = New System.Drawing.Size(141, 21)
@@ -87,7 +87,7 @@ Partial Class CABEZALES
         '
         'btnmenu
         '
-        Me.btnmenu.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnmenu.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
         Me.btnmenu.Location = New System.Drawing.Point(3, 3)
@@ -100,9 +100,9 @@ Partial Class CABEZALES
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Black
+        Me.Label7.BackColor = System.Drawing.Color.LavenderBlush
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(19, 382)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(135, 16)
@@ -113,7 +113,7 @@ Partial Class CABEZALES
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(104, 289)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(45, 16)
@@ -122,10 +122,10 @@ Partial Class CABEZALES
         '
         'CAPACIDAD
         '
-        Me.CAPACIDAD.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.CAPACIDAD.BackColor = System.Drawing.Color.LavenderBlush
         Me.CAPACIDAD.Enabled = False
         Me.CAPACIDAD.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CAPACIDAD.ForeColor = System.Drawing.Color.White
+        Me.CAPACIDAD.ForeColor = System.Drawing.Color.Black
         Me.CAPACIDAD.Location = New System.Drawing.Point(195, 379)
         Me.CAPACIDAD.Name = "CAPACIDAD"
         Me.CAPACIDAD.Size = New System.Drawing.Size(141, 21)
@@ -133,10 +133,10 @@ Partial Class CABEZALES
         '
         'MOTORISTA
         '
-        Me.MOTORISTA.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.MOTORISTA.BackColor = System.Drawing.Color.LavenderBlush
         Me.MOTORISTA.Enabled = False
         Me.MOTORISTA.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MOTORISTA.ForeColor = System.Drawing.Color.White
+        Me.MOTORISTA.ForeColor = System.Drawing.Color.Black
         Me.MOTORISTA.Location = New System.Drawing.Point(195, 334)
         Me.MOTORISTA.Name = "MOTORISTA"
         Me.MOTORISTA.Size = New System.Drawing.Size(141, 21)
@@ -145,9 +145,9 @@ Partial Class CABEZALES
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Black
+        Me.Label5.BackColor = System.Drawing.Color.LavenderBlush
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(3, 334)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(149, 16)
@@ -162,7 +162,7 @@ Partial Class CABEZALES
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(22, 509)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(135, 16)
@@ -171,10 +171,10 @@ Partial Class CABEZALES
         '
         'CC
         '
-        Me.CC.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.CC.BackColor = System.Drawing.Color.LavenderBlush
         Me.CC.Enabled = False
         Me.CC.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CC.ForeColor = System.Drawing.Color.White
+        Me.CC.ForeColor = System.Drawing.Color.Black
         Me.CC.Location = New System.Drawing.Point(198, 506)
         Me.CC.Name = "CC"
         Me.CC.Size = New System.Drawing.Size(141, 21)
@@ -184,7 +184,7 @@ Partial Class CABEZALES
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(107, 454)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 16)
@@ -193,10 +193,10 @@ Partial Class CABEZALES
         '
         'MR
         '
-        Me.MR.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.MR.BackColor = System.Drawing.Color.LavenderBlush
         Me.MR.Enabled = False
         Me.MR.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MR.ForeColor = System.Drawing.Color.White
+        Me.MR.ForeColor = System.Drawing.Color.Black
         Me.MR.Location = New System.Drawing.Point(198, 456)
         Me.MR.Name = "MR"
         Me.MR.Size = New System.Drawing.Size(141, 21)
@@ -206,7 +206,7 @@ Partial Class CABEZALES
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(6, 401)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(149, 16)
@@ -215,10 +215,10 @@ Partial Class CABEZALES
         '
         'MEN
         '
-        Me.MEN.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.MEN.BackColor = System.Drawing.Color.LavenderBlush
         Me.MEN.Enabled = False
         Me.MEN.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MEN.ForeColor = System.Drawing.Color.White
+        Me.MEN.ForeColor = System.Drawing.Color.Black
         Me.MEN.Location = New System.Drawing.Point(198, 406)
         Me.MEN.Name = "MEN"
         Me.MEN.Size = New System.Drawing.Size(141, 21)
@@ -228,7 +228,7 @@ Partial Class CABEZALES
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(107, 356)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 16)
@@ -237,10 +237,10 @@ Partial Class CABEZALES
         '
         'P
         '
-        Me.P.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.P.BackColor = System.Drawing.Color.LavenderBlush
         Me.P.Enabled = False
         Me.P.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.P.ForeColor = System.Drawing.Color.White
+        Me.P.ForeColor = System.Drawing.Color.Black
         Me.P.Location = New System.Drawing.Point(198, 356)
         Me.P.Name = "P"
         Me.P.Size = New System.Drawing.Size(141, 21)
@@ -248,7 +248,7 @@ Partial Class CABEZALES
         '
         'Eliminar
         '
-        Me.Eliminar.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Eliminar.BackColor = System.Drawing.Color.MidnightBlue
         Me.Eliminar.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Eliminar.ForeColor = System.Drawing.Color.White
         Me.Eliminar.Location = New System.Drawing.Point(449, 513)
@@ -260,7 +260,7 @@ Partial Class CABEZALES
         '
         'M
         '
-        Me.M.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.M.BackColor = System.Drawing.Color.MidnightBlue
         Me.M.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.M.ForeColor = System.Drawing.Color.White
         Me.M.Location = New System.Drawing.Point(449, 436)
@@ -272,7 +272,7 @@ Partial Class CABEZALES
         '
         'N
         '
-        Me.N.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.N.BackColor = System.Drawing.Color.MidnightBlue
         Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.N.ForeColor = System.Drawing.Color.White
         Me.N.Location = New System.Drawing.Point(449, 359)
@@ -286,7 +286,7 @@ Partial Class CABEZALES
         '
         Me.data1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.data1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.data1.BackgroundColor = System.Drawing.Color.Black
+        Me.data1.BackgroundColor = System.Drawing.Color.LavenderBlush
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -344,7 +344,7 @@ Partial Class CABEZALES
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(621, 12)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(277, 25)
@@ -355,7 +355,7 @@ Partial Class CABEZALES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1303, 609)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.HISTORIAL)

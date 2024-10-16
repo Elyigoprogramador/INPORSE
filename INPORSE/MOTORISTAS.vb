@@ -254,8 +254,13 @@ Public Class CON
         Tlicencia.Enabled = True
     End Sub
 
-    Private Sub tID_KeyUp(sender As Object, e As KeyEventArgs)
+
+    'nuevo
+    Private Sub tID_KeyUp_1(sender As Object, e As KeyEventArgs) Handles tID.KeyUp
         conjuntoDatos.Clear()
+        Tnombre.Clear()
+        Tlicencia.Clear()
+
         If tID.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM MOTORISTAS WHERE ID_MOTORISTA like '%" & tID.Text & "%'"
@@ -270,8 +275,11 @@ Public Class CON
         End If
     End Sub
 
-    Private Sub Tnombre_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub Tnombre_KeyUp_1(sender As Object, e As KeyEventArgs) Handles Tnombre.KeyUp
         conjuntoDatos.Clear()
+        tID.Clear()
+        Tlicencia.Clear()
+
         If Tnombre.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM MOTORISTAS WHERE NOMBRE like '%" & Tnombre.Text & "%'"
@@ -286,8 +294,11 @@ Public Class CON
         End If
     End Sub
 
-    Private Sub Tlicencia_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub Tlicencia_KeyUp_1(sender As Object, e As KeyEventArgs) Handles Tlicencia.KeyUp
         conjuntoDatos.Clear()
+        tID.Clear()
+        Tnombre.Clear()
+
         If Tlicencia.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM MOTORISTAS WHERE NUM_LICENCIA like '%" & Tlicencia.Text & "%'"
@@ -301,6 +312,4 @@ Public Class CON
             ActualizarGrid()
         End If
     End Sub
-
-
 End Class

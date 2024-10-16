@@ -214,8 +214,9 @@ Public Class PRODUCTOS
         TnombreE.Enabled = True
     End Sub
 
-    Private Sub Tid_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub TidD_KeyUp(sender As Object, e As KeyEventArgs) Handles TidD.KeyUp
         conjuntoDatos.Clear()
+        TnombreE.Clear()
         If TidD.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM PRODUCTO WHERE ID_PRODUCTO like '%" & TidD.Text & "%'"
@@ -230,8 +231,9 @@ Public Class PRODUCTOS
         End If
     End Sub
 
-    Private Sub Tnombre_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub TnombreE_KeyUp(sender As Object, e As KeyEventArgs) Handles TnombreE.KeyUp
         conjuntoDatos.Clear()
+        TidD.Clear()
         If TnombreE.Text <> "" Then
             Try
                 sentenciaSQL = "SELECT * FROM PRODUCTO WHERE NOMBRE like '%" & TnombreE.Text & "%'"
@@ -245,6 +247,4 @@ Public Class PRODUCTOS
             ActualizarGrid()
         End If
     End Sub
-
-
 End Class

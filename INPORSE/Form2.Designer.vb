@@ -50,10 +50,11 @@ Partial Class Form2
         '
         'btnClientes
         '
-        Me.btnClientes.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClientes.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClientes.ForeColor = System.Drawing.Color.Black
+        Me.btnClientes.BackColor = System.Drawing.Color.Black
+        Me.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClientes.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClientes.ForeColor = System.Drawing.Color.White
         Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
         Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnClientes.Location = New System.Drawing.Point(3, 193)
@@ -66,13 +67,14 @@ Partial Class Form2
         '
         'btnViajes
         '
-        Me.btnViajes.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnViajes.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViajes.ForeColor = System.Drawing.Color.Black
+        Me.btnViajes.BackColor = System.Drawing.Color.Black
+        Me.btnViajes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnViajes.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViajes.ForeColor = System.Drawing.Color.White
         Me.btnViajes.Image = CType(resources.GetObject("btnViajes.Image"), System.Drawing.Image)
         Me.btnViajes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnViajes.Location = New System.Drawing.Point(3, 258)
+        Me.btnViajes.Location = New System.Drawing.Point(1, 460)
         Me.btnViajes.Name = "btnViajes"
         Me.btnViajes.Size = New System.Drawing.Size(342, 48)
         Me.btnViajes.TabIndex = 4
@@ -82,14 +84,15 @@ Partial Class Form2
         '
         'btnProd
         '
-        Me.btnProd.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnProd.BackColor = System.Drawing.Color.Black
         Me.btnProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProd.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProd.ForeColor = System.Drawing.Color.Black
+        Me.btnProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnProd.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProd.ForeColor = System.Drawing.Color.White
         Me.btnProd.Image = CType(resources.GetObject("btnProd.Image"), System.Drawing.Image)
         Me.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProd.Location = New System.Drawing.Point(1, 323)
+        Me.btnProd.Location = New System.Drawing.Point(0, 247)
         Me.btnProd.Name = "btnProd"
         Me.btnProd.Size = New System.Drawing.Size(345, 48)
         Me.btnProd.TabIndex = 5
@@ -104,7 +107,7 @@ Partial Class Form2
         Me.Button5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.Black
+        Me.Button5.ForeColor = System.Drawing.Color.White
         Me.Button5.Location = New System.Drawing.Point(0, 721)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(345, 30)
@@ -198,20 +201,20 @@ Partial Class Form2
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.BackColor = System.Drawing.Color.Black
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.btnViajes)
         Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.btnCont)
+        Me.Panel1.Controls.Add(Me.btnProd)
+        Me.Panel1.Controls.Add(Me.btnCab)
         Me.Panel1.Controls.Add(Me.lblusuario)
+        Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.btnCab)
-        Me.Panel1.Controls.Add(Me.btnCont)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.btnClientes)
-        Me.Panel1.Controls.Add(Me.btnViajes)
-        Me.Panel1.Controls.Add(Me.btnProd)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 35)
         Me.Panel1.Name = "Panel1"
@@ -222,6 +225,7 @@ Partial Class Form2
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(132, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 16)
@@ -232,6 +236,7 @@ Partial Class Form2
         '
         Me.lblusuario.AutoSize = True
         Me.lblusuario.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblusuario.ForeColor = System.Drawing.Color.White
         Me.lblusuario.Location = New System.Drawing.Point(131, 18)
         Me.lblusuario.Name = "lblusuario"
         Me.lblusuario.Size = New System.Drawing.Size(0, 20)
@@ -249,7 +254,7 @@ Partial Class Form2
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(-1, 147)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(338, 28)
@@ -258,13 +263,14 @@ Partial Class Form2
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Black
+        Me.Button3.BackColor = System.Drawing.Color.Black
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(2, 518)
+        Me.Button3.Location = New System.Drawing.Point(0, 301)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(340, 48)
         Me.Button3.TabIndex = 15
@@ -281,13 +287,14 @@ Partial Class Form2
         '
         'btnCab
         '
-        Me.btnCab.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnCab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCab.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCab.ForeColor = System.Drawing.Color.Black
+        Me.btnCab.BackColor = System.Drawing.Color.Black
+        Me.btnCab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnCab.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCab.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCab.ForeColor = System.Drawing.Color.White
         Me.btnCab.Image = CType(resources.GetObject("btnCab.Image"), System.Drawing.Image)
         Me.btnCab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCab.Location = New System.Drawing.Point(2, 453)
+        Me.btnCab.Location = New System.Drawing.Point(3, 355)
         Me.btnCab.Name = "btnCab"
         Me.btnCab.Size = New System.Drawing.Size(340, 48)
         Me.btnCab.TabIndex = 11
@@ -297,15 +304,16 @@ Partial Class Form2
         '
         'btnCont
         '
-        Me.btnCont.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCont.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCont.ForeColor = System.Drawing.Color.Black
+        Me.btnCont.BackColor = System.Drawing.Color.Black
+        Me.btnCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnCont.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCont.Font = New System.Drawing.Font("Century Gothic", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCont.ForeColor = System.Drawing.Color.White
         Me.btnCont.Image = CType(resources.GetObject("btnCont.Image"), System.Drawing.Image)
         Me.btnCont.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCont.Location = New System.Drawing.Point(1, 388)
+        Me.btnCont.Location = New System.Drawing.Point(2, 409)
         Me.btnCont.Name = "btnCont"
-        Me.btnCont.Size = New System.Drawing.Size(341, 45)
+        Me.btnCont.Size = New System.Drawing.Size(341, 48)
         Me.btnCont.TabIndex = 10
         Me.btnCont.Text = "CONTENEDORES"
         Me.btnCont.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -314,8 +322,9 @@ Partial Class Form2
         'lblE
         '
         Me.lblE.AutoSize = True
+        Me.lblE.BackColor = System.Drawing.Color.LavenderBlush
         Me.lblE.Font = New System.Drawing.Font("Century Gothic", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblE.ForeColor = System.Drawing.Color.White
+        Me.lblE.ForeColor = System.Drawing.Color.Black
         Me.lblE.Location = New System.Drawing.Point(626, 35)
         Me.lblE.Name = "lblE"
         Me.lblE.Size = New System.Drawing.Size(387, 47)
@@ -333,7 +342,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1386, 788)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.lblE)

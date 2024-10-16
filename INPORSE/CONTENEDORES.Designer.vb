@@ -66,7 +66,7 @@ Partial Class CONTENEDORES
         '
         'btnmenu
         '
-        Me.btnmenu.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnmenu.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
         Me.btnmenu.Location = New System.Drawing.Point(3, 3)
@@ -80,7 +80,7 @@ Partial Class CONTENEDORES
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(55, 257)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 16)
@@ -89,10 +89,10 @@ Partial Class CONTENEDORES
         '
         'TID
         '
-        Me.TID.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.TID.BackColor = System.Drawing.Color.LavenderBlush
         Me.TID.Enabled = False
         Me.TID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TID.ForeColor = System.Drawing.Color.White
+        Me.TID.ForeColor = System.Drawing.Color.Black
         Me.TID.Location = New System.Drawing.Point(123, 171)
         Me.TID.Name = "TID"
         Me.TID.Size = New System.Drawing.Size(141, 21)
@@ -100,10 +100,10 @@ Partial Class CONTENEDORES
         '
         'TTIPO
         '
-        Me.TTIPO.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.TTIPO.BackColor = System.Drawing.Color.LavenderBlush
         Me.TTIPO.Enabled = False
         Me.TTIPO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TTIPO.ForeColor = System.Drawing.Color.White
+        Me.TTIPO.ForeColor = System.Drawing.Color.Black
         Me.TTIPO.Location = New System.Drawing.Point(123, 250)
         Me.TTIPO.Name = "TTIPO"
         Me.TTIPO.Size = New System.Drawing.Size(141, 21)
@@ -113,7 +113,7 @@ Partial Class CONTENEDORES
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(69, 178)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(21, 16)
@@ -128,7 +128,7 @@ Partial Class CONTENEDORES
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(28, 437)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 16)
@@ -137,10 +137,10 @@ Partial Class CONTENEDORES
         '
         'TI
         '
-        Me.TI.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.TI.BackColor = System.Drawing.Color.LavenderBlush
         Me.TI.Enabled = False
         Me.TI.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TI.ForeColor = System.Drawing.Color.White
+        Me.TI.ForeColor = System.Drawing.Color.Black
         Me.TI.Location = New System.Drawing.Point(119, 437)
         Me.TI.Name = "TI"
         Me.TI.Size = New System.Drawing.Size(141, 21)
@@ -150,7 +150,7 @@ Partial Class CONTENEDORES
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(28, 381)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 16)
@@ -159,10 +159,10 @@ Partial Class CONTENEDORES
         '
         'T
         '
-        Me.T.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.T.BackColor = System.Drawing.Color.LavenderBlush
         Me.T.Enabled = False
         Me.T.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T.ForeColor = System.Drawing.Color.White
+        Me.T.ForeColor = System.Drawing.Color.Black
         Me.T.Location = New System.Drawing.Point(119, 388)
         Me.T.Name = "T"
         Me.T.Size = New System.Drawing.Size(141, 21)
@@ -172,7 +172,7 @@ Partial Class CONTENEDORES
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(28, 339)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 16)
@@ -181,10 +181,10 @@ Partial Class CONTENEDORES
         '
         'txtID
         '
-        Me.txtID.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.txtID.BackColor = System.Drawing.Color.LavenderBlush
         Me.txtID.Enabled = False
         Me.txtID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.ForeColor = System.Drawing.Color.White
+        Me.txtID.ForeColor = System.Drawing.Color.Black
         Me.txtID.Location = New System.Drawing.Point(119, 339)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(141, 21)
@@ -196,7 +196,7 @@ Partial Class CONTENEDORES
         '
         'Eliminar
         '
-        Me.Eliminar.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Eliminar.BackColor = System.Drawing.Color.MidnightBlue
         Me.Eliminar.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Eliminar.ForeColor = System.Drawing.Color.White
         Me.Eliminar.Location = New System.Drawing.Point(340, 468)
@@ -208,7 +208,7 @@ Partial Class CONTENEDORES
         '
         'M
         '
-        Me.M.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.M.BackColor = System.Drawing.Color.MidnightBlue
         Me.M.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.M.ForeColor = System.Drawing.Color.White
         Me.M.Location = New System.Drawing.Point(340, 395)
@@ -220,7 +220,7 @@ Partial Class CONTENEDORES
         '
         'N
         '
-        Me.N.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.N.BackColor = System.Drawing.Color.MidnightBlue
         Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.N.ForeColor = System.Drawing.Color.White
         Me.N.Location = New System.Drawing.Point(340, 322)
@@ -234,7 +234,7 @@ Partial Class CONTENEDORES
         '
         Me.data1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.data1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.data1.BackgroundColor = System.Drawing.Color.Black
+        Me.data1.BackgroundColor = System.Drawing.Color.LavenderBlush
         Me.data1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -293,7 +293,7 @@ Partial Class CONTENEDORES
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(596, 17)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(277, 25)
@@ -304,7 +304,7 @@ Partial Class CONTENEDORES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1370, 749)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.HISTORIAL)
