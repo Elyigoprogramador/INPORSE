@@ -158,7 +158,7 @@ Partial Class CLIENTES
         Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtID.Enabled = False
         Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.ForeColor = System.Drawing.Color.White
+        Me.txtID.ForeColor = System.Drawing.Color.Black
         Me.txtID.Location = New System.Drawing.Point(685, 213)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(141, 20)
@@ -194,7 +194,7 @@ Partial Class CLIENTES
         Me.txtNOM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNOM.Enabled = False
         Me.txtNOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNOM.ForeColor = System.Drawing.Color.White
+        Me.txtNOM.ForeColor = System.Drawing.Color.Black
         Me.txtNOM.Location = New System.Drawing.Point(685, 255)
         Me.txtNOM.Name = "txtNOM"
         Me.txtNOM.Size = New System.Drawing.Size(141, 20)
@@ -218,7 +218,7 @@ Partial Class CLIENTES
         Me.txtTEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTEL.Enabled = False
         Me.txtTEL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTEL.ForeColor = System.Drawing.Color.White
+        Me.txtTEL.ForeColor = System.Drawing.Color.Black
         Me.txtTEL.Location = New System.Drawing.Point(685, 297)
         Me.txtTEL.Name = "txtTEL"
         Me.txtTEL.Size = New System.Drawing.Size(141, 20)
@@ -242,7 +242,7 @@ Partial Class CLIENTES
         Me.txtDIR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDIR.Enabled = False
         Me.txtDIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDIR.ForeColor = System.Drawing.Color.White
+        Me.txtDIR.ForeColor = System.Drawing.Color.Black
         Me.txtDIR.Location = New System.Drawing.Point(685, 339)
         Me.txtDIR.Name = "txtDIR"
         Me.txtDIR.Size = New System.Drawing.Size(141, 20)
@@ -266,7 +266,7 @@ Partial Class CLIENTES
         Me.txtCOR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCOR.Enabled = False
         Me.txtCOR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCOR.ForeColor = System.Drawing.Color.White
+        Me.txtCOR.ForeColor = System.Drawing.Color.Black
         Me.txtCOR.Location = New System.Drawing.Point(685, 381)
         Me.txtCOR.Name = "txtCOR"
         Me.txtCOR.Size = New System.Drawing.Size(141, 20)
@@ -285,7 +285,7 @@ Partial Class CLIENTES
         '
         'pnlconsulta
         '
-        Me.pnlconsulta.BackColor = System.Drawing.Color.Black
+        Me.pnlconsulta.BackColor = System.Drawing.Color.LavenderBlush
         Me.pnlconsulta.Controls.Add(Me.Label6)
         Me.pnlconsulta.Controls.Add(Me.btnmenu)
         Me.pnlconsulta.Controls.Add(Me.Ttelefono)
@@ -302,7 +302,7 @@ Partial Class CLIENTES
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(9, 347)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(67, 13)
@@ -311,9 +311,9 @@ Partial Class CLIENTES
         '
         'Ttelefono
         '
-        Me.Ttelefono.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Ttelefono.BackColor = System.Drawing.Color.LavenderBlush
         Me.Ttelefono.Enabled = False
-        Me.Ttelefono.ForeColor = System.Drawing.Color.White
+        Me.Ttelefono.ForeColor = System.Drawing.Color.Black
         Me.Ttelefono.Location = New System.Drawing.Point(100, 347)
         Me.Ttelefono.Name = "Ttelefono"
         Me.Ttelefono.Size = New System.Drawing.Size(141, 20)
@@ -321,9 +321,9 @@ Partial Class CLIENTES
         '
         'tID
         '
-        Me.tID.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.tID.BackColor = System.Drawing.Color.LavenderBlush
         Me.tID.Enabled = False
-        Me.tID.ForeColor = System.Drawing.Color.White
+        Me.tID.ForeColor = System.Drawing.Color.Black
         Me.tID.Location = New System.Drawing.Point(100, 249)
         Me.tID.Name = "tID"
         Me.tID.Size = New System.Drawing.Size(141, 20)
@@ -332,7 +332,7 @@ Partial Class CLIENTES
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(9, 291)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(57, 13)
@@ -342,7 +342,7 @@ Partial Class CLIENTES
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(9, 249)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(21, 13)
@@ -351,9 +351,9 @@ Partial Class CLIENTES
         '
         'TNombre
         '
-        Me.TNombre.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.TNombre.BackColor = System.Drawing.Color.LavenderBlush
         Me.TNombre.Enabled = False
-        Me.TNombre.ForeColor = System.Drawing.Color.White
+        Me.TNombre.ForeColor = System.Drawing.Color.Black
         Me.TNombre.Location = New System.Drawing.Point(100, 298)
         Me.TNombre.Name = "TNombre"
         Me.TNombre.Size = New System.Drawing.Size(141, 20)
@@ -382,7 +382,7 @@ Partial Class CLIENTES
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(898, 65)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(277, 25)

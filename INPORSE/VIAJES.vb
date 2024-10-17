@@ -111,7 +111,7 @@ Public Class VIAJES
     End Sub
     Private Sub CargarIdClientes()
         Try
-            Dim comando As New MySqlCommand("SELECT ID_CLIENTE FROM CLEINTE", Module1.mysqlconexion)
+            Dim comando As New MySqlCommand("SELECT ID_CLIENTE FROM CLIENTE", Module1.mysqlconexion)
             Dim reader As MySqlDataReader = comando.ExecuteReader()
 
             cmbc.Items.Clear()
@@ -450,5 +450,6 @@ Public Class VIAJES
             ActualizarGrid()
         End If
     End Sub
+
 
 End Class

@@ -84,11 +84,7 @@ Public Class CLIENTES
         Return True
     End Function
 
-
-
     Private Sub CLIENTES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         pnlconsulta.Width = 90
 
         Try
@@ -103,125 +99,96 @@ Public Class CLIENTES
         Label8.Visible = False
         Label7.Visible = False
         Label6.Visible = False
+
     End Sub
 
     Private Sub N1_Click(sender As Object, e As EventArgs) Handles N1.Click
         If N1.Text = "NUEVO" Then
             N1.Text = "GUARDAR"
-
             txtID.Enabled = True
             txtDIR.Enabled = True
             txtCOR.Enabled = True
             txtNOM.Enabled = True
             txtTEL.Enabled = True
-            tID.Enabled = False
-            TNombre.Enabled = False
-            Ttelefono.Enabled = False
             M1.Enabled = False
             E1.Enabled = False
         Else
-
-
-            If Not ValidarDatos() Then
+            If Not ValidarCampos() Then
                 Exit Sub
             End If
 
             Try
+                ' Inserción sin parámetros, utilizando concatenación directa
                 sentenciaSQL = "INSERT INTO CLIENTE VALUES ('" & txtID.Text & "','" & txtNOM.Text & "','" & txtTEL.Text & "','" & txtDIR.Text & "','" & txtCOR.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
 
-                MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
+                MessageBox.Show("El registro ha sido creado.", "Información", MessageBoxButtons.OK)
                 ActualizarGrid()
 
+                ' Guardar historial
                 Dim accion As String = "agregar"
                 Dim descripcion As String = "Se agregó un cliente con ID: " & txtID.Text & " y nombre: " & txtNOM.Text
-
-
                 Dim logFilePath As String = "C:\rutahistorial\historial.txt"
                 Dim logEntry As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") & " - Acción: " & accion & " - Descripción: " & descripcion
-
 
                 Using writer As New StreamWriter(logFilePath, True)
                     writer.WriteLine(logEntry)
                 End Using
 
-
                 HISTORIAL.Items.Add(logEntry)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
+
             N1.Text = "NUEVO"
             txtID.Enabled = False
             txtDIR.Enabled = False
             txtCOR.Enabled = False
             txtNOM.Enabled = False
             txtTEL.Enabled = False
-            tID.Enabled = False
-            TNombre.Enabled = False
-            Ttelefono.Enabled = False
             M1.Enabled = True
             E1.Enabled = True
         End If
-        N1 = AcceptButton
+
+
 
     End Sub
 
     Private Sub M1_Click(sender As Object, e As EventArgs) Handles M1.Click
         If M1.Text = "EDITAR" Then
             M1.Text = "GUARDAR"
-            txtID.Enabled = True
+            txtID.Enabled = False
             txtDIR.Enabled = True
             txtCOR.Enabled = True
             txtNOM.Enabled = True
             txtTEL.Enabled = True
-            tID.Enabled = False
-            TNombre.Enabled = False
-            Ttelefono.Enabled = False
             N1.Enabled = False
             E1.Enabled = False
         Else
             Try
-
+                ' Actualización sin parámetros
                 sentenciaSQL = "UPDATE CLIENTE SET NOMBRE='" & txtNOM.Text & "', TELEFONO='" & txtTEL.Text & "', DIRECCION='" & txtDIR.Text & "', EMAIL='" & txtCOR.Text & "' WHERE ID_CLIENTE='" & txtID.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
-                MessageBox.Show("El registro a sido modificado.", "Informacion", MessageBoxButtons.OK)
-                conjuntoDatos.Clear()
+
+                MessageBox.Show("El registro ha sido modificado.", "Información", MessageBoxButtons.OK)
                 ActualizarGrid()
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
+
             M1.Text = "EDITAR"
             txtID.Enabled = False
             txtDIR.Enabled = False
             txtCOR.Enabled = False
             txtNOM.Enabled = False
             txtTEL.Enabled = False
-            tID.Enabled = False
-            TNombre.Enabled = False
-            Ttelefono.Enabled = False
             N1.Enabled = True
             E1.Enabled = True
-
         End If
-        M1 = AcceptButton
-        txtID.Clear()
-        txtDIR.Clear()
-        txtCOR.Clear()
-        txtNOM.Clear()
-        txtTEL.Clear()
-    End Sub
 
 
-    Private Sub data1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data1.CellContentClick
-        Dim fila As Integer
-        fila = e.RowIndex
-        txtID.Text = data1.Rows(fila).Cells(0).Value.ToString
-        txtNOM.Text = data1.Rows(fila).Cells(1).Value.ToString
-        txtTEL.Text = data1.Rows(fila).Cells(2).Value.ToString
-        txtDIR.Text = data1.Rows(fila).Cells(3).Value.ToString
-        txtCOR.Text = data1.Rows(fila).Cells(4).Value.ToString
     End Sub
 
     Private Sub E1_Click(sender As Object, e As EventArgs) Handles E1.Click
@@ -270,9 +237,8 @@ Public Class CLIENTES
         txtCOR.Clear()
         txtNOM.Clear()
         txtTEL.Clear()
+
     End Sub
-
-
 
     Private Sub Timercontrae_Tick(sender As Object, e As EventArgs) Handles Timercontrae.Tick
         If pnlconsulta.Width <= 90 Then
@@ -286,6 +252,7 @@ Public Class CLIENTES
         Else
             pnlconsulta.Width = pnlconsulta.Width - 5
         End If
+
     End Sub
 
     Private Sub Timerdespliega_Tick(sender As Object, e As EventArgs) Handles Timerdespliega.Tick
@@ -300,9 +267,10 @@ Public Class CLIENTES
         Else
             pnlconsulta.Width = pnlconsulta.Width + 5
         End If
+
     End Sub
 
-    Private Sub CON_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
+    Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
             btnmenu.Text = "-->"
@@ -314,9 +282,10 @@ Public Class CLIENTES
         tID.Enabled = True
         TNombre.Enabled = True
         Ttelefono.Enabled = True
+
     End Sub
 
-    Private Sub tID_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub tID_KeyUp(sender As Object, e As KeyEventArgs) Handles tID.KeyUp
         Ttelefono.Clear()
         conjuntoDatos.Clear()
         If tID.Text <> "" Then
@@ -331,9 +300,10 @@ Public Class CLIENTES
         Else
             ActualizarGrid()
         End If
+
     End Sub
 
-    Private Sub TNombre_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub TNombre_KeyUp(sender As Object, e As KeyEventArgs) Handles TNombre.KeyUp
         tID.Clear()
         conjuntoDatos.Clear()
         If TNombre.Text <> "" Then
@@ -348,9 +318,10 @@ Public Class CLIENTES
         Else
             ActualizarGrid()
         End If
+
     End Sub
 
-    Private Sub Ttelefono_KeyUp(sender As Object, e As KeyEventArgs)
+    Private Sub Ttelefono_KeyUp(sender As Object, e As KeyEventArgs) Handles Ttelefono.KeyUp
         TNombre.Clear()
         conjuntoDatos.Clear()
         If Ttelefono.Text <> "" Then
@@ -365,9 +336,6 @@ Public Class CLIENTES
         Else
             ActualizarGrid()
         End If
+
     End Sub
-
-
-
-
 End Class
