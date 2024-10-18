@@ -100,11 +100,43 @@ Public Class CLIENTES
         Label7.Visible = False
         Label6.Visible = False
 
+        txtID.Enabled = False
+        txtDIR.Enabled = False
+        txtCOR.Enabled = False
+        txtNOM.Enabled = False
+        txtTEL.Enabled = False
+
+        txtID.Visible = False
+        txtDIR.Visible = False
+        txtCOR.Visible = False
+        txtNOM.Visible = False
+        txtTEL.Visible = False
+
+        Label1.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+
+
     End Sub
 
     Private Sub N1_Click(sender As Object, e As EventArgs) Handles N1.Click
         If N1.Text = "NUEVO" Then
             N1.Text = "GUARDAR"
+            'los pone visibles
+            txtID.Visible = True
+            txtDIR.Visible = True
+            txtCOR.Visible = True
+            txtNOM.Visible = True
+            txtTEL.Visible = True
+
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+
             txtID.Enabled = True
             txtDIR.Enabled = True
             txtCOR.Enabled = True
@@ -158,6 +190,19 @@ Public Class CLIENTES
     Private Sub M1_Click(sender As Object, e As EventArgs) Handles M1.Click
         If M1.Text = "EDITAR" Then
             M1.Text = "GUARDAR"
+            'los pone visibles
+            txtID.Visible = True
+            txtDIR.Visible = True
+            txtCOR.Visible = True
+            txtNOM.Visible = True
+            txtTEL.Visible = True
+
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+
             txtID.Enabled = False
             txtDIR.Enabled = True
             txtCOR.Enabled = True
@@ -195,6 +240,18 @@ Public Class CLIENTES
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
 
+            'los pone visibles
+            txtID.Visible = True
+            txtDIR.Visible = True
+            txtCOR.Visible = True
+            txtNOM.Visible = True
+            txtTEL.Visible = True
+
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
 
             txtID.Text = True
             txtNOM.Text = True
