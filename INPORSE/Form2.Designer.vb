@@ -56,9 +56,9 @@ Partial Class Form2
         Me.btnViajes.ForeColor = System.Drawing.Color.LightPink
         Me.btnViajes.Image = CType(resources.GetObject("btnViajes.Image"), System.Drawing.Image)
         Me.btnViajes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnViajes.Location = New System.Drawing.Point(0, 385)
+        Me.btnViajes.Location = New System.Drawing.Point(-9, 385)
         Me.btnViajes.Name = "btnViajes"
-        Me.btnViajes.Size = New System.Drawing.Size(342, 48)
+        Me.btnViajes.Size = New System.Drawing.Size(305, 48)
         Me.btnViajes.TabIndex = 4
         Me.btnViajes.Text = "VIAJES"
         Me.btnViajes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -73,9 +73,9 @@ Partial Class Form2
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.Black
-        Me.Button5.Location = New System.Drawing.Point(0, 653)
+        Me.Button5.Location = New System.Drawing.Point(0, 723)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(335, 30)
+        Me.Button5.Size = New System.Drawing.Size(296, 30)
         Me.Button5.TabIndex = 7
         Me.Button5.Text = "LOGIN OUT"
         Me.Button5.UseVisualStyleBackColor = False
@@ -89,9 +89,40 @@ Partial Class Form2
         Me.Panel4.ForeColor = System.Drawing.Color.White
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1386, 35)
+        Me.Panel4.Size = New System.Drawing.Size(1386, 33)
         Me.Panel4.TabIndex = 11
         '
+<<<<<<< HEAD
+=======
+        'btnMaximizar
+        '
+        Me.btnMaximizar.BackgroundImage = CType(resources.GetObject("btnMaximizar.BackgroundImage"), System.Drawing.Image)
+        Me.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnMaximizar.FlatAppearance.BorderSize = 0
+        Me.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMaximizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMaximizar.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnMaximizar.Location = New System.Drawing.Point(1300, 0)
+        Me.btnMaximizar.Name = "btnMaximizar"
+        Me.btnMaximizar.Size = New System.Drawing.Size(40, 35)
+        Me.btnMaximizar.TabIndex = 15
+        Me.btnMaximizar.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
+        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button6.Location = New System.Drawing.Point(1252, 0)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(40, 35)
+        Me.Button6.TabIndex = 14
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+>>>>>>> 1180661 (2024/10/19)
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -103,6 +134,24 @@ Partial Class Form2
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "GRUPO INPORSE "
         '
+<<<<<<< HEAD
+=======
+        'btnRestaurar
+        '
+        Me.btnRestaurar.BackgroundImage = CType(resources.GetObject("btnRestaurar.BackgroundImage"), System.Drawing.Image)
+        Me.btnRestaurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnRestaurar.FlatAppearance.BorderSize = 0
+        Me.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRestaurar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRestaurar.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnRestaurar.Location = New System.Drawing.Point(1306, 0)
+        Me.btnRestaurar.Name = "btnRestaurar"
+        Me.btnRestaurar.Size = New System.Drawing.Size(40, 33)
+        Me.btnRestaurar.TabIndex = 12
+        Me.btnRestaurar.UseVisualStyleBackColor = True
+        '
+>>>>>>> 1180661 (2024/10/19)
         'btnCerrar
         '
         Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
@@ -114,7 +163,7 @@ Partial Class Form2
         Me.btnCerrar.ForeColor = System.Drawing.Color.Black
         Me.btnCerrar.Location = New System.Drawing.Point(1346, 0)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(40, 35)
+        Me.btnCerrar.Size = New System.Drawing.Size(40, 33)
         Me.btnCerrar.TabIndex = 11
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
@@ -134,9 +183,9 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 35)
+        Me.Panel1.Location = New System.Drawing.Point(0, 33)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(337, 685)
+        Me.Panel1.Size = New System.Drawing.Size(298, 755)
         Me.Panel1.TabIndex = 13
         '
         'Label3
@@ -161,9 +210,9 @@ Partial Class Form2
         Me.btnCont.ForeColor = System.Drawing.Color.LightPink
         Me.btnCont.Image = CType(resources.GetObject("btnCont.Image"), System.Drawing.Image)
         Me.btnCont.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCont.Location = New System.Drawing.Point(1, 334)
+        Me.btnCont.Location = New System.Drawing.Point(-8, 334)
         Me.btnCont.Name = "btnCont"
-        Me.btnCont.Size = New System.Drawing.Size(341, 48)
+        Me.btnCont.Size = New System.Drawing.Size(305, 48)
         Me.btnCont.TabIndex = 10
         Me.btnCont.Text = "CONTENEDORES"
         Me.btnCont.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -179,9 +228,9 @@ Partial Class Form2
         Me.btnCab.ForeColor = System.Drawing.Color.LightPink
         Me.btnCab.Image = CType(resources.GetObject("btnCab.Image"), System.Drawing.Image)
         Me.btnCab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCab.Location = New System.Drawing.Point(2, 280)
+        Me.btnCab.Location = New System.Drawing.Point(-7, 280)
         Me.btnCab.Name = "btnCab"
-        Me.btnCab.Size = New System.Drawing.Size(340, 48)
+        Me.btnCab.Size = New System.Drawing.Size(304, 48)
         Me.btnCab.TabIndex = 11
         Me.btnCab.Text = "CABEZALES"
         Me.btnCab.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -208,9 +257,9 @@ Partial Class Form2
         Me.Button3.ForeColor = System.Drawing.Color.LightPink
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(-1, 226)
+        Me.Button3.Location = New System.Drawing.Point(-10, 226)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(340, 48)
+        Me.Button3.Size = New System.Drawing.Size(306, 48)
         Me.Button3.TabIndex = 15
         Me.Button3.Text = "MOTORISTAS"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -230,11 +279,11 @@ Partial Class Form2
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(-1, 147)
+        Me.Label2.Location = New System.Drawing.Point(48, 154)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(338, 28)
+        Me.Label2.Size = New System.Drawing.Size(193, 28)
         Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Ventana De Aceso A Tablas"
+        Me.Label2.Text = "Aceso A Tablas"
         '
         'Panel2
         '
@@ -258,9 +307,15 @@ Partial Class Form2
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
+<<<<<<< HEAD
         Me.Panel3.Location = New System.Drawing.Point(342, 79)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1032, 640)
+=======
+        Me.Panel3.Location = New System.Drawing.Point(299, 78)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1083, 710)
+>>>>>>> 1180661 (2024/10/19)
         Me.Panel3.TabIndex = 16
         '
         'contrae
@@ -273,7 +328,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1386, 720)
+        Me.ClientSize = New System.Drawing.Size(1386, 788)
         Me.Controls.Add(Me.lblE)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)

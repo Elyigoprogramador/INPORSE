@@ -23,6 +23,7 @@ Partial Class CABEZALES
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CABEZALES))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -87,14 +88,17 @@ Partial Class CABEZALES
         '
         'btnmenu
         '
-        Me.btnmenu.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnmenu.BackColor = System.Drawing.Color.Transparent
+        Me.btnmenu.BackgroundImage = CType(resources.GetObject("btnmenu.BackgroundImage"), System.Drawing.Image)
+        Me.btnmenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnmenu.FlatAppearance.BorderSize = 0
+        Me.btnmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
-        Me.btnmenu.Location = New System.Drawing.Point(3, 3)
+        Me.btnmenu.Location = New System.Drawing.Point(26, 3)
         Me.btnmenu.Name = "btnmenu"
-        Me.btnmenu.Size = New System.Drawing.Size(97, 28)
+        Me.btnmenu.Size = New System.Drawing.Size(37, 32)
         Me.btnmenu.TabIndex = 25
-        Me.btnmenu.Text = "CONSULTAR"
         Me.btnmenu.UseVisualStyleBackColor = False
         '
         'Label7
@@ -163,7 +167,7 @@ Partial Class CABEZALES
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(22, 509)
+        Me.Label4.Location = New System.Drawing.Point(225, 518)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(135, 16)
         Me.Label4.TabIndex = 44
@@ -175,7 +179,7 @@ Partial Class CABEZALES
         Me.CC.Enabled = False
         Me.CC.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CC.ForeColor = System.Drawing.Color.Black
-        Me.CC.Location = New System.Drawing.Point(198, 506)
+        Me.CC.Location = New System.Drawing.Point(401, 515)
         Me.CC.Name = "CC"
         Me.CC.Size = New System.Drawing.Size(141, 21)
         Me.CC.TabIndex = 43
@@ -185,7 +189,7 @@ Partial Class CABEZALES
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(107, 454)
+        Me.Label3.Location = New System.Drawing.Point(310, 463)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 16)
         Me.Label3.TabIndex = 42
@@ -197,7 +201,7 @@ Partial Class CABEZALES
         Me.MR.Enabled = False
         Me.MR.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MR.ForeColor = System.Drawing.Color.Black
-        Me.MR.Location = New System.Drawing.Point(198, 456)
+        Me.MR.Location = New System.Drawing.Point(401, 465)
         Me.MR.Name = "MR"
         Me.MR.Size = New System.Drawing.Size(141, 21)
         Me.MR.TabIndex = 41
@@ -207,7 +211,7 @@ Partial Class CABEZALES
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(6, 401)
+        Me.Label2.Location = New System.Drawing.Point(209, 410)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(149, 16)
         Me.Label2.TabIndex = 40
@@ -219,7 +223,7 @@ Partial Class CABEZALES
         Me.MEN.Enabled = False
         Me.MEN.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MEN.ForeColor = System.Drawing.Color.Black
-        Me.MEN.Location = New System.Drawing.Point(198, 406)
+        Me.MEN.Location = New System.Drawing.Point(401, 415)
         Me.MEN.Name = "MEN"
         Me.MEN.Size = New System.Drawing.Size(141, 21)
         Me.MEN.TabIndex = 39
@@ -229,7 +233,7 @@ Partial Class CABEZALES
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(107, 356)
+        Me.Label1.Location = New System.Drawing.Point(310, 365)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 16)
         Me.Label1.TabIndex = 38
@@ -241,7 +245,7 @@ Partial Class CABEZALES
         Me.P.Enabled = False
         Me.P.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.P.ForeColor = System.Drawing.Color.Black
-        Me.P.Location = New System.Drawing.Point(198, 356)
+        Me.P.Location = New System.Drawing.Point(401, 365)
         Me.P.Name = "P"
         Me.P.Size = New System.Drawing.Size(141, 21)
         Me.P.TabIndex = 37
@@ -251,7 +255,7 @@ Partial Class CABEZALES
         Me.Eliminar.BackColor = System.Drawing.Color.MidnightBlue
         Me.Eliminar.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Eliminar.ForeColor = System.Drawing.Color.White
-        Me.Eliminar.Location = New System.Drawing.Point(449, 513)
+        Me.Eliminar.Location = New System.Drawing.Point(12, 499)
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.Size = New System.Drawing.Size(134, 55)
         Me.Eliminar.TabIndex = 36
@@ -263,7 +267,7 @@ Partial Class CABEZALES
         Me.M.BackColor = System.Drawing.Color.MidnightBlue
         Me.M.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.M.ForeColor = System.Drawing.Color.White
-        Me.M.Location = New System.Drawing.Point(449, 436)
+        Me.M.Location = New System.Drawing.Point(12, 422)
         Me.M.Name = "M"
         Me.M.Size = New System.Drawing.Size(134, 55)
         Me.M.TabIndex = 35
@@ -275,7 +279,7 @@ Partial Class CABEZALES
         Me.N.BackColor = System.Drawing.Color.MidnightBlue
         Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.N.ForeColor = System.Drawing.Color.White
-        Me.N.Location = New System.Drawing.Point(449, 359)
+        Me.N.Location = New System.Drawing.Point(12, 345)
         Me.N.Name = "N"
         Me.N.Size = New System.Drawing.Size(134, 55)
         Me.N.TabIndex = 34
@@ -287,13 +291,14 @@ Partial Class CABEZALES
         Me.data1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.data1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.data1.BackgroundColor = System.Drawing.Color.LavenderBlush
+        Me.data1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(52, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.LavenderBlush
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
@@ -301,30 +306,29 @@ Partial Class CABEZALES
         Me.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!)
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.data1.DefaultCellStyle = DataGridViewCellStyle2
         Me.data1.EnableHeadersVisualStyles = False
-        Me.data1.GridColor = System.Drawing.Color.SteelBlue
+        Me.data1.GridColor = System.Drawing.Color.White
         Me.data1.Location = New System.Drawing.Point(6, 12)
         Me.data1.Name = "data1"
-        Me.data1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.CadetBlue
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightPink
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer))
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.PapayaWhip
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.data1.Size = New System.Drawing.Size(607, 327)
         Me.data1.TabIndex = 33
@@ -334,20 +338,20 @@ Partial Class CABEZALES
         Me.HISTORIAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HISTORIAL.FormattingEnabled = True
         Me.HISTORIAL.ItemHeight = 7
-        Me.HISTORIAL.Location = New System.Drawing.Point(618, 51)
+        Me.HISTORIAL.Location = New System.Drawing.Point(618, 42)
         Me.HISTORIAL.Margin = New System.Windows.Forms.Padding(2)
         Me.HISTORIAL.Name = "HISTORIAL"
-        Me.HISTORIAL.Size = New System.Drawing.Size(280, 550)
+        Me.HISTORIAL.Size = New System.Drawing.Size(157, 298)
         Me.HISTORIAL.TabIndex = 46
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(621, 12)
+        Me.Label9.Location = New System.Drawing.Point(626, 22)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(277, 25)
+        Me.Label9.Size = New System.Drawing.Size(142, 16)
         Me.Label9.TabIndex = 47
         Me.Label9.Text = "HISTORIAL DE REGISTRO"
         '

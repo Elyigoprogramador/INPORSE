@@ -76,12 +76,33 @@ Public Class CON
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
+
         Label11.Visible = False
         Label10.Visible = False
         Label9.Visible = False
         tID.Visible = False
         Tnombre.Visible = False
         Tlicencia.Visible = False
+
+        txtID.Visible = False
+        txtNOM.Visible = False
+        NL.Visible = False
+        DISPO.Visible = False
+        DUI.Visible = False
+        TEL.Visible = False
+        DIREC.Visible = False
+        SB.Visible = False
+
+        Label1.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
+        Label7.Visible = False
+        Label8.Visible = False
+
+
     End Sub
 
     Private Sub MOTORISTAS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -99,6 +120,24 @@ Public Class CON
             TEL.Enabled = True
             DIREC.Enabled = True
             SB.Enabled = True
+
+            txtID.Visible = True
+            txtNOM.Visible = True
+            NL.Visible = True
+            DISPO.Visible = True
+            DUI.Visible = True
+            TEL.Visible = True
+            DIREC.Visible = True
+            SB.Visible = True
+
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label6.Visible = True
+            Label7.Visible = True
+            Label8.Visible = True
             M.Enabled = False
             btnmenu.Enabled = False
             Eliminar.Enabled = False
@@ -116,6 +155,23 @@ Public Class CON
                 MessageBox.Show(ex.ToString)
             End Try
             N.Text = "NUEVO"
+            txtID.Visible = False
+            txtNOM.Visible = False
+            NL.Visible = False
+            DISPO.Visible = False
+            DUI.Visible = False
+            TEL.Visible = False
+            DIREC.Visible = False
+            SB.Visible = False
+
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
@@ -128,6 +184,15 @@ Public Class CON
             M.Enabled = True
             Eliminar.Enabled = True
         End If
+        AcceptButton = N
+        txtID.Clear()
+        txtNOM.Clear()
+        NL.Clear()
+        DISPO.Clear()
+        DUI.Clear()
+        DIREC.Clear()
+        SB.Clear()
+        TEL.Clear()
     End Sub
 
     Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
@@ -141,6 +206,23 @@ Public Class CON
             TEL.Enabled = True
             DIREC.Enabled = True
             SB.Enabled = True
+            txtID.Visible = True
+            txtNOM.Visible = True
+            NL.Visible = True
+            DISPO.Visible = True
+            DUI.Visible = True
+            TEL.Visible = True
+            DIREC.Visible = True
+            SB.Visible = True
+
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label6.Visible = True
+            Label7.Visible = True
+            Label8.Visible = True
             N.Enabled = False
             btnmenu.Enabled = False
             Eliminar.Enabled = False
@@ -158,6 +240,23 @@ Public Class CON
                 MessageBox.Show(ex.ToString)
             End Try
             M.Text = "MODIFICAR"
+            txtID.Visible = False
+            txtNOM.Visible = False
+            NL.Visible = False
+            DISPO.Visible = False
+            DUI.Visible = False
+            TEL.Visible = False
+            DIREC.Visible = False
+            SB.Visible = False
+
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
@@ -170,11 +269,38 @@ Public Class CON
             N.Enabled = True
             Eliminar.Enabled = True
         End If
+        AcceptButton = M
+        txtID.Clear()
+        txtNOM.Clear()
+        NL.Clear()
+        DISPO.Clear()
+        DUI.Clear()
+        DIREC.Clear()
+        SB.Clear()
+        TEL.Clear()
     End Sub
 
     Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
+
+            txtID.Visible = True
+            txtNOM.Visible = True
+            NL.Visible = True
+            DISPO.Visible = True
+            DUI.Visible = True
+            TEL.Visible = True
+            DIREC.Visible = True
+            SB.Visible = True
+
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label6.Visible = True
+            Label7.Visible = True
+            Label8.Visible = True
             txtID.Enabled = True
             txtNOM.Enabled = True
             NL.Enabled = True
@@ -199,6 +325,23 @@ Public Class CON
                 MessageBox.Show(ex.ToString)
 
             End Try
+            txtID.Visible = False
+            txtNOM.Visible = False
+            NL.Visible = False
+            DISPO.Visible = False
+            DUI.Visible = False
+            TEL.Visible = False
+            DIREC.Visible = False
+            SB.Visible = False
+
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
@@ -244,10 +387,10 @@ Public Class CON
     Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
-            btnmenu.Text = "-->"
+
         ElseIf pnlconsulta.Width = 300 Then
             Timercontrae.Enabled = True
-            btnmenu.Text = "CONSULTAR"
+
         End If
         tID.Enabled = True
         Tnombre.Enabled = True
@@ -312,4 +455,7 @@ Public Class CON
             ActualizarGrid()
         End If
     End Sub
+
+
+
 End Class

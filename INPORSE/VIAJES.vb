@@ -132,38 +132,8 @@ Public Class VIAJES
             MessageBox.Show("Error al cargar productos: " & ex.Message)
         End Try
     End Sub
-    Private Sub CargarIdClientes()
-        Try
-            Dim comando As New MySqlCommand("SELECT ID_CLIENTE FROM CLIENTE", Module1.mysqlconexion)
-            Dim reader As MySqlDataReader = comando.ExecuteReader()
 
-            cmbc.Items.Clear()
 
-            While reader.Read()
-                cmbc.Items.Add(reader("ID_CLIENTE").ToString())
-            End While
-
-            reader.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error al cargar productos: " & ex.Message)
-        End Try
-    End Sub
-    Private Sub CargarIdProductos()
-        Try
-            Dim comando As New MySqlCommand("SELECT ID_PRODUCTO FROM PRODUCTO", Module1.mysqlconexion)
-            Dim reader As MySqlDataReader = comando.ExecuteReader()
-
-            cmbp.Items.Clear()
-
-            While reader.Read()
-                cmbp.Items.Add(reader("ID_PRODUCTO").ToString())
-            End While
-
-            reader.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error al cargar productos: " & ex.Message)
-        End Try
-    End Sub
     Private Sub CargarDestinos()
         Try
             Dim comando As New MySqlCommand("SELECT Nombre FROM Destinos", Module1.mysqlconexion)
@@ -203,8 +173,8 @@ Public Class VIAJES
             Module1.funcionConectarBD()
             ActualizarGrid()
             CargarDestinos()
-            CargarIdClientes()
-            CargarIdProductos()
+
+
             CargarIdCabezales()
             CargarIdContenedor()
         Catch ex As Exception
@@ -395,10 +365,10 @@ Public Class VIAJES
     Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
-            btnmenu.Text = "-->"
+
         ElseIf pnlconsulta.Width = 300 Then
             Timercontrae.Enabled = True
-            btnmenu.Text = "CONSULTAR"
+
         End If
         TID.Enabled = True
         RUTA.Enabled = True

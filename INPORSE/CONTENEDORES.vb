@@ -58,6 +58,12 @@ Public Class CONTENEDORES
 
         TID.Visible = False
         TTIPO.Visible = False
+        txtID.Visible = False
+        T.Visible = False
+        TI.Visible = False
+        Label1.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
     End Sub
 
     Private Sub CONTENEDORES_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -67,6 +73,14 @@ Public Class CONTENEDORES
     Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
+            TID.Visible = True
+            TTIPO.Visible = True
+            txtID.Visible = True
+            T.Visible = True
+            TI.Visible = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
             txtID.Enabled = True
             T.Enabled = True
             cmbTI.Enabled = True
@@ -89,6 +103,14 @@ Public Class CONTENEDORES
                 MessageBox.Show(ex.ToString)
             End Try
             N.Text = "NUEVO"
+            TID.Visible = False
+            TTIPO.Visible = False
+            txtID.Visible = False
+            T.Visible = False
+            TI.Visible = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
             txtID.Enabled = False
             T.Enabled = False
             cmbTI.Enabled = False
@@ -103,6 +125,14 @@ Public Class CONTENEDORES
     Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
         If M.Text = "MODIFICAR" Then
             M.Text = "GUARDAR"
+            TID.Visible = True
+            TTIPO.Visible = True
+            txtID.Visible = True
+            T.Visible = True
+            TI.Visible = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
             txtID.Enabled = True
             T.Enabled = True
             cmbTI.Enabled = True
@@ -124,6 +154,14 @@ Public Class CONTENEDORES
                 MessageBox.Show(ex.ToString)
             End Try
             M.Text = "MODIFICAR"
+            TID.Visible = False
+            TTIPO.Visible = False
+            txtID.Visible = False
+            T.Visible = False
+            TI.Visible = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
             txtID.Enabled = False
             T.Enabled = False
             cmbTI.Enabled = False
@@ -139,6 +177,15 @@ Public Class CONTENEDORES
     Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
+
+            TID.Visible = True
+            TTIPO.Visible = True
+            txtID.Visible = True
+            T.Visible = True
+            TI.Visible = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
             txtID.Enabled = True
             T.Enabled = True
             cmbTI.Enabled = True
@@ -160,6 +207,14 @@ Public Class CONTENEDORES
                 MessageBox.Show(ex.ToString)
 
             End Try
+            TID.Visible = False
+            TTIPO.Visible = False
+            txtID.Visible = False
+            T.Visible = False
+            TI.Visible = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
             txtID.Enabled = False
             T.Enabled = False
             cmbTI.Enabled = False
@@ -201,10 +256,10 @@ Public Class CONTENEDORES
     Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
-            btnmenu.Text = "-->"
+
         ElseIf pnlconsulta.Width = 300 Then
             Timercontrae.Enabled = True
-            btnmenu.Text = "CONSULTAR"
+
         End If
 
         TID.Enabled = True
