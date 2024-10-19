@@ -71,6 +71,8 @@ Partial Class VIAJES
         Me.cmbp = New System.Windows.Forms.ComboBox()
         Me.cmbcab = New System.Windows.Forms.ComboBox()
         Me.IDV = New System.Windows.Forms.TextBox()
+        Me.btnFactura = New System.Windows.Forms.Button()
+        Me.DateTime1 = New System.Windows.Forms.DateTimePicker()
         Me.pnlconsulta.SuspendLayout()
         CType(Me.data1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -195,11 +197,11 @@ Partial Class VIAJES
         'N
         '
         Me.N.BackColor = System.Drawing.Color.MidnightBlue
-        Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.N.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.N.ForeColor = System.Drawing.Color.White
-        Me.N.Location = New System.Drawing.Point(201, 592)
+        Me.N.Location = New System.Drawing.Point(220, 332)
         Me.N.Name = "N"
-        Me.N.Size = New System.Drawing.Size(302, 36)
+        Me.N.Size = New System.Drawing.Size(92, 31)
         Me.N.TabIndex = 76
         Me.N.Text = "NUEVO"
         Me.N.UseVisualStyleBackColor = False
@@ -552,12 +554,33 @@ Partial Class VIAJES
         Me.IDV.Size = New System.Drawing.Size(141, 20)
         Me.IDV.TabIndex = 105
         '
+        'btnFactura
+        '
+        Me.btnFactura.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnFactura.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFactura.ForeColor = System.Drawing.Color.White
+        Me.btnFactura.Location = New System.Drawing.Point(677, 602)
+        Me.btnFactura.Name = "btnFactura"
+        Me.btnFactura.Size = New System.Drawing.Size(130, 31)
+        Me.btnFactura.TabIndex = 106
+        Me.btnFactura.Text = "Generar Factura"
+        Me.btnFactura.UseVisualStyleBackColor = False
+        '
+        'DateTime1
+        '
+        Me.DateTime1.Location = New System.Drawing.Point(860, 661)
+        Me.DateTime1.Name = "DateTime1"
+        Me.DateTime1.Size = New System.Drawing.Size(202, 20)
+        Me.DateTime1.TabIndex = 107
+        '
         'VIAJES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1323, 735)
+        Me.Controls.Add(Me.DateTime1)
+        Me.Controls.Add(Me.btnFactura)
         Me.Controls.Add(Me.IDV)
         Me.Controls.Add(Me.cmbcab)
         Me.Controls.Add(Me.cmbp)
@@ -639,4 +662,6 @@ Partial Class VIAJES
     Friend WithEvents cmbp As ComboBox
     Friend WithEvents cmbcab As ComboBox
     Friend WithEvents IDV As TextBox
+    Friend WithEvents btnFactura As Button
+    Friend WithEvents DateTime1 As DateTimePicker
 End Class

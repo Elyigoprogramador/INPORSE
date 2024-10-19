@@ -23,10 +23,10 @@ Partial Class CONTENEDORES
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlconsulta = New System.Windows.Forms.Panel()
         Me.btnmenu = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -35,7 +35,6 @@ Partial Class CONTENEDORES
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Timercontrae = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TI = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.T = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,6 +46,7 @@ Partial Class CONTENEDORES
         Me.data1 = New System.Windows.Forms.DataGridView()
         Me.HISTORIAL = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.cmbTI = New System.Windows.Forms.ComboBox()
         Me.pnlconsulta.SuspendLayout()
         CType(Me.data1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -135,17 +135,6 @@ Partial Class CONTENEDORES
         Me.Label3.TabIndex = 32
         Me.Label3.Text = "TIPO:"
         '
-        'TI
-        '
-        Me.TI.BackColor = System.Drawing.Color.LavenderBlush
-        Me.TI.Enabled = False
-        Me.TI.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TI.ForeColor = System.Drawing.Color.Black
-        Me.TI.Location = New System.Drawing.Point(119, 437)
-        Me.TI.Name = "TI"
-        Me.TI.Size = New System.Drawing.Size(141, 21)
-        Me.TI.TabIndex = 31
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -165,7 +154,7 @@ Partial Class CONTENEDORES
         Me.T.ForeColor = System.Drawing.Color.Black
         Me.T.Location = New System.Drawing.Point(119, 388)
         Me.T.Name = "T"
-        Me.T.Size = New System.Drawing.Size(141, 21)
+        Me.T.Size = New System.Drawing.Size(165, 21)
         Me.T.TabIndex = 29
         '
         'Label1
@@ -187,7 +176,7 @@ Partial Class CONTENEDORES
         Me.txtID.ForeColor = System.Drawing.Color.Black
         Me.txtID.Location = New System.Drawing.Point(119, 339)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(141, 21)
+        Me.txtID.Size = New System.Drawing.Size(165, 21)
         Me.txtID.TabIndex = 27
         '
         'Timerdespliega
@@ -238,43 +227,43 @@ Partial Class CONTENEDORES
         Me.data1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.data1.ColumnHeadersHeight = 30
         Me.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.data1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.data1.DefaultCellStyle = DataGridViewCellStyle2
         Me.data1.EnableHeadersVisualStyles = False
         Me.data1.GridColor = System.Drawing.Color.SteelBlue
         Me.data1.Location = New System.Drawing.Point(12, 12)
         Me.data1.Name = "data1"
         Me.data1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.CadetBlue
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.CadetBlue
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.data1.Size = New System.Drawing.Size(559, 301)
         Me.data1.TabIndex = 23
         '
@@ -300,17 +289,26 @@ Partial Class CONTENEDORES
         Me.Label9.TabIndex = 81
         Me.Label9.Text = "HISTORIAL DE REGISTRO"
         '
+        'cmbTI
+        '
+        Me.cmbTI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbTI.FormattingEnabled = True
+        Me.cmbTI.Location = New System.Drawing.Point(119, 435)
+        Me.cmbTI.Name = "cmbTI"
+        Me.cmbTI.Size = New System.Drawing.Size(165, 21)
+        Me.cmbTI.TabIndex = 82
+        '
         'CONTENEDORES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1370, 749)
+        Me.Controls.Add(Me.cmbTI)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.HISTORIAL)
         Me.Controls.Add(Me.pnlconsulta)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TI)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.T)
         Me.Controls.Add(Me.Label1)
@@ -339,7 +337,6 @@ Partial Class CONTENEDORES
     Friend WithEvents Label4 As Label
     Friend WithEvents Timercontrae As Timer
     Friend WithEvents Label3 As Label
-    Friend WithEvents TI As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents T As TextBox
     Friend WithEvents Label1 As Label
@@ -351,4 +348,5 @@ Partial Class CONTENEDORES
     Friend WithEvents data1 As DataGridView
     Friend WithEvents HISTORIAL As ListBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents cmbTI As ComboBox
 End Class

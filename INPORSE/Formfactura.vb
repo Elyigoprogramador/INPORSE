@@ -1,9 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports MySql.Data
-Imports iTextSharp.text
-Imports iTextSharp.text.pdf
-Imports System.IO
-Imports iTextSharp.text.pdf.draw
+
 Public Class Formfactura
     Private cliente1 As String
     Private destino1 As String
@@ -153,6 +150,15 @@ Public Class Formfactura
 
 
     End Sub
+
+    Public Sub ImprimirFactura(ByVal archivoPdf As String)
+        Dim proceso As New Process()
+        proceso.StartInfo.FileName = archivoPdf
+        proceso.StartInfo.Verb = "print"
+        proceso.StartInfo.CreateNoWindow = True
+        proceso.Start()
+    End Sub
+
     Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
         Dim total As Double = lbltotal.Text
         Dim cobro As Double = npCobro.Value
@@ -288,6 +294,19 @@ Public Class Formfactura
         MsgBox("Factura PDF generada correctamente en: " & rutaPDF)
     End Sub
 
+    Public Sub EnviarFacturaPorCorreo(ByVal archivoPdf As String, ByVal correoCliente As String)
+        Dim mensaje As New MailMessage("tuCorreo@dominio.com", correoCliente)
+        mensaje.Subject = "Factura del Viaje"
+        mensaje.Body = "Adjunto encontrarás la factura del viaje."
+        mensaje.Attachments.Add(New Attachment(archivoPdf))
+
+        Dim smtp As New SmtpClient("smtp.dominio.com")
+        smtp.Port = 587 ' Cambiar por el puerto correcto
+        smtp.Credentials = New System.Net.NetworkCredential("tuCorreo@dominio.com", "tuContraseña")
+        smtp.EnableSsl = True
+
+        smtp.Send(mensaje)
+    End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()

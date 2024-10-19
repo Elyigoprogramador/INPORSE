@@ -69,7 +69,7 @@ Public Class CONTENEDORES
             N.Text = "GUARDAR"
             txtID.Enabled = True
             T.Enabled = True
-            TI.Enabled = True
+            cmbTI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
