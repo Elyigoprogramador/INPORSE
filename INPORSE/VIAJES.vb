@@ -188,14 +188,6 @@ Public Class VIAJES
         Return random.Next(10000, 99999).ToString()
     End Function
 
-    Private Sub N_Paint(sender As Object, e As PaintEventArgs) Handles N.Paint
-        Dim buttonPath As Drawing2D.GraphicsPath = New Drawing2D.GraphicsPath()
-        Dim myRectangle = N.ClientRectangle
-        myRectangle.Inflate(0, 35)
-        buttonPath.AddEllipse(myRectangle)
-        N.Region = New Region(buttonPath)
-    End Sub
-
     Private Sub VIAJES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbEST.Items.Add("Cargando")
         cmbEST.Items.Add("En camino")
@@ -495,8 +487,9 @@ Public Class VIAJES
         End If
     End Sub
 
+    Private Sub pnlconsulta_Paint(sender As Object, e As PaintEventArgs) Handles pnlconsulta.Paint
 
-
+    End Sub
 
     'Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
     '    'Dim total As Double = lbltotal.Text

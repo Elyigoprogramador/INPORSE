@@ -3,7 +3,11 @@ Imports System.Runtime.InteropServices
 Imports System.Xml
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Org.BouncyCastle.Crypto.Digests
+Imports Guna.UI2.WinForms
+Imports iTextSharp.text.pdf.codec.wmf
+Imports System.Security.Cryptography
 Public Class Form2
+
 
     <DllImport("User32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
@@ -17,8 +21,17 @@ Public Class Form2
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblusuario.Text = Form1.NombreUsuario
+        btnViajes.FlatAppearance.BorderSize = 0
+        btnCont.FlatAppearance.BorderSize = 0
+        btnCab.FlatAppearance.BorderSize = 0
+        Button3.FlatAppearance.BorderSize = 0
+        contrae.Interval = 100
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Opacity = 10
+        Opacity = 0
         lblE.Text = "REGISTRO DE CLIENTES"
         Dim CLIENTES As New CLIENTES()
 
@@ -37,26 +50,30 @@ Public Class Form2
         CLIENTES.Show()
 
     End Sub
+    Private Sub animTimer_Tick(sender As Object, e As EventArgs) Handles contrae.Tick
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnViajes.Click
-        lblE.Text = "REGISTRO DE VIAJES"
-        Dim VIAJES As New VIAJES()
-
-
-        VIAJES.TopLevel = False
-
-        VIAJES.FormBorderStyle = FormBorderStyle.None
-
-
-        Panel3.Controls.Add(VIAJES)
-
-
-        VIAJES.Dock = DockStyle.Fill
-
-
-        VIAJES.Show()
+        Panel3.Width = Panel3.Width + 400
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnViajes.Click
+
+        lblE.Text = "REGISTRO DE VIAJES"
+            Dim VIAJES As New VIAJES()
+
+            VIAJES.TopLevel = False
+            VIAJES.FormBorderStyle = FormBorderStyle.None
+
+            Panel3.Controls.Clear()
+            Panel3.Controls.Add(VIAJES)
+
+            VIAJES.Dock = DockStyle.Fill
+            VIAJES.Show()
+
+
+    End Sub
+
+
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         lblE.Text = "REGISTRO DE PRODUCTOS"
@@ -141,34 +158,20 @@ Public Class Form2
         Me.Hide()
     End Sub
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblusuario.Text = Form1.NombreUsuario
-        btnViajes.FlatAppearance.BorderSize = 0
-        btnCont.FlatAppearance.BorderSize = 0
-        btnCab.FlatAppearance.BorderSize = 0
-        Button3.FlatAppearance.BorderSize = 0
-        btnMaximizar.Visible = False
-    End Sub
-    Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
-        Me.WindowState = FormWindowState.Normal
-        btnRestaurar.Visible = False
-        btnMaximizar.Visible = True
-    End Sub
 
-    Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
-        Me.WindowState = FormWindowState.Maximized
-        btnRestaurar.Visible = True
-        btnMaximizar.Visible = False
-    End Sub
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        Me.Close()
-        Form1.Close()
+        Dim result As DialogResult = MessageBox.Show("¿Seguro que deseas cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            Me.Close()
+            Form1.Close()
+        End If
     End Sub
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
-
     End Sub
+
 End Class

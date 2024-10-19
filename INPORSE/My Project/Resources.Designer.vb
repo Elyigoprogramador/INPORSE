@@ -113,6 +113,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Chachi() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Chachi", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property LOGO_INPORSE1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("LOGO_INPORSE1", resourceCulture)

@@ -395,4 +395,8 @@ Public Class CLIENTES
         End If
 
     End Sub
+
+    Private Sub HISTORIAL_SelectedIndexChanged(sender As Object, e As EventArgs) Handles HISTORIAL.SelectedIndexChanged
+
+    End Sub
 End Class

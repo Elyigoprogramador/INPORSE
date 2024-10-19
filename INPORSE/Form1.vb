@@ -29,15 +29,15 @@ Public Class Form1
 
 
         'EN CASO DE QUE CUALQUIER DE LOS DOS SEA CORRECTO
-        If txtContra.Text = "102421" And txtUser.Text = "Mario Escalante" Then
+        If txtContra.Text = "102422" And txtUser.Text = "Mario Escalante" Then
             NombreUsuario = "Mario Escalante"
             intentosFallidos = 0
             NombreUsuario = txtUser.Text
             Dim form2 As New Form2
             form2.Show()
             form2.Button3.Visible = False
-            Form2.Button3.Enabled = False
-            Form2.Show()
+            form2.Button3.Enabled = False
+            form2.Show()
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
@@ -50,8 +50,8 @@ Public Class Form1
             form2.Panel5.BackgroundImageLayout = ImageLayout.Stretch
             form2.Show()
             form2.Button3.Visible = True
-            Form2.Button3.Enabled = True
-            Form2.Show()
+            form2.Button3.Enabled = True
+            form2.Show()
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
@@ -65,7 +65,7 @@ Public Class Form1
             form2.Panel5.BackgroundImageLayout = ImageLayout.Stretch
             form2.Show()
             form2.Button3.Visible = True
-            Form2.Button3.Enabled = True
+            form2.Button3.Enabled = True
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
@@ -74,10 +74,12 @@ Public Class Form1
             intentosFallidos = 0
             NombreUsuario = txtUser.Text
             Dim form2 As New Form2
+            form2.Panel5.BackgroundImage = My.Resources.Chachi
+            form2.Panel5.BackgroundImageLayout = ImageLayout.Stretch
             form2.Show()
             form2.Button3.Visible = True
-            Form2.Button3.Enabled = True
-            Form2.Show()
+            form2.Button3.Enabled = True
+            form2.Show()
             txtUser.Text = ""
             txtContra.Text = ""
             Me.Hide()
@@ -89,14 +91,40 @@ Public Class Form1
             txtContra.Clear()
 
             'PARA LOGIN DE ADMINISTRADOR
-        ElseIf txtContra.Text <> "INPORSE123" And txtUser.Text = "Administrador" Then
+        ElseIf txtContra.Text <> "200618" And txtUser.Text = "Rodrigo Hernandez" Then
             lblpassw.Visible = True
             intentosFallidos += 1
             txtContra.Clear()
-        ElseIf txtContra.Text = "INPORSE123" And txtUser.Text <> "Administrador" Then
+        ElseIf txtContra.Text = "200618" And txtUser.Text <> "Rodrigo Hernandez" Then
             lbluser.Visible = True
             txtUser.Clear()
-        ElseIf txtContra.Text <> "INPORSE123" And txtUser.Text <> "Administrador" Then
+        ElseIf txtContra.Text <> "200618" And txtUser.Text <> "Rodrigo Hernandez" Then
+            lbluser.Visible = True
+            lblpassw.Visible = True
+            txtUser.Clear()
+            txtContra.Clear()
+
+        ElseIf txtContra.Text <> "200618" And txtUser.Text = "Anna Shantall" Then
+            lblpassw.Visible = True
+            intentosFallidos += 1
+            txtContra.Clear()
+        ElseIf txtContra.Text = "200618" And txtUser.Text <> "Anna Shantall" Then
+            lbluser.Visible = True
+            txtUser.Clear()
+        ElseIf txtContra.Text <> "200618" And txtUser.Text <> "Anna Shantall" Then
+            lbluser.Visible = True
+            lblpassw.Visible = True
+            txtUser.Clear()
+            txtContra.Clear()
+
+        ElseIf txtContra.Text <> "200618" And txtUser.Text = "Cesar Lemus" Then
+            lblpassw.Visible = True
+            intentosFallidos += 1
+            txtContra.Clear()
+        ElseIf txtContra.Text = "200618" And txtUser.Text <> "Cesar Lemus" Then
+            lbluser.Visible = True
+            txtUser.Clear()
+        ElseIf txtContra.Text <> "200618" And txtUser.Text <> "Cesar Lemus" Then
             lbluser.Visible = True
             lblpassw.Visible = True
             txtUser.Clear()
@@ -131,7 +159,8 @@ Public Class Form1
         txtUser.BackColor = Me.BackColor ' Cambia esto al color del fondo de tu formulario
         txtUser.ForeColor = Color.White
 
-
+        lblpassw.Visible = False
+        lbluser.Visible = False
 
 
     End Sub

@@ -22,14 +22,12 @@ Partial Class Form2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.btnViajes = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.btnMaximizar = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnRestaurar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,6 +40,8 @@ Partial Class Form2
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblE = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.contrae = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -83,10 +83,7 @@ Partial Class Form2
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Panel4.Controls.Add(Me.btnMaximizar)
-        Me.Panel4.Controls.Add(Me.Button6)
         Me.Panel4.Controls.Add(Me.Label5)
-        Me.Panel4.Controls.Add(Me.btnRestaurar)
         Me.Panel4.Controls.Add(Me.btnCerrar)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.ForeColor = System.Drawing.Color.White
@@ -94,34 +91,6 @@ Partial Class Form2
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1386, 35)
         Me.Panel4.TabIndex = 11
-        '
-        'btnMaximizar
-        '
-        Me.btnMaximizar.BackgroundImage = CType(resources.GetObject("btnMaximizar.BackgroundImage"), System.Drawing.Image)
-        Me.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnMaximizar.FlatAppearance.BorderSize = 0
-        Me.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMaximizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMaximizar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnMaximizar.Location = New System.Drawing.Point(1298, 0)
-        Me.btnMaximizar.Name = "btnMaximizar"
-        Me.btnMaximizar.Size = New System.Drawing.Size(40, 35)
-        Me.btnMaximizar.TabIndex = 15
-        Me.btnMaximizar.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
-        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button6.Location = New System.Drawing.Point(1252, 0)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(40, 35)
-        Me.Button6.TabIndex = 14
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -133,21 +102,6 @@ Partial Class Form2
         Me.Label5.Size = New System.Drawing.Size(110, 16)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "GRUPO INPORSE "
-        '
-        'btnRestaurar
-        '
-        Me.btnRestaurar.BackgroundImage = CType(resources.GetObject("btnRestaurar.BackgroundImage"), System.Drawing.Image)
-        Me.btnRestaurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnRestaurar.FlatAppearance.BorderSize = 0
-        Me.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRestaurar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestaurar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnRestaurar.Location = New System.Drawing.Point(1306, 0)
-        Me.btnRestaurar.Name = "btnRestaurar"
-        Me.btnRestaurar.Size = New System.Drawing.Size(40, 35)
-        Me.btnRestaurar.TabIndex = 12
-        Me.btnRestaurar.UseVisualStyleBackColor = True
         '
         'btnCerrar
         '
@@ -304,10 +258,14 @@ Partial Class Form2
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.Location = New System.Drawing.Point(337, 80)
+        Me.Panel3.Location = New System.Drawing.Point(342, 79)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1042, 640)
+        Me.Panel3.Size = New System.Drawing.Size(1032, 640)
         Me.Panel3.TabIndex = 16
+        '
+        'contrae
+        '
+        Me.contrae.Interval = 1000
         '
         'Form2
         '
@@ -336,7 +294,6 @@ Partial Class Form2
     Friend WithEvents btnViajes As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Button6 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Panel1 As Panel
@@ -346,10 +303,10 @@ Partial Class Form2
     Friend WithEvents lblE As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button3 As Button
-    Friend WithEvents btnMaximizar As Button
-    Friend WithEvents btnRestaurar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lblusuario As Label
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents contrae As Timer
 End Class

@@ -66,14 +66,14 @@ Partial Class VIAJES
         Me.cmbcon = New System.Windows.Forms.ComboBox()
         Me.cmbp = New System.Windows.Forms.ComboBox()
         Me.cmbcab = New System.Windows.Forms.ComboBox()
-        Me.IDV = New System.Windows.Forms.TextBox()
-        Me.btnFactura = New System.Windows.Forms.Button()
         Me.DateTime1 = New System.Windows.Forms.DateTimePicker()
         Me.ELIMINAR = New System.Windows.Forms.Button()
         Me.N = New System.Windows.Forms.Button()
         Me.M = New System.Windows.Forms.Button()
         Me.npCant = New System.Windows.Forms.NumericUpDown()
         Me.cmbEST = New System.Windows.Forms.ComboBox()
+        Me.btnFactura = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.IDV = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnlconsulta.SuspendLayout()
         CType(Me.data1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.npCant, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -390,9 +390,9 @@ Partial Class VIAJES
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(61, 434)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 13)
+        Me.Label2.Size = New System.Drawing.Size(26, 13)
         Me.Label2.TabIndex = 84
-        Me.Label2.Text = "ID DEL CLIENTE:"
+        Me.Label2.Text = "Dui:"
         '
         'Label1
         '
@@ -455,7 +455,7 @@ Partial Class VIAJES
         Me.cmbR.FormattingEnabled = True
         Me.cmbR.Location = New System.Drawing.Point(171, 467)
         Me.cmbR.Name = "cmbR"
-        Me.cmbR.Size = New System.Drawing.Size(141, 21)
+        Me.cmbR.Size = New System.Drawing.Size(155, 21)
         Me.cmbR.TabIndex = 99
         '
         'cmbc
@@ -464,7 +464,7 @@ Partial Class VIAJES
         Me.cmbc.FormattingEnabled = True
         Me.cmbc.Location = New System.Drawing.Point(171, 426)
         Me.cmbc.Name = "cmbc"
-        Me.cmbc.Size = New System.Drawing.Size(141, 21)
+        Me.cmbc.Size = New System.Drawing.Size(155, 21)
         Me.cmbc.TabIndex = 101
         '
         'cmbcon
@@ -473,7 +473,7 @@ Partial Class VIAJES
         Me.cmbcon.FormattingEnabled = True
         Me.cmbcon.Location = New System.Drawing.Point(171, 503)
         Me.cmbcon.Name = "cmbcon"
-        Me.cmbcon.Size = New System.Drawing.Size(141, 21)
+        Me.cmbcon.Size = New System.Drawing.Size(155, 21)
         Me.cmbcon.TabIndex = 102
         '
         'cmbp
@@ -482,7 +482,7 @@ Partial Class VIAJES
         Me.cmbp.FormattingEnabled = True
         Me.cmbp.Location = New System.Drawing.Point(171, 539)
         Me.cmbp.Name = "cmbp"
-        Me.cmbp.Size = New System.Drawing.Size(141, 21)
+        Me.cmbp.Size = New System.Drawing.Size(155, 21)
         Me.cmbp.TabIndex = 103
         '
         'cmbcab
@@ -493,28 +493,6 @@ Partial Class VIAJES
         Me.cmbcab.Name = "cmbcab"
         Me.cmbcab.Size = New System.Drawing.Size(141, 21)
         Me.cmbcab.TabIndex = 104
-        '
-        'IDV
-        '
-        Me.IDV.BackColor = System.Drawing.Color.LavenderBlush
-        Me.IDV.Enabled = False
-        Me.IDV.ForeColor = System.Drawing.Color.Black
-        Me.IDV.Location = New System.Drawing.Point(171, 391)
-        Me.IDV.Name = "IDV"
-        Me.IDV.Size = New System.Drawing.Size(141, 20)
-        Me.IDV.TabIndex = 105
-        '
-        'btnFactura
-        '
-        Me.btnFactura.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnFactura.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFactura.ForeColor = System.Drawing.Color.White
-        Me.btnFactura.Location = New System.Drawing.Point(677, 602)
-        Me.btnFactura.Name = "btnFactura"
-        Me.btnFactura.Size = New System.Drawing.Size(130, 31)
-        Me.btnFactura.TabIndex = 106
-        Me.btnFactura.Text = "Generar Factura"
-        Me.btnFactura.UseVisualStyleBackColor = False
         '
         'DateTime1
         '
@@ -584,17 +562,53 @@ Partial Class VIAJES
         Me.cmbEST.Size = New System.Drawing.Size(141, 21)
         Me.cmbEST.TabIndex = 109
         '
+        'btnFactura
+        '
+        Me.btnFactura.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot
+        Me.btnFactura.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnFactura.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnFactura.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnFactura.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnFactura.FillColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnFactura.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.btnFactura.ForeColor = System.Drawing.Color.White
+        Me.btnFactura.Location = New System.Drawing.Point(694, 567)
+        Me.btnFactura.Name = "btnFactura"
+        Me.btnFactura.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnFactura.Size = New System.Drawing.Size(196, 43)
+        Me.btnFactura.TabIndex = 110
+        Me.btnFactura.Text = "Generar Facturar"
+        '
+        'IDV
+        '
+        Me.IDV.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.IDV.DefaultText = ""
+        Me.IDV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.IDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.IDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.IDV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.IDV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IDV.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.IDV.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IDV.Location = New System.Drawing.Point(171, 392)
+        Me.IDV.Name = "IDV"
+        Me.IDV.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.IDV.PlaceholderText = ""
+        Me.IDV.SelectedText = ""
+        Me.IDV.Size = New System.Drawing.Size(155, 19)
+        Me.IDV.TabIndex = 111
+        '
         'VIAJES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1323, 735)
+        Me.Controls.Add(Me.IDV)
+        Me.Controls.Add(Me.btnFactura)
         Me.Controls.Add(Me.cmbEST)
         Me.Controls.Add(Me.npCant)
         Me.Controls.Add(Me.DateTime1)
-        Me.Controls.Add(Me.btnFactura)
-        Me.Controls.Add(Me.IDV)
         Me.Controls.Add(Me.cmbcab)
         Me.Controls.Add(Me.cmbp)
         Me.Controls.Add(Me.cmbcon)
@@ -671,9 +685,9 @@ Partial Class VIAJES
     Friend WithEvents cmbcon As ComboBox
     Friend WithEvents cmbp As ComboBox
     Friend WithEvents cmbcab As ComboBox
-    Friend WithEvents IDV As TextBox
-    Friend WithEvents btnFactura As Button
     Friend WithEvents DateTime1 As DateTimePicker
     Friend WithEvents npCant As NumericUpDown
     Friend WithEvents cmbEST As ComboBox
+    Friend WithEvents btnFactura As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents IDV As Guna.UI2.WinForms.Guna2TextBox
 End Class

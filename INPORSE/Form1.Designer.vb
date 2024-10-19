@@ -26,6 +26,7 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.MoverLabel = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -42,10 +43,9 @@ Partial Class Form1
         Me.lblpassw = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.btnInicio = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -75,6 +75,22 @@ Partial Class Form1
         Me.Label5.Size = New System.Drawing.Size(164, 21)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "GRUPO INPORSE "
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnCerrar.Location = New System.Drawing.Point(1042, 0)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(53, 39)
+        Me.btnCerrar.TabIndex = 11
+        Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'MoverLabel
         '
@@ -120,7 +136,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(291, 86)
+        Me.Label3.Location = New System.Drawing.Point(261, 90)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(165, 17)
@@ -207,7 +223,7 @@ Partial Class Form1
         'lblpassw
         '
         Me.lblpassw.ForeColor = System.Drawing.Color.Red
-        Me.lblpassw.Location = New System.Drawing.Point(291, 324)
+        Me.lblpassw.Location = New System.Drawing.Point(291, 322)
         Me.lblpassw.Name = "lblpassw"
         Me.lblpassw.Size = New System.Drawing.Size(183, 23)
         Me.lblpassw.TabIndex = 0
@@ -244,22 +260,6 @@ Partial Class Form1
         Me.Panel4.Size = New System.Drawing.Size(665, 483)
         Me.Panel4.TabIndex = 17
         '
-        'btnInicio
-        '
-        Me.btnInicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInicio.ForeColor = System.Drawing.Color.White
-        Me.btnInicio.Image = CType(resources.GetObject("btnInicio.Image"), System.Drawing.Image)
-        Me.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnInicio.Location = New System.Drawing.Point(229, 391)
-        Me.btnInicio.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(249, 41)
-        Me.btnInicio.TabIndex = 6
-        Me.btnInicio.Text = "SIGUIENTE"
-        Me.btnInicio.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -282,21 +282,21 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 13
         Me.PictureBox2.TabStop = False
         '
-        'btnCerrar
+        'btnInicio
         '
-        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCerrar.Location = New System.Drawing.Point(1042, 0)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(53, 39)
-        Me.btnCerrar.TabIndex = 11
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.btnInicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInicio.ForeColor = System.Drawing.Color.White
+        Me.btnInicio.Image = CType(resources.GetObject("btnInicio.Image"), System.Drawing.Image)
+        Me.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnInicio.Location = New System.Drawing.Point(229, 391)
+        Me.btnInicio.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnInicio.Name = "btnInicio"
+        Me.btnInicio.Size = New System.Drawing.Size(249, 41)
+        Me.btnInicio.TabIndex = 6
+        Me.btnInicio.Text = "SIGUIENTE"
+        Me.btnInicio.UseVisualStyleBackColor = True
         '
         'Panel3
         '
