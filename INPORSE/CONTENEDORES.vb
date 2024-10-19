@@ -91,7 +91,7 @@ Public Class CONTENEDORES
             N.Text = "NUEVO"
             txtID.Enabled = False
             T.Enabled = False
-            TI.Enabled = False
+            cmbTI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -105,7 +105,7 @@ Public Class CONTENEDORES
             M.Text = "GUARDAR"
             txtID.Enabled = True
             T.Enabled = True
-            TI.Enabled = True
+            cmbTI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -114,7 +114,7 @@ Public Class CONTENEDORES
         Else
             Try
 
-                sentenciaSQL = "UPDATE CONTENEDOR SET TAMANYO='" & T.Text & "', TIPO='" & TI.Text & "' WHERE ID_CONTENEDOR='" & txtID.Text & "'"
+                sentenciaSQL = "UPDATE CONTENEDOR SET TAMANYO='" & T.Text & "', TIPO='" & cmbTI.Text & "' WHERE ID_CONTENEDOR='" & txtID.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido modificado.", "Informacion", MessageBoxButtons.OK)
@@ -126,7 +126,7 @@ Public Class CONTENEDORES
             M.Text = "MODIFICAR"
             txtID.Enabled = False
             T.Enabled = False
-            TI.Enabled = False
+            cmbTI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -141,7 +141,7 @@ Public Class CONTENEDORES
             MessageBox.Show("Cancelado")
             txtID.Enabled = True
             T.Enabled = True
-            TI.Enabled = True
+            cmbTI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -162,7 +162,7 @@ Public Class CONTENEDORES
             End Try
             txtID.Enabled = False
             T.Enabled = False
-            TI.Enabled = False
+            cmbTI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False

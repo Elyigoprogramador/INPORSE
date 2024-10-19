@@ -46,6 +46,8 @@ Public Class Form1
             intentosFallidos = 0
             NombreUsuario = txtUser.Text
             Dim form2 As New Form2
+            form2.Panel5.BackgroundImage = My.Resources.YigoJuan
+            form2.Panel5.BackgroundImageLayout = ImageLayout.Stretch
             form2.Show()
             form2.Button3.Visible = True
             Form2.Button3.Enabled = True
@@ -59,6 +61,8 @@ Public Class Form1
             intentosFallidos = 0
             NombreUsuario = txtUser.Text
             Dim form2 As New Form2
+            form2.Panel5.BackgroundImage = My.Resources.Anna
+            form2.Panel5.BackgroundImageLayout = ImageLayout.Stretch
             form2.Show()
             form2.Button3.Visible = True
             Form2.Button3.Enabled = True
