@@ -144,4 +144,21 @@
   <metadata name="Timercontrae.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>413, 19</value>
   </metadata>
+  <data name="N.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAeJJREFUSEvd
+        VU1LAlEU9Se0bde/aJmlodEitbaCv6IgKAuiaCOWtAiCUZKKMMJiGlNCochqkx+BmKFChEQfGlJYGq93
+        h/fGsaZpnGkRHTg8ZrzvnDn3zht1/w/64T2L3sY6NXGE0xM5afRYWaSVeisbI3LSkNrULn80WeZKyBe7
+        18SlnZsSkZNGMP3yHsnXkRauxctPRE4a+7m3B1oczNTQylmVXz1HFVlCDd3HZmppIicNXHRLi8HAsXrN
+        r73uK1lCDd0XztdPiZw0xCZq2ZbJIm4DPCWsnaMpWUKNKhO1/NUk3fNZtJ58RruXZeSKh5Az6kNzhwHk
+        TaSUD14JXcccGvTbkMFr+sxtC2PpILKtwBsVJYEEYEBF7VsOtBD3oImDKeGe0Ws6J7KtEJvIEVokTjAd
+        nUGARCkp3AP2M2YHkW4CCwgm4nPShxNRTnJ3QgpIAAabFwHepPBY5K/HwuP870bG/PU7JjYRn3hoGSW0
+        CoYMItAiKRTKRZqmTKSbEJvIcRa/RSACM4AWgSig+lrlr0O5sLIkcvSnsvRJeX43EwNjchPpJg6KjYFI
+        oTGkhLYN+wkVgxlAGpqAGFTMjLmLSKsDnAMslBBExcQGuFXyf8PtAF5T6D0RhtWtOcEfhk73AeGTWc87
+        IH4zAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>54</value>
+  </metadata>
 </root>
