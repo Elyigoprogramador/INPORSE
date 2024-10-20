@@ -42,14 +42,7 @@ Public Class VIAJES
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
-    Private Function ValidarDatos() As Boolean
 
-        If Not ValidarCampos() Then
-            Return False
-        End If
-
-        Return True
-    End Function
     Private Sub cmbEST_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEST.SelectedIndexChanged
 
     End Sub
@@ -60,8 +53,8 @@ Public Class VIAJES
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(cmbc.Text) Then
-            MessageBox.Show("El campo de id del cliente es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If String.IsNullOrWhiteSpace(txtDui.Text) Then
+            MessageBox.Show("El campo de Dui es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
 
@@ -74,17 +67,17 @@ Public Class VIAJES
             MessageBox.Show("El campo de id del contenedor es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
-        If String.IsNullOrWhiteSpace(cmbp.Text) Then
-            MessageBox.Show("El campo de id del producto es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If String.IsNullOrWhiteSpace(txtProd.Text) Then
+            MessageBox.Show("El campo de producto es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(npCant.Value) Then
-            MessageBox.Show("El campo de cantidad es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        'If String.IsNullOrWhiteSpace(npCant.Value) Then
+        ' MessageBox.Show("El campo de cantidad es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-            Return False
-        End If
+        '  Return False
+        ' End If '
         If String.IsNullOrWhiteSpace(cmbcab.Text) Then
             MessageBox.Show("El campo de cabezal es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
@@ -94,10 +87,56 @@ Public Class VIAJES
             MessageBox.Show("El campo de estado es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
-        If String.IsNullOrWhiteSpace(COBRO.Text) Then
-            MessageBox.Show("El campo de cobro es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ' If String.IsNullOrWhiteSpace(COBRO.Text) Then
+        'MessageBox.Show("El campo de cobro es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        'Return False
+        ' End If
+        Return True
+    End Function
+    Private Function ValidarDUI(ByVal dui As String) As Boolean
+
+        Dim duiR As String = "^\d{8}-\d{1}$"
+
+        If Not System.Text.RegularExpressions.Regex.IsMatch(dui, duiR) Then
+            MessageBox.Show("Formato de DUI no válido.")
             Return False
         End If
+
+        Return True
+    End Function
+    Private Function ValidarCorreo(ByVal email As String) As Boolean
+        Dim emailR As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        If Not System.Text.RegularExpressions.Regex.IsMatch(email, emailR) Then
+            MessageBox.Show("Formato de correo electrónico no válido.")
+            Return False
+        End If
+        Return True
+    End Function
+    Private Function ValidarTelefono(ByVal telefono As String) As Boolean
+        Dim telefonoR As String = "^\d{8}$"
+        If Not System.Text.RegularExpressions.Regex.IsMatch(telefono, telefonoR) Then
+            MessageBox.Show("Número de teléfono no válido. Debe contener 8 dígitos.")
+            Return False
+        End If
+        Return True
+    End Function
+    Private Function ValidarDatos() As Boolean
+
+        If Not ValidarCampos() Then
+            Return False
+        End If
+        If Not ValidarCorreo(txtCorreo.Text) Then
+            Return False
+        End If
+
+        If Not ValidarTelefono(txtTel.Text) Then
+            Return False
+        End If
+
+        If Not ValidarDUI(txtDui.Text) Then
+            Return False
+        End If
+
         Return True
     End Function
     Private Sub CargarIdContenedor()
@@ -132,38 +171,38 @@ Public Class VIAJES
             MessageBox.Show("Error al cargar productos: " & ex.Message)
         End Try
     End Sub
-    Private Sub CargarIdClientes()
-        Try
-            Dim comando As New MySqlCommand("SELECT ID_CLIENTE FROM CLIENTE", Module1.mysqlconexion)
-            Dim reader As MySqlDataReader = comando.ExecuteReader()
+    'Private Sub CargarIdClientes()
+    '    Try
+    '        Dim comando As New MySqlCommand("SELECT ID_CLIENTE FROM CLIENTE", Module1.mysqlconexion)
+    '        Dim reader As MySqlDataReader = comando.ExecuteReader()
 
-            cmbc.Items.Clear()
+    '        cmbc.Items.Clear()
 
-            While reader.Read()
-                cmbc.Items.Add(reader("ID_CLIENTE").ToString())
-            End While
+    '        While reader.Read()
+    '            cmbc.Items.Add(reader("ID_CLIENTE").ToString())
+    '        End While
 
-            reader.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error al cargar productos: " & ex.Message)
-        End Try
-    End Sub
-    Private Sub CargarIdProductos()
-        Try
-            Dim comando As New MySqlCommand("SELECT ID_PRODUCTO FROM PRODUCTO", Module1.mysqlconexion)
-            Dim reader As MySqlDataReader = comando.ExecuteReader()
+    '        reader.Close()
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error al cargar productos: " & ex.Message)
+    '    End Try
+    'End Sub
+    ''Private Sub CargarIdProductos()
+    '    Try
+    '        Dim comando As New MySqlCommand("SELECT ID_PRODUCTO FROM PRODUCTO", Module1.mysqlconexion)
+    '        Dim reader As MySqlDataReader = comando.ExecuteReader()
 
-            cmbp.Items.Clear()
+    '        cmbp.Items.Clear()
 
-            While reader.Read()
-                cmbp.Items.Add(reader("ID_PRODUCTO").ToString())
-            End While
+    '        While reader.Read()
+    '            cmbp.Items.Add(reader("ID_PRODUCTO").ToString())
+    '        End While
 
-            reader.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error al cargar productos: " & ex.Message)
-        End Try
-    End Sub
+    '        reader.Close()
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error al cargar productos: " & ex.Message)
+    '    End Try
+    'End Sub
     Private Sub CargarDestinos()
         Try
             Dim comando As New MySqlCommand("SELECT Nombre FROM Destinos", Module1.mysqlconexion)
@@ -203,8 +242,8 @@ Public Class VIAJES
             Module1.funcionConectarBD()
             ActualizarGrid()
             CargarDestinos()
-            CargarIdClientes()
-            CargarIdProductos()
+            'CargarIdClientes()
+            'CargarIdProductos()
             CargarIdCabezales()
             CargarIdContenedor()
         Catch ex As Exception
@@ -228,13 +267,13 @@ Public Class VIAJES
             N.ImageAlign = ContentAlignment.MiddleCenter
             IDV.Enabled = False
             IDV.Text = GenerarIdViajes()
-            cmbc.Enabled = True
+            txtCorreo.Enabled = True
             cmbR.Enabled = True
             cmbcab.Enabled = True
             cmbEST.Enabled = True
             COBRO.Enabled = True
             cmbcon.Enabled = True
-            cmbp.Enabled = True
+            txtProd.Enabled = True
             npCant.Enabled = True
             btnmenu.Enabled = False
             M.Enabled = False
@@ -244,7 +283,7 @@ Public Class VIAJES
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO VIAJES VALUES ('" & IDV.Text & "','" & cmbc.Text & "','" & cmbR.Text & "','" & cmbcab.Text & "','" & cmbEST.Text & "','" & COBRO.Text & "','" & cmbcon.Text & "','" & cmbp.Text & "','" & npCant.Text & "')"
+                sentenciaSQL = "INSERT INTO VIAJES (ID_VIAJE, ID_CLIENTE, RUTA, CABEZAL, ID_CONTENEDOR, CANTIDAD, NOMBRE, TELEFONO, EMAIL, NOMBRE_PRODUCTO) " & " VALUES ('" & IDV.Text & "','" & txtDui.Text & "','" & cmbR.Text & "','" & cmbcab.Text & "','" & cmbcon.Text & "','" & npCant.Text & "','" & txtNom.Text & "','" & txtTel.Text & "','" & txtCorreo.Text & "', '" & txtProd.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
@@ -261,14 +300,14 @@ Public Class VIAJES
             N.Image = My.Resources.Add_properties
             N.ImageAlign = ContentAlignment.MiddleCenter
             IDV.Enabled = False
-            cmbc.Enabled = False
+            txtCorreo.Enabled = False
             cmbR.Enabled = False
             cmbcab.Enabled = False
             cmbEST.Enabled = False
-            COBRO.Enabled = False
+            'COBRO.Enabled = False
             cmbcon.Enabled = False
-            cmbp.Enabled = False
-            npCant.Enabled = False
+            txtCorreo.Enabled = False
+            'npCant.Enabled = False
             btnmenu.Enabled = False
             M.Enabled = True
             ELIMINAR.Enabled = True
@@ -279,13 +318,13 @@ Public Class VIAJES
         If M.Text = "EDITAR" Then
             M.Text = "GUARDAR"
             IDV.Enabled = True
-            cmbc.Enabled = True
+            txtCorreo.Enabled = True
             cmbR.Enabled = True
             cmbcab.Enabled = True
             cmbEST.Enabled = True
             COBRO.Enabled = True
             cmbcon.Enabled = True
-            cmbp.Enabled = True
+            txtProd.Enabled = True
             npCant.Enabled = True
             btnmenu.Enabled = False
             N.Enabled = False
@@ -293,7 +332,7 @@ Public Class VIAJES
         Else
             Try
 
-                sentenciaSQL = "UPDATE VIAJES SET ID_CLIENTE='" & cmbc.Text & "', RUTA='" & cmbR.Text & "', CABEZAL='" & cmbcab.Text & "', ESTADO='" & cmbEST.Text & "', COBRO_VIAJE='" & COBRO.Text & "', ID_CONTENEDOR='" & cmbcon.Text & "', ID_PRODUCTOS='" & cmbp.Text & "', CANTIDAD='" & npCant.Text & "' WHERE ID_VIAJE='" & IDV.Text & "'"
+                sentenciaSQL = "UPDATE VIAJES SET ID_CLIENTE='" & txtDui.Text & "', RUTA='" & cmbR.Text & "', CABEZAL='" & cmbcab.Text & "', ESTADO='" & cmbEST.Text & "', COBRO_VIAJE='" & COBRO.Text & "', ID_CONTENEDOR='" & cmbcon.Text & "', ID_PRODUCTOS='" & txtProd.Text & "', CANTIDAD='" & npCant.Text & "' WHERE ID_VIAJE='" & IDV.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro a sido modificado.", "Informacion", MessageBoxButtons.OK)
@@ -304,13 +343,13 @@ Public Class VIAJES
             End Try
             M.Text = "EDITAR"
             IDV.Enabled = False
-            cmbc.Enabled = False
+            txtDui.Enabled = False
             cmbR.Enabled = False
             cmbcab.Enabled = False
             cmbEST.Enabled = False
             COBRO.Enabled = False
             cmbcon.Enabled = False
-            cmbp.Enabled = False
+            txtProd.Enabled = False
             npCant.Enabled = False
             N.Enabled = True
             btnmenu.Enabled = False
@@ -322,13 +361,13 @@ Public Class VIAJES
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
             IDV.Enabled = True
-            cmbc.Enabled = True
+            txtDui.Enabled = True
             cmbR.Enabled = True
             cmbcab.Enabled = True
             cmbEST.Enabled = True
             COBRO.Enabled = True
             cmbcon.Enabled = True
-            cmbp.Enabled = True
+            txtProd.Enabled = True
             btnmenu.Enabled = False
             npCant.Enabled = True
             M.Enabled = False
@@ -348,13 +387,13 @@ Public Class VIAJES
             End Try
 
             IDV.Enabled = False
-            cmbc.Enabled = False
+            txtDui.Enabled = False
             cmbR.Enabled = False
             cmbcab.Enabled = False
             cmbEST.Enabled = False
             COBRO.Enabled = False
             cmbcon.Enabled = False
-            cmbp.Enabled = False
+            txtProd.Enabled = False
             npCant.Enabled = False
             btnmenu.Enabled = False
             M.Enabled = True
@@ -487,6 +526,16 @@ Public Class VIAJES
         End If
     End Sub
 
+    Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
+
+        Formfactura.Show()
+
+    End Sub
+
+    Private Sub cmbR_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbR.SelectedIndexChanged
+
+    End Sub
+
 
 
 
@@ -494,9 +543,9 @@ Public Class VIAJES
 
 
     'Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
-    '    'Dim total As Double = lbltotal.Text
-    '    'Dim cobro As Double = npCobro.Value
-    '    'Dim PesoP As Double = npPP.Value
+    '    Dim total As Double 
+    '    Dim cobro As Double = npCobro.Value
+    '    Dim Destino As Double = npPP.Value
 
     '    Dim logo As iTextSharp.text.Image
 

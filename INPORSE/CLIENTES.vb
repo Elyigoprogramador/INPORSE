@@ -52,37 +52,7 @@ Public Class CLIENTES
 
         Return True
     End Function
-    Private Function ValidarCorreo(ByVal email As String) As Boolean
-        Dim emailR As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-        If Not System.Text.RegularExpressions.Regex.IsMatch(email, emailR) Then
-            MessageBox.Show("Formato de correo electrónico no válido.")
-            Return False
-        End If
-        Return True
-    End Function
-    Private Function ValidarTelefono(ByVal telefono As String) As Boolean
-        Dim telefonoR As String = "^\d{8}$"
-        If Not System.Text.RegularExpressions.Regex.IsMatch(telefono, telefonoR) Then
-            MessageBox.Show("Número de teléfono no válido. Debe contener 8 dígitos.")
-            Return False
-        End If
-        Return True
-    End Function
-    Private Function ValidarDatos() As Boolean
 
-        If Not ValidarCampos() Then
-            Return False
-        End If
-        If Not ValidarCorreo(txtCOR.Text) Then
-            Return False
-        End If
-
-        If Not ValidarTelefono(txtTEL.Text) Then
-            Return False
-        End If
-
-        Return True
-    End Function
 
     Private Sub CLIENTES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlconsulta.Width = 90

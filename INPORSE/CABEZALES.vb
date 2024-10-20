@@ -77,6 +77,7 @@ Public Class CABEZALES
             MEN.Enabled = True
             MR.Enabled = True
             CC.Enabled = True
+            txtEstado.Enabled = True
             PLACA.Enabled = False
             MOTORISTA.Enabled = False
             CAPACIDAD.Enabled = False
@@ -88,7 +89,7 @@ Public Class CABEZALES
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO CABEZAL VALUES ('" & P.Text & "','" & MEN.Text & "','" & MR.Text & "','" & CC.Text & "')"
+                sentenciaSQL = "INSERT INTO CABEZAL VALUES ('" & P.Text & "','" & MEN.Text & "','" & MR.Text & "','" & CC.Text & "', '" & txtEstado.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
@@ -101,6 +102,7 @@ Public Class CABEZALES
             MEN.Enabled = False
             MR.Enabled = False
             CC.Enabled = False
+            txtEstado.Enabled = False
             PLACA.Enabled = False
             MOTORISTA.Enabled = False
             CAPACIDAD.Enabled = False
@@ -126,7 +128,7 @@ Public Class CABEZALES
         Else
             Try
 
-                sentenciaSQL = "UPDATE CABEZAL SET MOTORISTA_ENCARGADO='" & MEN.Text & "', MARCA='" & MR.Text & "', CAPACIDAD_DE_CARGA='" & CC.Text & "' WHERE PLACA='" & P.Text & "'"
+                sentenciaSQL = "UPDATE CABEZAL Set MOTORISTA_ENCARGADO='" & MEN.Text & "', MARCA='" & MR.Text & "', CAPACIDAD_DE_CARGA='" & CC.Text & "' WHERE PLACA='" & P.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro a sido modificado.", "Informacion", MessageBoxButtons.OK)
