@@ -32,11 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-<<<<<<< HEAD
-            Me.MainForm = Global.INPORSE.Form2
-=======
             Me.MainForm = Global.INPORSE.Form3
->>>>>>> 1180661 (2024/10/19)
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

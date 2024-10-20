@@ -160,18 +160,12 @@ Public Class Form2
 
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-<<<<<<< HEAD
         Dim result As DialogResult = MessageBox.Show("¿Seguro que deseas cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
             Me.Close()
             Form1.Close()
         End If
-=======
-        Me.Close()
-        Form1.Close()
-        Form3.Close()
->>>>>>> 1180661 (2024/10/19)
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized

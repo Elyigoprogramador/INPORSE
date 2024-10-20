@@ -68,18 +68,6 @@ Public Class CABEZALES
         PLACA.Visible = False
         MOTORISTA.Visible = False
         CAPACIDAD.Visible = False
-        P.Enabled = False
-        MEN.Enabled = False
-        MR.Enabled = False
-        CC.Enabled = False
-        P.Visible = False
-        MEN.Visible = False
-        MR.Visible = False
-        CC.Visible = False
-        Label1.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = False
     End Sub
 
     Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
@@ -89,15 +77,7 @@ Public Class CABEZALES
             MEN.Enabled = True
             MR.Enabled = True
             CC.Enabled = True
-            P.Visible = True
-            MEN.Visible = True
-            MR.Visible = True
-            CC.Visible = True
-            Label1.Visible = True
-            Label2.Visible = True
-            Label3.Visible = True
-            Label4.Visible = True
-            PLACA.Enabled = True
+            PLACA.Enabled = False
             MOTORISTA.Enabled = False
             CAPACIDAD.Enabled = False
             M.Enabled = False
@@ -117,18 +97,6 @@ Public Class CABEZALES
                 MessageBox.Show(ex.ToString)
             End Try
             N.Text = "NUEVO"
-            P.Visible = False
-            MEN.Visible = False
-            MR.Visible = False
-            CC.Visible = False
-            P.Visible = False
-            MEN.Visible = False
-            MR.Visible = False
-            CC.Visible = False
-            Label1.Visible = False
-            Label2.Visible = False
-            Label3.Visible = False
-            Label4.Visible = False
             P.Enabled = False
             MEN.Enabled = False
             MR.Enabled = False
@@ -145,14 +113,6 @@ Public Class CABEZALES
     Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
         If M.Text = "MODIFICAR" Then
             M.Text = "GUARDAR"
-            P.Visible = True
-            MEN.Visible = True
-            MR.Visible = True
-            CC.Visible = True
-            Label1.Visible = True
-            Label2.Visible = True
-            Label3.Visible = True
-            Label4.Visible = True
             P.Enabled = True
             MEN.Enabled = True
             MR.Enabled = True
@@ -176,14 +136,6 @@ Public Class CABEZALES
                 MessageBox.Show(ex.ToString)
             End Try
             M.Text = "MODIFICAR"
-            P.Visible = False
-            MEN.Visible = False
-            MR.Visible = False
-            CC.Visible = False
-            Label1.Visible = False
-            Label2.Visible = False
-            Label3.Visible = False
-            Label4.Visible = False
             P.Enabled = False
             MEN.Enabled = False
             MR.Enabled = False
@@ -200,14 +152,6 @@ Public Class CABEZALES
     Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
-            P.Visible = True
-            MEN.Visible = True
-            MR.Visible = True
-            CC.Visible = True
-            Label1.Visible = True
-            Label2.Visible = True
-            Label3.Visible = True
-            Label4.Visible = True
             P.Enabled = True
             MEN.Enabled = True
             MR.Enabled = True
@@ -231,14 +175,7 @@ Public Class CABEZALES
                 MessageBox.Show(ex.ToString)
 
             End Try
-            P.Visible = False
-            MEN.Visible = False
-            MR.Visible = False
-            CC.Visible = False
-            Label1.Visible = False
-            Label2.Visible = False
-            Label3.Visible = False
-            Label4.Visible = False
+
             P.Enabled = False
             MEN.Enabled = False
             MR.Enabled = False
@@ -283,10 +220,10 @@ Public Class CABEZALES
     Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
-
+            btnmenu.Text = "-->"
         ElseIf pnlconsulta.Width = 300 Then
             Timercontrae.Enabled = True
-
+            btnmenu.Text = "CONSULTAR"
         End If
 
         PLACA.Enabled = True
