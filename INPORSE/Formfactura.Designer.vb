@@ -51,13 +51,7 @@ Partial Class Formfactura
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbTel = New System.Windows.Forms.ComboBox()
         Me.lbl69 = New System.Windows.Forms.Label()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
         Me.btnimprimirfact = New System.Windows.Forms.Button()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.PanelPDF = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -348,20 +342,6 @@ Partial Class Formfactura
         Me.lbl69.TabIndex = 122
         Me.lbl69.Text = "Telefono:"
         '
-        'PrintPreviewDialog1
-        '
-        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
-        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
-        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
-        Me.PrintPreviewDialog1.Enabled = True
-        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
-        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
-        Me.PrintPreviewDialog1.Visible = False
-        '
-        'PrintDialog1
-        '
-        Me.PrintDialog1.UseEXDialog = True
-        '
         'btnimprimirfact
         '
         Me.btnimprimirfact.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -373,23 +353,11 @@ Partial Class Formfactura
         Me.btnimprimirfact.Text = "Imprimir Factura"
         Me.btnimprimirfact.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'PanelPDF
-        '
-        Me.PanelPDF.Location = New System.Drawing.Point(351, 105)
-        Me.PanelPDF.Name = "PanelPDF"
-        Me.PanelPDF.Size = New System.Drawing.Size(276, 300)
-        Me.PanelPDF.TabIndex = 125
-        '
         'Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(639, 566)
-        Me.Controls.Add(Me.PanelPDF)
         Me.Controls.Add(Me.btnimprimirfact)
         Me.Controls.Add(Me.cmbTel)
         Me.Controls.Add(Me.lbl69)
@@ -456,11 +424,5 @@ Partial Class Formfactura
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbTel As ComboBox
     Friend WithEvents lbl69 As Label
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
-    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
-    Friend WithEvents PrintDialog1 As PrintDialog
-    Friend WithEvents PageSetupDialog1 As PageSetupDialog
     Friend WithEvents btnimprimirfact As Button
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents PanelPDF As Guna.UI2.WinForms.Guna2Panel
 End Class

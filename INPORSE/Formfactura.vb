@@ -6,7 +6,7 @@ Imports iTextSharp.text.pdf.draw
 Imports iTextSharp
 Imports System.IO
 Imports System.Drawing.Printing
-Imports PdfiumViewer
+
 
 
 Public Class Formfactura
@@ -18,7 +18,6 @@ Public Class Formfactura
     Private pesoProducto As Decimal
     Private total As Decimal
     Public UsuarioActual As String
-    Private pdfViewer As PdfViewer
     Private Function GenerarCodigoFactura() As String
 
         Dim random As New Random()
@@ -176,9 +175,7 @@ Public Class Formfactura
 
     Private Sub Formfactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        pdfViewer = New PdfViewer()
-        pdfViewer.Dock = DockStyle.Fill
-        panelPDF.Controls.Add(pdfViewer)
+
         txtasesor.Text = Form1.NombreUsuario
 
         Try
@@ -207,60 +204,25 @@ Public Class Formfactura
         Dim Deca As Integer = 18
         Dim IVA As Double = 0.13
 
-        If cmbDestino.Text = "San Miguel" Then
-            Destino = 230
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Sonsonate" Then
-            Destino = 30
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "La Libertad" Then
-            Destino = 170
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Santa Ana" Then
-            Destino = 120
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "La Paz" Then
-            Destino = 200
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Cabañas" Then
-            Destino = 155
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Usulután" Then
-            Destino = 110
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Morazán" Then
-            Destino = 135
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "La Unión" Then
-            Destino = 260
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "San Vicente" Then
-            Destino = 140
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "San Salvador" Then
-            Destino = 100
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Chalatenango" Then
-            Destino = 210
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Cuscatlán" Then
-            Destino = 120
-            cobro = (Deca + Destino) * IVA
-            total = (Deca + Destino) + cobro
-        ElseIf cmbDestino.Text = "Ahuachapán" Then
-            Destino = 160
+        Dim destinos As New Dictionary(Of String, Decimal) From {
+    {"San Miguel", 230},
+    {"Sonsonate", 30},
+    {"La Libertad", 170},
+    {"Santa Ana", 120},
+    {"La Paz", 200},
+    {"Cabañas", 155},
+    {"Usulután", 110},
+    {"Morazán", 135},
+    {"La Unión", 260},
+    {"San Vicente", 140},
+    {"San Salvador", 100},
+    {"Chalatenango", 210},
+    {"Cuscatlán", 120},
+    {"Ahuachapán", 160}
+}
+
+        If destinos.ContainsKey(cmbDestino.Text) Then
+            Destino = destinos(cmbDestino.Text)
             cobro = (Deca + Destino) * IVA
             total = (Deca + Destino) + cobro
         End If
