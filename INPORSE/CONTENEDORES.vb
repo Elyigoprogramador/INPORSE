@@ -201,10 +201,10 @@ Public Class CONTENEDORES
     Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
-            btnmenu.Text = "-->"
+
         ElseIf pnlconsulta.Width = 300 Then
             Timercontrae.Enabled = True
-            btnmenu.Text = "CONSULTAR"
+
         End If
 
         TID.Enabled = True

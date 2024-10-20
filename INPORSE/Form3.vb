@@ -1,34 +1,33 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Runtime.InteropServices
 Public Class Form3
-  
+    <DllImport("User32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+
+
+    <DllImport("User32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+    Private Sub Panel4_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel4.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'crear una conexion a la base de datos MySQL
-        Dim conexion As New MySqlConnection("Server=localhost; User ID=root; Password=admin123; Port=3306; Database=INPORSE;")
 
-        ' Comando SQL para seleccionar los datps de la tabla 
-        Dim sqlQuery As String = "SELECT * FROM CLIENTE"
-        Dim SqlCommand As New MySqlCommand(sqlQuery, conexion)
+    End Sub
 
-        Try
-            'Abre la conexion
-            conexion.Open()
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
 
-            'crea un datable como fuente de datos del dataGridView
-            Dim dataTable As New DataTable()
-            Dim adapter As New MySqlDataAdapter(SqlCommand)
-            adapter.Fill(dataTable)
+    Private Sub btncapaci_Click(sender As Object, e As EventArgs) Handles btncapaci.Click
+        Dim url As String = "https://docs.google.com/forms/d/e/1FAIpQLSdcl1a66ZxxJ7yeFcSMoGXT70nlbpXofi3LDomwp2O5Nk8afg/viewform"
+        Process.Start(url)
+    End Sub
 
-            'asigna el dataTable como fuente de datos de datagridview
-            data1.DataSource = dataTable
-
-        Catch ex As MySqlException
-            ' muestra un mensaje en caso de error
-            MessageBox.Show("Error:" & ex.Message)
-        Finally
-            'Cierra la conexion si esta abierta
-            If conexion IsNot Nothing AndAlso conexion.State = ConnectionState.Open Then
-                conexion.Close()
-            End If
-        End Try
+    Private Sub btnRE_Click(sender As Object, e As EventArgs) Handles btnRE.Click
+        Me.Hide()
+        Form1.Show()
     End Sub
 End Class

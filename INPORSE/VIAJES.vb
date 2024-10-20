@@ -395,10 +395,10 @@ Public Class VIAJES
     Private Sub btnmenu_Click(sender As Object, e As EventArgs) Handles btnmenu.Click
         If pnlconsulta.Width = 90 Then
             Timerdespliega.Enabled = True
-            btnmenu.Text = "-->"
+
         ElseIf pnlconsulta.Width = 300 Then
             Timercontrae.Enabled = True
-            btnmenu.Text = "CONSULTAR"
+
         End If
         TID.Enabled = True
         RUTA.Enabled = True
@@ -487,9 +487,11 @@ Public Class VIAJES
         End If
     End Sub
 
-    Private Sub pnlconsulta_Paint(sender As Object, e As PaintEventArgs) Handles pnlconsulta.Paint
 
-    End Sub
+
+
+
+
 
     'Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
     '    'Dim total As Double = lbltotal.Text

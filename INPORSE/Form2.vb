@@ -165,13 +165,12 @@ Public Class Form2
         If result = DialogResult.Yes Then
             Me.Close()
             Form1.Close()
+            Form3.Close()
         End If
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
-    End Sub
 
 End Class

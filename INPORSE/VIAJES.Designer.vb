@@ -23,10 +23,11 @@ Partial Class VIAJES
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VIAJES))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlconsulta = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnmenu = New System.Windows.Forms.Button()
@@ -49,8 +50,6 @@ Partial Class VIAJES
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Timercontrae = New System.Windows.Forms.Timer(Me.components)
         Me.Timerdespliega = New System.Windows.Forms.Timer(Me.components)
-        Me.HISTORIAL = New System.Windows.Forms.ListBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -74,6 +73,8 @@ Partial Class VIAJES
         Me.cmbEST = New System.Windows.Forms.ComboBox()
         Me.btnFactura = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.IDV = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.HISTORIAL = New System.Windows.Forms.ListBox()
         Me.pnlconsulta.SuspendLayout()
         CType(Me.data1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.npCant, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,14 +110,17 @@ Partial Class VIAJES
         '
         'btnmenu
         '
-        Me.btnmenu.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnmenu.BackColor = System.Drawing.Color.Transparent
+        Me.btnmenu.BackgroundImage = CType(resources.GetObject("btnmenu.BackgroundImage"), System.Drawing.Image)
+        Me.btnmenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnmenu.FlatAppearance.BorderSize = 0
+        Me.btnmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
         Me.btnmenu.Location = New System.Drawing.Point(3, 3)
         Me.btnmenu.Name = "btnmenu"
-        Me.btnmenu.Size = New System.Drawing.Size(83, 29)
+        Me.btnmenu.Size = New System.Drawing.Size(42, 32)
         Me.btnmenu.TabIndex = 19
-        Me.btnmenu.Text = "CONSULTAR"
         Me.btnmenu.UseVisualStyleBackColor = False
         '
         'Label12
@@ -201,41 +205,48 @@ Partial Class VIAJES
         Me.data1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.data1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.data1.BackgroundColor = System.Drawing.Color.LavenderBlush
-        Me.data1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(52, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.LavenderBlush
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.data1.ColumnHeadersHeight = 30
         Me.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.data1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column10, Me.Column9, Me.Column8, Me.Column7, Me.Column5, Me.Column4, Me.Column3, Me.Column2})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.data1.DefaultCellStyle = DataGridViewCellStyle2
         Me.data1.EnableHeadersVisualStyles = False
-        Me.data1.GridColor = System.Drawing.Color.CadetBlue
+        Me.data1.GridColor = System.Drawing.Color.White
         Me.data1.Location = New System.Drawing.Point(1, 2)
         Me.data1.Name = "data1"
         Me.data1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CadetBlue
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightPink
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PapayaWhip
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.data1.RowHeadersWidth = 51
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle9
-        Me.data1.Size = New System.Drawing.Size(744, 264)
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightPink
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.data1.Size = New System.Drawing.Size(675, 264)
         Me.data1.TabIndex = 56
         '
         'Column1
@@ -317,28 +328,6 @@ Partial Class VIAJES
         'Timerdespliega
         '
         Me.Timerdespliega.Interval = 5
-        '
-        'HISTORIAL
-        '
-        Me.HISTORIAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HISTORIAL.FormattingEnabled = True
-        Me.HISTORIAL.ItemHeight = 7
-        Me.HISTORIAL.Location = New System.Drawing.Point(750, 70)
-        Me.HISTORIAL.Margin = New System.Windows.Forms.Padding(2)
-        Me.HISTORIAL.Name = "HISTORIAL"
-        Me.HISTORIAL.Size = New System.Drawing.Size(280, 347)
-        Me.HISTORIAL.TabIndex = 79
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(753, 30)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(277, 25)
-        Me.Label14.TabIndex = 80
-        Me.Label14.Text = "HISTORIAL DE REGISTRO"
         '
         'Label6
         '
@@ -598,12 +587,36 @@ Partial Class VIAJES
         Me.IDV.Size = New System.Drawing.Size(155, 19)
         Me.IDV.TabIndex = 111
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Uighur", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(695, 3)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(178, 25)
+        Me.Label14.TabIndex = 113
+        Me.Label14.Text = "HISTORIAL DE REGISTRO"
+        '
+        'HISTORIAL
+        '
+        Me.HISTORIAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HISTORIAL.FormattingEnabled = True
+        Me.HISTORIAL.ItemHeight = 7
+        Me.HISTORIAL.Location = New System.Drawing.Point(705, 33)
+        Me.HISTORIAL.Margin = New System.Windows.Forms.Padding(2)
+        Me.HISTORIAL.Name = "HISTORIAL"
+        Me.HISTORIAL.Size = New System.Drawing.Size(161, 235)
+        Me.HISTORIAL.TabIndex = 112
+        '
         'VIAJES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LavenderBlush
         Me.ClientSize = New System.Drawing.Size(1323, 735)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.HISTORIAL)
         Me.Controls.Add(Me.IDV)
         Me.Controls.Add(Me.btnFactura)
         Me.Controls.Add(Me.cmbEST)
@@ -624,8 +637,6 @@ Partial Class VIAJES
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.HISTORIAL)
         Me.Controls.Add(Me.ELIMINAR)
         Me.Controls.Add(Me.pnlconsulta)
         Me.Controls.Add(Me.N)
@@ -668,8 +679,6 @@ Partial Class VIAJES
     Friend WithEvents ELIMINAR As Button
     Friend WithEvents Timercontrae As Timer
     Friend WithEvents Timerdespliega As Timer
-    Friend WithEvents HISTORIAL As ListBox
-    Friend WithEvents Label14 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
@@ -690,4 +699,6 @@ Partial Class VIAJES
     Friend WithEvents cmbEST As ComboBox
     Friend WithEvents btnFactura As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents IDV As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents HISTORIAL As ListBox
 End Class
