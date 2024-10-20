@@ -50,15 +50,14 @@ Partial Class Form2
         '
         Me.btnViajes.BackColor = System.Drawing.Color.Transparent
         Me.btnViajes.FlatAppearance.BorderSize = 0
-        Me.btnViajes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnViajes.Font = New System.Drawing.Font("Courier New", 26.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViajes.ForeColor = System.Drawing.Color.LightPink
         Me.btnViajes.Image = CType(resources.GetObject("btnViajes.Image"), System.Drawing.Image)
         Me.btnViajes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnViajes.Location = New System.Drawing.Point(0, 385)
+        Me.btnViajes.Location = New System.Drawing.Point(-1, 385)
         Me.btnViajes.Name = "btnViajes"
-        Me.btnViajes.Size = New System.Drawing.Size(342, 48)
+        Me.btnViajes.Size = New System.Drawing.Size(275, 48)
         Me.btnViajes.TabIndex = 4
         Me.btnViajes.Text = "VIAJES"
         Me.btnViajes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -75,7 +74,7 @@ Partial Class Form2
         Me.Button5.ForeColor = System.Drawing.Color.Black
         Me.Button5.Location = New System.Drawing.Point(0, 653)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(335, 30)
+        Me.Button5.Size = New System.Drawing.Size(264, 30)
         Me.Button5.TabIndex = 7
         Me.Button5.Text = "LOGIN OUT"
         Me.Button5.UseVisualStyleBackColor = False
@@ -136,7 +135,7 @@ Partial Class Form2
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 35)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(337, 685)
+        Me.Panel1.Size = New System.Drawing.Size(266, 685)
         Me.Panel1.TabIndex = 13
         '
         'Label3
@@ -155,15 +154,14 @@ Partial Class Form2
         '
         Me.btnCont.BackColor = System.Drawing.Color.Transparent
         Me.btnCont.FlatAppearance.BorderSize = 0
-        Me.btnCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnCont.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCont.Font = New System.Drawing.Font("Courier New", 26.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCont.ForeColor = System.Drawing.Color.LightPink
         Me.btnCont.Image = CType(resources.GetObject("btnCont.Image"), System.Drawing.Image)
         Me.btnCont.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCont.Location = New System.Drawing.Point(1, 334)
+        Me.btnCont.Location = New System.Drawing.Point(0, 334)
         Me.btnCont.Name = "btnCont"
-        Me.btnCont.Size = New System.Drawing.Size(341, 48)
+        Me.btnCont.Size = New System.Drawing.Size(274, 48)
         Me.btnCont.TabIndex = 10
         Me.btnCont.Text = "CONTENEDORES"
         Me.btnCont.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -173,15 +171,14 @@ Partial Class Form2
         '
         Me.btnCab.BackColor = System.Drawing.Color.Transparent
         Me.btnCab.FlatAppearance.BorderSize = 0
-        Me.btnCab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnCab.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCab.Font = New System.Drawing.Font("Courier New", 26.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCab.ForeColor = System.Drawing.Color.LightPink
         Me.btnCab.Image = CType(resources.GetObject("btnCab.Image"), System.Drawing.Image)
         Me.btnCab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCab.Location = New System.Drawing.Point(2, 280)
+        Me.btnCab.Location = New System.Drawing.Point(1, 280)
         Me.btnCab.Name = "btnCab"
-        Me.btnCab.Size = New System.Drawing.Size(340, 48)
+        Me.btnCab.Size = New System.Drawing.Size(273, 48)
         Me.btnCab.TabIndex = 11
         Me.btnCab.Text = "CABEZALES"
         Me.btnCab.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -202,15 +199,14 @@ Partial Class Form2
         '
         Me.Button3.BackColor = System.Drawing.Color.Transparent
         Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button3.Font = New System.Drawing.Font("Courier New", 26.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.LightPink
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(-1, 226)
+        Me.Button3.Location = New System.Drawing.Point(-2, 226)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(340, 48)
+        Me.Button3.Size = New System.Drawing.Size(273, 48)
         Me.Button3.TabIndex = 15
         Me.Button3.Text = "MOTORISTAS"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -228,13 +224,13 @@ Partial Class Form2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Copperplate Gothic Light", 21.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(-1, 147)
+        Me.Label2.Location = New System.Drawing.Point(-5, 147)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(338, 28)
+        Me.Label2.Size = New System.Drawing.Size(270, 30)
         Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Ventana De Aceso A Tablas"
+        Me.Label2.Text = " Aceso A Tablas"
         '
         'Panel2
         '
@@ -258,9 +254,9 @@ Partial Class Form2
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.Location = New System.Drawing.Point(342, 79)
+        Me.Panel3.Location = New System.Drawing.Point(267, 77)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1044, 640)
+        Me.Panel3.Size = New System.Drawing.Size(1119, 642)
         Me.Panel3.TabIndex = 16
         '
         'contrae
