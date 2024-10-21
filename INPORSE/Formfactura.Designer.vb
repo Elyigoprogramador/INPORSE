@@ -68,7 +68,7 @@ Partial Class Formfactura
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(639, 36)
+        Me.Panel1.Size = New System.Drawing.Size(982, 36)
         Me.Panel1.TabIndex = 11
         '
         'Label5
@@ -91,7 +91,7 @@ Partial Class Formfactura
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCerrar.Location = New System.Drawing.Point(595, 0)
+        Me.btnCerrar.Location = New System.Drawing.Point(938, 0)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(40, 32)
         Me.btnCerrar.TabIndex = 11
@@ -411,7 +411,7 @@ Partial Class Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(639, 669)
+        Me.ClientSize = New System.Drawing.Size(982, 669)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DateTime2)
         Me.Controls.Add(Me.txtDireccion)

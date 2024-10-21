@@ -201,7 +201,6 @@ Partial Class Form1
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(249, 45)
         Me.txtUser.TabIndex = 11
-        Me.txtUser.UseSystemPasswordChar = True
         '
         'Panel2
         '

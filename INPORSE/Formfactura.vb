@@ -205,6 +205,7 @@ Public Class Formfactura
             CargarProducto()
             CargarCorreo()
             CargarTelefono()
+            CargarContenedor()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -265,7 +266,7 @@ Public Class Formfactura
         Dim logo As iTextSharp.text.Image
         Try
             logo = iTextSharp.text.Image.GetInstance("C:\Users\josia\Downloads\Yigo prueba\LOGO_INPORSE1.PNG")
-            logo.ScaleToFit(65, 65)
+            logo.ScaleToFit(70, 70)
             logo.Alignment = Element.ALIGN_RIGHT
             encabezadoTable.AddCell(New PdfPCell(logo) With {.Border = PdfPCell.NO_BORDER})
         Catch ex As Exception
@@ -276,11 +277,11 @@ Public Class Formfactura
         End Try
 
         ' Fuente
-        Dim fuenteTitulo As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 26, Font.Bold, New BaseColor(0, 123, 255))
+        Dim fuenteTitulo As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 28, Font.Bold, New BaseColor(0, 0, 0))
         Dim fuenteSubTitulo As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 15)
         Dim fuenteNormal As Font = FontFactory.GetFont(FontFactory.HELVETICA, 14)
         Dim fuenteNormal1 As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)
-        Dim fuenteinfo As Font = FontFactory.GetFont(FontFactory.HELVETICA, 12)
+        Dim fuenteinfo As Font = FontFactory.GetFont(FontFactory.HELVETICA, 14)
         Dim CodFac As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16, Font.Bold, New BaseColor(0, 0, 0))
         Dim fuentePequena As Font = FontFactory.GetFont(FontFactory.HELVETICA, 10)
         Dim FuenteDetalle As Font = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 15)
@@ -297,7 +298,7 @@ Public Class Formfactura
         doc.Add(encabezadoTable)
 
         ' Factura Exportadora
-        Dim facturaTitulo As New Paragraph("FACTURA DE EXPORTACIÓN DE CARGA", fuenteSubTitulo)
+        Dim facturaTitulo As New Paragraph("FACTURA", fuenteSubTitulo)
         facturaTitulo.Alignment = Element.ALIGN_RIGHT
         doc.Add(facturaTitulo)
 
@@ -334,11 +335,11 @@ Public Class Formfactura
         ' Tabla de detalles del viaje
         Dim tablaViaje As New PdfPTable(1)
         tablaViaje.WidthPercentage = 100
-        tablaViaje.AddCell(New PdfPCell(New Phrase("Departamento de Destino:  " & cmbCliente.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
+        tablaViaje.AddCell(New PdfPCell(New Phrase("Departamento de Destino:  " & cmbDestino.Text & " " & cmbDistrito.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
         tablaViaje.AddCell(New PdfPCell(New Phrase("Cabezal:  " & cmbCabezal.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
         tablaViaje.AddCell(New PdfPCell(New Phrase("Motorista:  " & cmbMotorista.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
         tablaViaje.AddCell(New PdfPCell(New Phrase("Contenedor:  " & cmbContenedor.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
-        tablaViaje.AddCell(New PdfPCell(New Phrase("Direccion del Contratista:  " & txtDireccion.Text & cmbDistrito.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
+        tablaViaje.AddCell(New PdfPCell(New Phrase("Direccion del Contratista:  " & txtDireccion.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
 
         ' Añadir las tablas a las celdas de la tabla principal
         tablaDetalles.AddCell(New PdfPCell(tablaClienteFecha) With {.Border = PdfPCell.NO_BORDER})
@@ -348,22 +349,13 @@ Public Class Formfactura
         doc.Add(tablaDetalles)
 
 
-
-        ' Dirección y Municipio
-        'Dim tablaDireccionMunicipio As New PdfPTable(2)
-        'tablaDireccionMunicipio.WidthPercentage = 40
-        'tablaDireccionMunicipio.SetWidths(New Single() {1, 1})
-        'tablaDireccionMunicipio.AddCell(New PdfPCell(New Phrase("Dirección:" & txtDireccion.Text, fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
-
-        ' Condiciones de Pago
-        doc.Add(New Paragraph("Condiciones de Pago:", fuenteNormal))
         doc.Add(New Paragraph(" ", fuenteNormal))
         ' Detalle de la factura
         Dim tablaDetalle As New PdfPTable(4)
         tablaDetalle.WidthPercentage = 100
         tablaDetalle.SetWidths(New Single() {0.7, 3, 1, 1.2})
         tablaDetalle.AddCell(New PdfPCell(New Phrase("CANT", fuenteSubTitulo)))
-        tablaDetalle.AddCell(New PdfPCell(New Phrase("                          DESCRIPCIÓN     ", fuenteSubTitulo)))
+        tablaDetalle.AddCell(New PdfPCell(New Phrase("                       DESCRIPCIÓN     ", fuenteSubTitulo)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("PRECIO UNITARIO", fuenteSubTitulo)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("VENTAS GRAVADAS", fuenteSubTitulo)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("10", fuenteNormal)))
@@ -401,11 +393,12 @@ Public Class Formfactura
         doc.Add(tablaDetalle)
 
         ' Total
+        doc.Add(New Paragraph("Factura realizada por: " & txtasesor.Text, fuenteSubTitulo))
         doc.Add(New Paragraph("Total: $" & total, fuenteSubTitulo))
 
         ' Mensaje final
         doc.Add(New Paragraph("¡Gracias por utilizar nuestros servicios!", fuenteNormal) With {.Alignment = Element.ALIGN_CENTER})
-        doc.Add(New Paragraph("info@grupoinporse.com", fuenteNormal) With {.Alignment = Element.ALIGN_CENTER})
+        doc.Add(New Paragraph("info@grupoinporse.com", fuenteNormal) With {.Alignment = Element.ALIGN_RIGHT})
 
         doc.Close()
         MsgBox("Factura PDF generada correctamente")
@@ -414,6 +407,12 @@ Public Class Formfactura
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+
+    End Sub
+
+    Private Sub btnimprimirfact_Click(sender As Object, e As EventArgs) Handles btnimprimirfact.Click
+
+        Imprimir.Show()
 
     End Sub
 End Class
