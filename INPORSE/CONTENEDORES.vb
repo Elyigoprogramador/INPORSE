@@ -58,6 +58,13 @@ Public Class CONTENEDORES
 
         TID.Visible = False
         TTIPO.Visible = False
+        txtID.Visible = False
+        T.Visible = False
+        cmbTI.Visible = False
+        cmbTI.Visible = False
+        Label1.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
     End Sub
 
     Private Sub CONTENEDORES_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -69,7 +76,17 @@ Public Class CONTENEDORES
             N.Text = "GUARDAR"
             txtID.Enabled = True
             T.Enabled = True
+            N.Image = My.Resources.Save
+            N.ImageAlign = ContentAlignment.MiddleCenter
             cmbTI.Enabled = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            cmbTI.Visible = True
+            TID.Visible = True
+            TTIPO.Visible = True
+            txtID.Visible = True
+            T.Visible = True
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -89,9 +106,19 @@ Public Class CONTENEDORES
                 MessageBox.Show(ex.ToString)
             End Try
             N.Text = "NUEVO"
+            N.Image = My.Resources.Add_properties
+            N.ImageAlign = ContentAlignment.MiddleCenter
             txtID.Enabled = False
             T.Enabled = False
             cmbTI.Enabled = False
+            cmbTI.Visible = False
+            T.Visible = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            TID.Visible = False
+            TTIPO.Visible = False
+            txtID.Visible = False
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -101,11 +128,19 @@ Public Class CONTENEDORES
     End Sub
 
     Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
-        If M.Text = "MODIFICAR" Then
+        If M.Text = "EDITAR" Then
             M.Text = "GUARDAR"
             txtID.Enabled = True
             T.Enabled = True
             cmbTI.Enabled = True
+            cmbTI.Visible = True
+            T.Visible = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            TID.Visible = True
+            TTIPO.Visible = True
+            txtID.Visible = True
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -123,10 +158,18 @@ Public Class CONTENEDORES
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
-            M.Text = "MODIFICAR"
+            M.Text = "EDITAR"
             txtID.Enabled = False
             T.Enabled = False
             cmbTI.Enabled = False
+            cmbTI.Visible = False
+            T.Visible = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            TID.Visible = False
+            TTIPO.Visible = False
+            txtID.Visible = False
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -139,14 +182,15 @@ Public Class CONTENEDORES
     Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
+
             txtID.Enabled = True
             T.Enabled = True
             cmbTI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
-            btnmenu.Enabled = False
-            N.Enabled = False
-            M.Enabled = False
+            btnmenu.Enabled = True
+            N.Enabled = True
+            M.Enabled = True
         Else
             Dim CodigoEliminar As String
             CodigoEliminar = InputBox("Digite el codigo del registro a eliminar:", "Eliminar")
@@ -160,6 +204,7 @@ Public Class CONTENEDORES
                 MessageBox.Show(ex.ToString)
 
             End Try
+
             txtID.Enabled = False
             T.Enabled = False
             cmbTI.Enabled = False

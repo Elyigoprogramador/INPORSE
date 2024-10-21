@@ -82,6 +82,22 @@ Public Class CON
         tID.Visible = False
         Tnombre.Visible = False
         Tlicencia.Visible = False
+        txtID.Visible = False
+        txtNOM.Visible = False
+        NL.Visible = False
+        DISPO.Visible = False
+        DUI.Visible = False
+        TEL.Visible = False
+        DIREC.Visible = False
+        SB.Visible = False
+        Label1.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label8.Visible = False
+        Label7.Visible = False
+        Label6.Visible = False
     End Sub
 
     Private Sub MOTORISTAS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -91,6 +107,8 @@ Public Class CON
     Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
+            N.Image = My.Resources.Save
+            N.ImageAlign = ContentAlignment.MiddleCenter
             txtID.Enabled = True
             txtNOM.Enabled = True
             NL.Enabled = True
@@ -99,6 +117,22 @@ Public Class CON
             TEL.Enabled = True
             DIREC.Enabled = True
             SB.Enabled = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label8.Visible = True
+            Label7.Visible = True
+            Label6.Visible = True
+            txtID.Visible = True
+            txtNOM.Visible = True
+            NL.Visible = True
+            DISPO.Visible = True
+            DUI.Visible = True
+            TEL.Visible = True
+            DIREC.Visible = True
+            SB.Visible = True
             M.Enabled = False
             btnmenu.Enabled = False
             Eliminar.Enabled = False
@@ -116,6 +150,8 @@ Public Class CON
                 MessageBox.Show(ex.ToString)
             End Try
             N.Text = "NUEVO"
+            N.Image = My.Resources.Add_properties
+            N.ImageAlign = ContentAlignment.MiddleCenter
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
@@ -124,6 +160,22 @@ Public Class CON
             TEL.Enabled = False
             DIREC.Enabled = False
             SB.Enabled = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label8.Visible = False
+            Label7.Visible = False
+            Label6.Visible = False
+            txtID.Visible = False
+            txtNOM.Visible = False
+            NL.Visible = False
+            DISPO.Visible = False
+            DUI.Visible = False
+            TEL.Visible = False
+            DIREC.Visible = False
+            SB.Visible = False
             btnmenu.Enabled = False
             M.Enabled = True
             Eliminar.Enabled = True
@@ -131,7 +183,7 @@ Public Class CON
     End Sub
 
     Private Sub M_Click_1(sender As Object, e As EventArgs) Handles M.Click
-        If M.Text = "MODIFICAR" Then
+        If M.Text = "EDITAR" Then
             M.Text = "GUARDAR"
             txtID.Enabled = True
             txtNOM.Enabled = True
@@ -141,6 +193,22 @@ Public Class CON
             TEL.Enabled = True
             DIREC.Enabled = True
             SB.Enabled = True
+            Label1.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label8.Visible = True
+            Label7.Visible = True
+            Label6.Visible = True
+            txtID.Visible = True
+            txtNOM.Visible = True
+            NL.Visible = True
+            DISPO.Visible = True
+            DUI.Visible = True
+            TEL.Visible = True
+            DIREC.Visible = True
+            SB.Visible = True
             N.Enabled = False
             btnmenu.Enabled = False
             Eliminar.Enabled = False
@@ -157,7 +225,7 @@ Public Class CON
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
-            M.Text = "MODIFICAR"
+            M.Text = "EDITAR"
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
@@ -166,6 +234,22 @@ Public Class CON
             TEL.Enabled = False
             DIREC.Enabled = False
             SB.Enabled = False
+            Label1.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label8.Visible = False
+            Label7.Visible = False
+            Label6.Visible = False
+            txtID.Visible = False
+            txtNOM.Visible = False
+            NL.Visible = False
+            DISPO.Visible = False
+            DUI.Visible = False
+            TEL.Visible = False
+            DIREC.Visible = False
+            SB.Visible = False
             btnmenu.Enabled = False
             N.Enabled = True
             Eliminar.Enabled = True
@@ -175,6 +259,7 @@ Public Class CON
     Private Sub Eliminar_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
+
             txtID.Enabled = True
             txtNOM.Enabled = True
             NL.Enabled = True
@@ -183,9 +268,9 @@ Public Class CON
             TEL.Enabled = True
             DIREC.Enabled = True
             SB.Enabled = True
-            N.Enabled = False
-            btnmenu.Enabled = False
-            M.Enabled = False
+            N.Enabled = True
+            btnmenu.Enabled = True
+            M.Enabled = True
         Else
             Dim CodigoEliminar As String
             CodigoEliminar = InputBox("Digite el codigo del registro a eliminar:", "Eliminar")
@@ -199,6 +284,7 @@ Public Class CON
                 MessageBox.Show(ex.ToString)
 
             End Try
+
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False

@@ -74,7 +74,7 @@ Partial Class CONTENEDORES
         Me.btnmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
-        Me.btnmenu.Location = New System.Drawing.Point(3, 3)
+        Me.btnmenu.Location = New System.Drawing.Point(19, 3)
         Me.btnmenu.Name = "btnmenu"
         Me.btnmenu.Size = New System.Drawing.Size(42, 32)
         Me.btnmenu.TabIndex = 17
@@ -85,7 +85,7 @@ Partial Class CONTENEDORES
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(55, 257)
+        Me.Label5.Location = New System.Drawing.Point(55, 223)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 16)
         Me.Label5.TabIndex = 21
@@ -99,7 +99,7 @@ Partial Class CONTENEDORES
         Me.TID.ForeColor = System.Drawing.Color.Black
         Me.TID.Location = New System.Drawing.Point(123, 171)
         Me.TID.Name = "TID"
-        Me.TID.Size = New System.Drawing.Size(141, 21)
+        Me.TID.Size = New System.Drawing.Size(65, 21)
         Me.TID.TabIndex = 18
         '
         'TTIPO
@@ -108,9 +108,9 @@ Partial Class CONTENEDORES
         Me.TTIPO.Enabled = False
         Me.TTIPO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TTIPO.ForeColor = System.Drawing.Color.Black
-        Me.TTIPO.Location = New System.Drawing.Point(123, 250)
+        Me.TTIPO.Location = New System.Drawing.Point(123, 216)
         Me.TTIPO.Name = "TTIPO"
-        Me.TTIPO.Size = New System.Drawing.Size(141, 21)
+        Me.TTIPO.Size = New System.Drawing.Size(65, 21)
         Me.TTIPO.TabIndex = 20
         '
         'Label4
@@ -133,7 +133,7 @@ Partial Class CONTENEDORES
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(28, 437)
+        Me.Label3.Location = New System.Drawing.Point(334, 432)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 16)
         Me.Label3.TabIndex = 32
@@ -144,7 +144,7 @@ Partial Class CONTENEDORES
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(28, 381)
+        Me.Label2.Location = New System.Drawing.Point(334, 376)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 16)
         Me.Label2.TabIndex = 30
@@ -156,7 +156,7 @@ Partial Class CONTENEDORES
         Me.T.Enabled = False
         Me.T.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.T.ForeColor = System.Drawing.Color.Black
-        Me.T.Location = New System.Drawing.Point(119, 388)
+        Me.T.Location = New System.Drawing.Point(425, 383)
         Me.T.Name = "T"
         Me.T.Size = New System.Drawing.Size(165, 21)
         Me.T.TabIndex = 29
@@ -166,7 +166,7 @@ Partial Class CONTENEDORES
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(28, 339)
+        Me.Label1.Location = New System.Drawing.Point(334, 334)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 16)
         Me.Label1.TabIndex = 28
@@ -178,7 +178,7 @@ Partial Class CONTENEDORES
         Me.txtID.Enabled = False
         Me.txtID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtID.ForeColor = System.Drawing.Color.Black
-        Me.txtID.Location = New System.Drawing.Point(119, 339)
+        Me.txtID.Location = New System.Drawing.Point(425, 334)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(165, 21)
         Me.txtID.TabIndex = 27
@@ -189,38 +189,47 @@ Partial Class CONTENEDORES
         '
         'Eliminar
         '
-        Me.Eliminar.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Eliminar.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Eliminar.BackgroundImage = CType(resources.GetObject("Eliminar.BackgroundImage"), System.Drawing.Image)
+        Me.Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Eliminar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Eliminar.ForeColor = System.Drawing.Color.White
-        Me.Eliminar.Location = New System.Drawing.Point(340, 468)
+        Me.Eliminar.Location = New System.Drawing.Point(22, 444)
         Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(147, 47)
+        Me.Eliminar.Size = New System.Drawing.Size(84, 69)
         Me.Eliminar.TabIndex = 26
         Me.Eliminar.Text = "ELIMINAR"
+        Me.Eliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Eliminar.UseVisualStyleBackColor = False
         '
         'M
         '
-        Me.M.BackColor = System.Drawing.Color.MidnightBlue
-        Me.M.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.M.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.M.BackgroundImage = CType(resources.GetObject("M.BackgroundImage"), System.Drawing.Image)
+        Me.M.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.M.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.M.ForeColor = System.Drawing.Color.White
-        Me.M.Location = New System.Drawing.Point(340, 395)
+        Me.M.Location = New System.Drawing.Point(22, 371)
         Me.M.Name = "M"
-        Me.M.Size = New System.Drawing.Size(147, 47)
+        Me.M.Size = New System.Drawing.Size(84, 69)
         Me.M.TabIndex = 25
-        Me.M.Text = "MODIFICAR"
+        Me.M.Text = "EDITAR"
+        Me.M.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.M.UseVisualStyleBackColor = False
         '
         'N
         '
-        Me.N.BackColor = System.Drawing.Color.MidnightBlue
-        Me.N.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.N.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.N.BackgroundImage = CType(resources.GetObject("N.BackgroundImage"), System.Drawing.Image)
+        Me.N.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.N.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.N.ForeColor = System.Drawing.Color.White
-        Me.N.Location = New System.Drawing.Point(340, 322)
+        Me.N.Location = New System.Drawing.Point(22, 298)
         Me.N.Name = "N"
-        Me.N.Size = New System.Drawing.Size(147, 47)
+        Me.N.Size = New System.Drawing.Size(84, 69)
         Me.N.TabIndex = 24
         Me.N.Text = "NUEVO"
+        Me.N.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.N.UseVisualStyleBackColor = False
         '
         'data1
@@ -274,7 +283,7 @@ Partial Class CONTENEDORES
         '
         Me.cmbTI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbTI.FormattingEnabled = True
-        Me.cmbTI.Location = New System.Drawing.Point(119, 435)
+        Me.cmbTI.Location = New System.Drawing.Point(425, 430)
         Me.cmbTI.Name = "cmbTI"
         Me.cmbTI.Size = New System.Drawing.Size(165, 21)
         Me.cmbTI.TabIndex = 82

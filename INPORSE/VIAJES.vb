@@ -257,12 +257,38 @@ Public Class VIAJES
         RUTA.Visible = False
         CABEZAL.Visible = False
         ESTADO.Visible = False
+
+        txtCorreo.Visible = False
+        IDV.Visible = False
+        cmbR.Visible = False
+        cmbcab.Visible = False
+        cmbEST.Visible = False
+        COBRO.Visible = False
+        cmbcon.Visible = False
+        txtProd.Visible = False
+        npCant.Visible = False
+        txtNom.Visible = False
+        txtTel.Visible = False
+        txtDui.Visible = False
+        Label16.Visible = False
+        Label15.Visible = False
+        Label1.Visible = False
+        Label17.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
+        Label8.Visible = False
+        Label7.Visible = False
+        Label6.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label9.Visible = False
     End Sub
 
 
     Private Sub N_Click_1(sender As Object, e As EventArgs) Handles N.Click
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
+            IDV.Visible = True
             N.Image = My.Resources.Save
             N.ImageAlign = ContentAlignment.MiddleCenter
             IDV.Enabled = False
@@ -275,6 +301,29 @@ Public Class VIAJES
             cmbcon.Enabled = True
             txtProd.Enabled = True
             npCant.Enabled = True
+            Label16.Visible = True
+            Label15.Visible = True
+            Label1.Visible = True
+            Label17.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label8.Visible = True
+            Label7.Visible = True
+            Label6.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label9.Visible = True
+            txtCorreo.Visible = True
+            txtNom.Visible = True
+            txtTel.Visible = True
+            txtDui.Visible = True
+            cmbR.Visible = True
+            cmbcab.Visible = True
+            cmbEST.Visible = True
+            COBRO.Visible = True
+            cmbcon.Visible = True
+            txtProd.Visible = True
+            npCant.Visible = True
             btnmenu.Enabled = False
             M.Enabled = False
             ELIMINAR.Enabled = False
@@ -299,6 +348,30 @@ Public Class VIAJES
             N.Text = "NUEVO"
             N.Image = My.Resources.Add_properties
             N.ImageAlign = ContentAlignment.MiddleCenter
+            IDV.Visible = False
+            txtNom.Visible = False
+            Label16.Visible = False
+            Label15.Visible = False
+            Label1.Visible = False
+            Label17.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label8.Visible = False
+            Label7.Visible = False
+            Label6.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label9.Visible = False
+            txtCorreo.Visible = False
+            txtTel.Visible = False
+            txtDui.Visible = False
+            cmbR.Visible = False
+            cmbcab.Visible = False
+            cmbEST.Visible = False
+            COBRO.Visible = False
+            cmbcon.Visible = False
+            txtProd.Visible = False
+            npCant.Visible = False
             IDV.Enabled = False
             txtCorreo.Enabled = False
             cmbR.Enabled = False
@@ -318,6 +391,7 @@ Public Class VIAJES
         If M.Text = "EDITAR" Then
             M.Text = "GUARDAR"
             IDV.Enabled = True
+            IDV.Visible = True
             txtCorreo.Enabled = True
             cmbR.Enabled = True
             cmbcab.Enabled = True
@@ -325,7 +399,30 @@ Public Class VIAJES
             COBRO.Enabled = True
             cmbcon.Enabled = True
             txtProd.Enabled = True
+            txtNom.Visible = True
             npCant.Enabled = True
+            Label16.Visible = True
+            Label15.Visible = True
+            Label1.Visible = True
+            Label17.Visible = True
+            Label2.Visible = True
+            Label3.Visible = True
+            Label8.Visible = True
+            Label7.Visible = True
+            Label6.Visible = True
+            Label4.Visible = True
+            Label5.Visible = True
+            Label9.Visible = True
+            txtTel.Visible = True
+            txtDui.Visible = True
+            txtCorreo.Visible = True
+            cmbR.Visible = True
+            cmbcab.Visible = True
+            cmbEST.Visible = True
+            COBRO.Visible = True
+            cmbcon.Visible = True
+            txtProd.Visible = True
+            npCant.Visible = True
             btnmenu.Enabled = False
             N.Enabled = False
             ELIMINAR.Enabled = False
@@ -342,6 +439,30 @@ Public Class VIAJES
                 MessageBox.Show(ex.ToString)
             End Try
             M.Text = "EDITAR"
+            IDV.Visible = False
+            txtNom.Visible = False
+            Label16.Visible = False
+            Label15.Visible = False
+            Label1.Visible = False
+            Label17.Visible = False
+            Label2.Visible = False
+            Label3.Visible = False
+            Label8.Visible = False
+            Label7.Visible = False
+            Label6.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label9.Visible = False
+            txtCorreo.Visible = False
+            txtTel.Visible = False
+            txtDui.Visible = False
+            cmbR.Visible = False
+            cmbcab.Visible = False
+            cmbEST.Visible = False
+            COBRO.Visible = False
+            cmbcon.Visible = False
+            txtProd.Visible = False
+            npCant.Visible = False
             IDV.Enabled = False
             txtDui.Enabled = False
             cmbR.Enabled = False
@@ -360,6 +481,7 @@ Public Class VIAJES
     Private Sub ELIMINAR_Click_1(sender As Object, e As EventArgs) Handles ELIMINAR.Click
         If MessageBox.Show("¿Desea eliminar un registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
             MessageBox.Show("Cancelado")
+
             IDV.Enabled = True
             txtDui.Enabled = True
             cmbR.Enabled = True
@@ -368,10 +490,10 @@ Public Class VIAJES
             COBRO.Enabled = True
             cmbcon.Enabled = True
             txtProd.Enabled = True
-            btnmenu.Enabled = False
+            btnmenu.Enabled = True
             npCant.Enabled = True
-            M.Enabled = False
-            N.Enabled = False
+            M.Enabled = True
+            N.Enabled = True
         Else
             Dim CodigoEliminar As String
             CodigoEliminar = InputBox("Digite el codigo del registro a eliminar:", "Eliminar")
@@ -532,9 +654,7 @@ Public Class VIAJES
 
     End Sub
 
-    Private Sub cmbR_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbR.SelectedIndexChanged
 
-    End Sub
 
 
 
