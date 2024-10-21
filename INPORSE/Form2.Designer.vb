@@ -70,7 +70,7 @@ Partial Class Form2
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Button5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.Black
         Me.Button5.Location = New System.Drawing.Point(0, 653)
         Me.Button5.Name = "Button5"
