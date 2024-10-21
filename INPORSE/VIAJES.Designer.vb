@@ -39,6 +39,16 @@ Partial Class VIAJES
         Me.RUTA = New System.Windows.Forms.TextBox()
         Me.CABEZAL = New System.Windows.Forms.TextBox()
         Me.data1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Timercontrae = New System.Windows.Forms.Timer(Me.components)
         Me.Timerdespliega = New System.Windows.Forms.Timer(Me.components)
         Me.Label6 = New System.Windows.Forms.Label()
@@ -72,16 +82,6 @@ Partial Class VIAJES
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtDui = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtProd = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlconsulta.SuspendLayout()
         CType(Me.data1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.npCant, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -256,6 +256,81 @@ Partial Class VIAJES
         Me.data1.Size = New System.Drawing.Size(631, 264)
         Me.data1.TabIndex = 56
         '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID_VIAJE"
+        Me.Column1.HeaderText = "ID DEL VIAJE"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 109
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "NOMBRE"
+        Me.Column6.HeaderText = "NOMBRE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 85
+        '
+        'Column9
+        '
+        Me.Column9.DataPropertyName = "EMAIL"
+        Me.Column9.HeaderText = "CORREO"
+        Me.Column9.Name = "Column9"
+        Me.Column9.Width = 87
+        '
+        'Column10
+        '
+        Me.Column10.DataPropertyName = "TELEFONO"
+        Me.Column10.HeaderText = "TELEFONO"
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 94
+        '
+        'Column11
+        '
+        Me.Column11.DataPropertyName = "ID_CLIENTE"
+        Me.Column11.HeaderText = "DUI"
+        Me.Column11.Name = "Column11"
+        Me.Column11.Width = 52
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "RUTA"
+        Me.Column3.HeaderText = "DESTINO"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 83
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "CABEZAL"
+        Me.Column4.HeaderText = "CABEZAL"
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 86
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "ID_CONTENEDOR"
+        Me.Column8.HeaderText = "ID DEL CONTENEDOR"
+        Me.Column8.MinimumWidth = 6
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 165
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "ESTADO"
+        Me.Column5.HeaderText = "ESTADO"
+        Me.Column5.MinimumWidth = 6
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 79
+        '
+        'Column2
+        '
+        Me.Column2.DataPropertyName = "NOMBRE_PRODUCTO"
+        Me.Column2.HeaderText = "PRODUCTO"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 103
+        '
         'Timercontrae
         '
         Me.Timercontrae.Interval = 5
@@ -301,11 +376,11 @@ Partial Class VIAJES
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(101, 182)
+        Me.Label3.Location = New System.Drawing.Point(30, 182)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 13)
+        Me.Label3.Size = New System.Drawing.Size(100, 13)
         Me.Label3.TabIndex = 86
-        Me.Label3.Text = "RUTA:"
+        Me.Label3.Text = "DEPARTAMENTO:"
         '
         'Label2
         '
@@ -653,81 +728,6 @@ Partial Class VIAJES
         Me.txtProd.SelectedText = ""
         Me.txtProd.Size = New System.Drawing.Size(155, 19)
         Me.txtProd.TabIndex = 121
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID_VIAJE"
-        Me.Column1.HeaderText = "ID DEL VIAJE"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 109
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "NOMBRE"
-        Me.Column6.HeaderText = "NOMBRE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 85
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "EMAIL"
-        Me.Column9.HeaderText = "CORREO"
-        Me.Column9.Name = "Column9"
-        Me.Column9.Width = 87
-        '
-        'Column10
-        '
-        Me.Column10.DataPropertyName = "TELEFONO"
-        Me.Column10.HeaderText = "TELEFONO"
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 94
-        '
-        'Column11
-        '
-        Me.Column11.DataPropertyName = "ID_CLIENTE"
-        Me.Column11.HeaderText = "DUI"
-        Me.Column11.Name = "Column11"
-        Me.Column11.Width = 52
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "RUTA"
-        Me.Column3.HeaderText = "DESTINO"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 83
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "CABEZAL"
-        Me.Column4.HeaderText = "CABEZAL"
-        Me.Column4.MinimumWidth = 6
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 86
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "ID_CONTENEDOR"
-        Me.Column8.HeaderText = "ID DEL CONTENEDOR"
-        Me.Column8.MinimumWidth = 6
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 165
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "ESTADO"
-        Me.Column5.HeaderText = "ESTADO"
-        Me.Column5.MinimumWidth = 6
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 79
-        '
-        'Column2
-        '
-        Me.Column2.DataPropertyName = "NOMBRE_PRODUCTO"
-        Me.Column2.HeaderText = "PRODUCTO"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 103
         '
         'VIAJES
         '
