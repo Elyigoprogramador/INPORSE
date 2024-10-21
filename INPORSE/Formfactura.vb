@@ -412,7 +412,6 @@ Public Class Formfactura
 
     Private Sub btnimprimirfact_Click(sender As Object, e As EventArgs) Handles btnimprimirfact.Click
 
-        Imprimir.Show()
 
     End Sub
 End Class
