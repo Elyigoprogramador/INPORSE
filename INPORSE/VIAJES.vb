@@ -143,18 +143,18 @@ Public Class VIAJES
     End Function
     Private Sub CargarIdContenedor()
         Try
-            Dim comando As New MySqlCommand("SELECT ID_CONTENEDOR FROM CONTENEDOR", Module1.mysqlconexion)
+            Dim comando As New MySqlCommand("SELECT TIPO FROM CONTENEDOR", Module1.mysqlconexion)
             Dim reader As MySqlDataReader = comando.ExecuteReader()
 
             cmbcon.Items.Clear()
 
             While reader.Read()
-                cmbcon.Items.Add(reader("ID_CONTENEDOR").ToString())
+                cmbcon.Items.Add(reader("TIPO").ToString())
             End While
 
             reader.Close()
         Catch ex As Exception
-            MessageBox.Show("Error al cargar productos: " & ex.Message)
+            MessageBox.Show("Error al cargar contenedor: " & ex.Message)
         End Try
     End Sub
     Private Sub CargarIdCabezales()
@@ -170,7 +170,7 @@ Public Class VIAJES
 
             reader.Close()
         Catch ex As Exception
-            MessageBox.Show("Error al cargar productos: " & ex.Message)
+            MessageBox.Show("Error al cargar cabezales: " & ex.Message)
         End Try
     End Sub
     'Private Sub CargarIdClientes()
@@ -221,6 +221,22 @@ Public Class VIAJES
             MessageBox.Show("Error al cargar productos: " & ex.Message)
         End Try
     End Sub
+    Private Sub CargarEstado()
+        Try
+            Dim comando As New MySqlCommand("SELECT ESTADO FROM CABEZAL", Module1.mysqlconexion)
+            Dim reader As MySqlDataReader = comando.ExecuteReader()
+
+            cmbEST.Items.Clear()
+
+            While reader.Read()
+                cmbEST.Items.Add(reader("ESTADO").ToString())
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar el estado: " & ex.Message)
+        End Try
+    End Sub
 
 
     Private Function GenerarIdViajes() As String
@@ -230,9 +246,7 @@ Public Class VIAJES
     End Function
 
     Private Sub VIAJES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbEST.Items.Add("Cargando")
-        cmbEST.Items.Add("En camino")
-        cmbEST.Items.Add("Finalizado")
+
         Me.Controls.Add(cmbEST)
 
         'txtasesor.Text = Form1.NombreUsuario
@@ -259,13 +273,13 @@ Public Class VIAJES
         RUTA.Visible = False
         CABEZAL.Visible = False
         ESTADO.Visible = False
-
+        lblDirec.Visible = False
         txtCorreo.Visible = False
         IDV.Visible = False
         cmbR.Visible = False
         cmbcab.Visible = False
         cmbEST.Visible = False
-        COBRO.Visible = False
+        TxtDireccion.Visible = False
         cmbcon.Visible = False
         txtProd.Visible = False
         npCant.Visible = False
@@ -283,7 +297,7 @@ Public Class VIAJES
         Label6.Visible = False
         Label4.Visible = False
         Label5.Visible = False
-        Label9.Visible = False
+
     End Sub
 
 
@@ -299,7 +313,7 @@ Public Class VIAJES
             cmbR.Enabled = True
             cmbcab.Enabled = True
             cmbEST.Enabled = True
-            COBRO.Enabled = True
+
             cmbcon.Enabled = True
             txtProd.Enabled = True
             npCant.Enabled = True
@@ -314,15 +328,15 @@ Public Class VIAJES
             Label6.Visible = True
             Label4.Visible = True
             Label5.Visible = True
-            Label9.Visible = True
             txtCorreo.Visible = True
+            lblDirec.Visible = True
             txtNom.Visible = True
             txtTel.Visible = True
             txtDui.Visible = True
             cmbR.Visible = True
             cmbcab.Visible = True
             cmbEST.Visible = True
-            COBRO.Visible = True
+            TxtDireccion.Visible = True
             cmbcon.Visible = True
             txtProd.Visible = True
             npCant.Visible = True
@@ -363,14 +377,14 @@ Public Class VIAJES
             Label6.Visible = False
             Label4.Visible = False
             Label5.Visible = False
-            Label9.Visible = False
+            TxtDireccion.Visible = False
             txtCorreo.Visible = False
             txtTel.Visible = False
             txtDui.Visible = False
             cmbR.Visible = False
             cmbcab.Visible = False
             cmbEST.Visible = False
-            COBRO.Visible = False
+            lblDirec.Visible = False
             cmbcon.Visible = False
             txtProd.Visible = False
             npCant.Visible = False
@@ -398,10 +412,11 @@ Public Class VIAJES
             cmbR.Enabled = True
             cmbcab.Enabled = True
             cmbEST.Enabled = True
-            COBRO.Enabled = True
+
             cmbcon.Enabled = True
             txtProd.Enabled = True
             txtNom.Visible = True
+            TxtDireccion.Visible = True
             npCant.Enabled = True
             Label16.Visible = True
             Label15.Visible = True
@@ -414,14 +429,14 @@ Public Class VIAJES
             Label6.Visible = True
             Label4.Visible = True
             Label5.Visible = True
-            Label9.Visible = True
+            lblDirec.Visible = True
             txtTel.Visible = True
             txtDui.Visible = True
             txtCorreo.Visible = True
             cmbR.Visible = True
             cmbcab.Visible = True
             cmbEST.Visible = True
-            COBRO.Visible = True
+
             cmbcon.Visible = True
             txtProd.Visible = True
             npCant.Visible = True
@@ -431,7 +446,7 @@ Public Class VIAJES
         Else
             Try
 
-                sentenciaSQL = "UPDATE VIAJES SET ID_CLIENTE='" & txtDui.Text & "', RUTA='" & cmbR.Text & "', CABEZAL='" & cmbcab.Text & "', ESTADO='" & cmbEST.Text & "', COBRO_VIAJE='" & COBRO.Text & "', ID_CONTENEDOR='" & cmbcon.Text & "', ID_PRODUCTOS='" & txtProd.Text & "', CANTIDAD='" & npCant.Text & "' WHERE ID_VIAJE='" & IDV.Text & "'"
+                sentenciaSQL = "UPDATE VIAJES SET ID_CLIENTE='" & txtDui.Text & "', RUTA='" & cmbR.Text & "', CABEZAL='" & cmbcab.Text & "', Tipo_Cont='" & cmbcon.Text & "', CANTIDAD='" & npCant.Text & "', NOMBRE='" & txtNom.Text & "', TELEFONO='" & txtTel.Text & "', DIRECCION='" & txtDireccion.Text & "', EMAIL='" & txtCorreo.Text & "', NOMBRE_PRODUCTO='" & txtProd.Text & "'  WHERE ID_VIAJE='" & IDV.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro a sido modificado.", "Informacion", MessageBoxButtons.OK)
@@ -454,14 +469,14 @@ Public Class VIAJES
             Label6.Visible = False
             Label4.Visible = False
             Label5.Visible = False
-            Label9.Visible = False
+
             txtCorreo.Visible = False
             txtTel.Visible = False
             txtDui.Visible = False
             cmbR.Visible = False
             cmbcab.Visible = False
             cmbEST.Visible = False
-            COBRO.Visible = False
+            lblDirec.Visible = False
             cmbcon.Visible = False
             txtProd.Visible = False
             npCant.Visible = False
@@ -470,7 +485,7 @@ Public Class VIAJES
             cmbR.Enabled = False
             cmbcab.Enabled = False
             cmbEST.Enabled = False
-            COBRO.Enabled = False
+            TxtDireccion.Visible = False
             cmbcon.Enabled = False
             txtProd.Enabled = False
             npCant.Enabled = False
@@ -489,7 +504,7 @@ Public Class VIAJES
             cmbR.Enabled = True
             cmbcab.Enabled = True
             cmbEST.Enabled = True
-            COBRO.Enabled = True
+
             cmbcon.Enabled = True
             txtProd.Enabled = True
             btnmenu.Enabled = True
@@ -515,7 +530,7 @@ Public Class VIAJES
             cmbR.Enabled = False
             cmbcab.Enabled = False
             cmbEST.Enabled = False
-            COBRO.Enabled = False
+
             cmbcon.Enabled = False
             txtProd.Enabled = False
             npCant.Enabled = False
@@ -655,7 +670,17 @@ Public Class VIAJES
         Formfactura.Show()
 
     End Sub
+    Private Sub txtDui_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDui.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "-" Then
+            e.Handled = True ' Evita que se agregue el carácter no permitido
+            Return
+        End If
 
+        ' Permitir que el guion solo se escriba en la novena posición
+        If e.KeyChar = "-" AndAlso txtDui.Text.Length <> 8 Then
+            e.Handled = True ' Evita que se agregue el guion si no está en la novena posición
+        End If
+    End Sub
     Private Sub txtDui_TextChanged(sender As Object, e As EventArgs) Handles txtDui.TextChanged
         If txtDui.Text.Length > 10 Then
             txtDui.Text = txtDui.Text.Substring(0, 10)
@@ -679,6 +704,43 @@ Public Class VIAJES
             txtDui.Focus() ' Devuelve el foco al TextBox
         End If
     End Sub
+
+    Private Sub txtNom_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNom.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTel.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "-" Then
+            e.Handled = True ' Evita que se ingresen caracteres no permitidos
+        End If
+        If e.KeyChar = "-" AndAlso txtTel.Text.Length <> 4 Then
+            e.Handled = True ' Solo permite el guion en la 5ª posición
+        End If
+    End Sub
+
+    Private Sub txtTel_TextChanged(sender As Object, e As EventArgs) Handles txtTel.TextChanged
+        If txtTel.Text.Length = 4 AndAlso Not txtTel.Text.Contains("-") Then
+            txtTel.Text &= "-" ' Añade el guion automáticamente
+            txtTel.SelectionStart = txtTel.Text.Length ' Coloca el cursor al final del texto
+        End If
+
+        ' Limita el texto a un formato de 0000-0000
+        If txtTel.Text.Length > 9 Then
+            txtTel.Text = txtTel.Text.Substring(0, 9) ' Limita el tamaño del texto a 9 caracteres
+            txtTel.SelectionStart = txtTel.Text.Length ' Coloca el cursor al final del texto
+        End If
+    End Sub
+
+    Private Sub txtProd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtProd.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+
 
 
 

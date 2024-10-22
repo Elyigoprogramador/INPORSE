@@ -175,7 +175,7 @@ Partial Class Form1
         Me.txtContra.Margin = New System.Windows.Forms.Padding(4)
         Me.txtContra.Name = "txtContra"
         Me.txtContra.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContra.Size = New System.Drawing.Size(249, 45)
+        Me.txtContra.Size = New System.Drawing.Size(286, 45)
         Me.txtContra.TabIndex = 5
         '
         'lblEmpresa
@@ -199,7 +199,7 @@ Partial Class Form1
         Me.txtUser.Location = New System.Drawing.Point(231, 170)
         Me.txtUser.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(249, 45)
+        Me.txtUser.Size = New System.Drawing.Size(286, 45)
         Me.txtUser.TabIndex = 11
         '
         'Panel2
@@ -207,7 +207,7 @@ Partial Class Form1
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Location = New System.Drawing.Point(229, 214)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(248, 1)
+        Me.Panel2.Size = New System.Drawing.Size(285, 1)
         Me.Panel2.TabIndex = 16
         '
         'lbluser
@@ -233,7 +233,7 @@ Partial Class Form1
         Me.Panel6.BackColor = System.Drawing.Color.White
         Me.Panel6.Location = New System.Drawing.Point(229, 318)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(248, 1)
+        Me.Panel6.Size = New System.Drawing.Size(285, 1)
         Me.Panel6.TabIndex = 17
         '
         'Panel4

@@ -9,6 +9,7 @@ Imports PdfiumViewer
 Imports System.Drawing.Imaging
 Imports System.Drawing.Printing
 Imports System.IO
+Imports Guna.UI2.WinForms
 
 
 
@@ -190,9 +191,29 @@ Public Class Formfactura
             MessageBox.Show("Error al cargar departamentos: " & ex.Message)
         End Try
     End Sub
+    Private distritos As New Dictionary(Of String, List(Of String)) From {
+    {"Sonsonate", New List(Of String) From {"Norte", "Centro", "Este", "Oeste"}},
+    {"Ahuachapán", New List(Of String) From {"Norte", "Sur", "Centro"}},
+    {"Cabañas", New List(Of String) From {"Este", "Oeste"}},
+    {"Chalatenango", New List(Of String) From {"Norte", "Sur", "Centro"}},
+    {"Cuscatlán", New List(Of String) From {"Norte", "Sur"}},
+    {"La Libertad", New List(Of String) From {"Norte", "Sur", "Centro", "Este", "Oeste", "Costa"}},
+    {"La Paz", New List(Of String) From {"Centro", "Este", "Oeste"}},
+    {"La Unión", New List(Of String) From {"Norte", "Sur"}},
+    {"Morazán", New List(Of String) From {"Norte", "Sur"}},
+    {"San Miguel", New List(Of String) From {"Norte", "Centro", "Oeste"}},
+    {"San Salvador", New List(Of String) From {"Norte", "Sur", "Centro", "Este", "Oeste"}},
+    {"San Vicente", New List(Of String) From {"Norte", "Sur"}},
+    {"Santa Ana", New List(Of String) From {"Norte", "Centro", "Este", "Oeste"}},
+    {"Usulután", New List(Of String) From {"Norte", "Este", "Oeste"}}
+}
+
+
 
     Private Sub Formfactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        btnNuevaFac.Enabled = False
 
         txtasesor.Text = Form1.NombreUsuario
 
@@ -209,6 +230,7 @@ Public Class Formfactura
             CargarCorreo()
             CargarTelefono()
             CargarContenedor()
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -216,11 +238,72 @@ Public Class Formfactura
 
     End Sub
 
+    Private Sub cmbDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDestino.SelectedIndexChanged
+
+        cmbDistrito.Items.Clear()
 
 
+        If distritos.ContainsKey(cmbDestino.Text) Then
 
+            For Each distrito As String In distritos(cmbDestino.Text)
+                cmbDistrito.Items.Add(distrito)
+            Next
+
+        End If
+    End Sub
 
     Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
+
+
+        Dim camposIncompletos As Boolean = False
+
+
+        For Each ctrl As Control In Me.Controls
+            ' Validar Guna2TextBox
+            If TypeOf ctrl Is Guna2TextBox Then
+                If String.IsNullOrWhiteSpace(CType(ctrl, Guna2TextBox).Text) Then
+                    MessageBox.Show("Por favor, completa el campo: " & ctrl.Name, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    camposIncompletos = True
+                    Exit For ' Termina la validación si hay un campo vacío
+                End If
+            End If
+
+            ' Validar ComboBox
+            If TypeOf ctrl Is Guna2ComboBox Then
+                If CType(ctrl, Guna2ComboBox).SelectedIndex = -1 Then
+                    MessageBox.Show("Por favor, selecciona un valor en: " & ctrl.Name, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    camposIncompletos = True
+                    Exit For
+                End If
+            End If
+
+            ' Validar DateTimePicker
+            If TypeOf ctrl Is DateTimePicker Then
+                If CType(ctrl, DateTimePicker).Value = DateTimePicker.MinimumDateTime Then
+                    MessageBox.Show("Por favor, selecciona una fecha válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    camposIncompletos = True
+                    Exit For
+                End If
+            End If
+
+            ' Validar NumericUpDown
+            If TypeOf ctrl Is Guna2NumericUpDown Then
+                If CType(ctrl, Guna2NumericUpDown).Value = 0 Then
+                    MessageBox.Show("Por favor, ingresa un valor mayor a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    camposIncompletos = True
+                    Exit For
+                End If
+            End If
+        Next
+
+        ' Si hay campos incompletos, detener el proceso de generación de factura
+        If camposIncompletos Then
+            Return ' Detiene el proceso si hay errores
+        End If
+
+        ' Si todos los campos están completos, continúa con la generación de la factura
+        MessageBox.Show("Todos los campos están completos. Generando factura...", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Dim total As Double
         Dim cobro As Double
         Dim Destino As Double
@@ -262,7 +345,7 @@ Public Class Formfactura
         Dim fechahora As String = DateTime.Now.ToString("yyyyMMdd_HHmmss")
         Dim Fechaviaje As DateTime = DateTime2.Value
 
-        Dim rutaPDF As String = "C:\Users\josia\Downloads\Yigo prueba\FACTURAINPORSE" & codigoFac.ToString & "_" & "_" & fechahora & ".pdf"
+        Dim rutaPDF As String = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FACTURAINPORSE" & codigoFac.ToString & "_" & "_" & fechahora & ".pdf")
         Dim doc As New Document(PageSize.A4, 25, 25, 10, 30)
         If Not Directory.Exists("C:\Facturas") Then
             Directory.CreateDirectory("C:\Facturas")
@@ -272,9 +355,19 @@ Public Class Formfactura
 
         Dim logo As iTextSharp.text.Image
         Try
-            logo = iTextSharp.text.Image.GetInstance("C:\Users\josia\Downloads\Yigo prueba\LOGO_INPORSE1.PNG")
+
+            Dim logoBitmap As Bitmap = My.Resources.LOGO_INPORSE1
+            Dim logoStream As New System.IO.MemoryStream()
+
+
+            logoBitmap.Save(logoStream, System.Drawing.Imaging.ImageFormat.Png)
+            logo = iTextSharp.text.Image.GetInstance(logoStream.ToArray())
+
+            ' Ajustar tamaño y alineación
             logo.ScaleToFit(75, 75)
             logo.Alignment = Element.ALIGN_RIGHT
+
+            ' Agregar el logo a la tabla
             encabezadoTable.AddCell(New PdfPCell(logo) With {.Border = PdfPCell.NO_BORDER})
         Catch ex As Exception
             MsgBox("Error al cargar la imagen: " & ex.Message)
@@ -282,7 +375,7 @@ Public Class Formfactura
             writer.Close()
             Return
         End Try
-
+        btnNuevaFac.Enabled = True
         ' Fuente
         Dim fuenteTitulo As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 28, Font.Bold, New BaseColor(0, 0, 0))
         Dim fuenteSubTitulo As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 15)
@@ -369,8 +462,8 @@ Public Class Formfactura
         tablaDetalle.AddCell(New PdfPCell(New Phrase("                       DESCRIPCIÓN     ", fuenteSubTitulo)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("PRECIO UNITARIO", fuenteSubTitulo)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("VENTAS GRAVADAS", fuenteSubTitulo)))
-        tablaDetalle.AddCell(New PdfPCell(New Phrase("10", fuenteNormal)))
-        tablaDetalle.AddCell(New PdfPCell(New Phrase("De mi choza a la casa de la anna" & Environment.NewLine & "Realizado el " & Fechaviaje.ToString("dd/MM/yyyy"), fuenteNormal)))
+        tablaDetalle.AddCell(New PdfPCell(New Phrase(npCant.Value.ToString("F2"), fuenteNormal)))
+        tablaDetalle.AddCell(New PdfPCell(New Phrase(txtD.Text & Environment.NewLine & "Realizado el " & Fechaviaje.ToString("dd/MM/yyyy"), fuenteNormal)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("$" & Destino, fuenteNormal)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase("$" & total, fuenteNormal)))
         tablaDetalle.AddCell(New PdfPCell(New Phrase(" ", fuenteNormal)))
@@ -421,7 +514,7 @@ Public Class Formfactura
 
     End Sub
 
-    Private Sub btnimprimirfact_Click(sender As Object, e As EventArgs) Handles btnimprimirfact.Click
+    Private Sub btnimprimirfact_Click(sender As Object, e As EventArgs)
 
 
     End Sub
@@ -441,59 +534,10 @@ Public Class Formfactura
     '    End If
     'End Sub
 
-    Private Sub brnPDF_Click(sender As Object, e As EventArgs) Handles brnPDF.Click
-        Dim rutaPDFs As String = "C:\Users\josia\Downloads\Yigo prueba\"
-
-        If Not Directory.Exists(rutaPDFs) Then
-            MessageBox.Show("La carpeta especificada no existe: " & rutaPDFs)
-            Return
-        End If
-
-        ' Listar archivos PDF en la carpeta especificada
-        Dim pdfFiles As String() = Directory.GetFiles(rutaPDFs, "*.pdf", SearchOption.TopDirectoryOnly)
-        ListBox1.Items.Clear() ' ListBox para mostrar archivos PDF
-        For Each file As String In pdfFiles
-            ListBox1.Items.Add(file)
-        Next
-    End Sub
-
-    Private Sub btnVistaP_Click(sender As Object, e As EventArgs) Handles btnVistaP.Click
-        If ListBox1.SelectedItem Is Nothing Then
-            MessageBox.Show("Selecciona un archivo PDF para vista previa.")
-            Return
-        End If
-
-        ' Establece el archivo PDF seleccionado
-        Dim selectedFile As String = ListBox1.SelectedItem.ToString()
-        PrintDocument1.DocumentName = selectedFile
-
-        ' Muestra la vista previa
-        PrintPreviewDialog1.Document = PrintDocument1
-        PrintPreviewDialog1.ShowDialog()
-    End Sub
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        If ListBox1.SelectedItem IsNot Nothing Then
-            Dim selectedFile As String = ListBox1.SelectedItem.ToString()
-            ' Cargar el PDF en el control WebBrowser
-            WebBrowser1.Navigate(selectedFile)
-        End If
-    End Sub
-    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        If ListBox1.SelectedItem Is Nothing Then
-            MessageBox.Show("Selecciona un archivo PDF para imprimir.")
-            Return
-        End If
-
-        Dim selectedFile As String = ListBox1.SelectedItem.ToString()
 
 
-        ' Configura el PrintDocument
-        PrintDocument1.DocumentName = selectedFile
-        If PrintDialog1.ShowDialog() = DialogResult.OK Then
-            PrintDocument1.Print()
-        End If
-    End Sub
-    Private Sub btnCuadroDialogo_Click(sender As Object, e As EventArgs) Handles btnCuadroDialogo.Click
+
+    Private Sub btnCuadroDialogo_Click(sender As Object, e As EventArgs)
         PageSetupDialog1.Document = PrintDocument1
         PageSetupDialog1.Document.DefaultPageSettings.Color = False
         PageSetupDialog1.ShowDialog()
@@ -504,4 +548,32 @@ Public Class Formfactura
         'e.Graphics.DrawImage("Imprimiendo: " & selectedFile.ToString, New Font("Arial", 12), Brushes.Black, 100, 100)
 
     End Sub
+
+    Private Sub btnNuevaFac_Click(sender As Object, e As EventArgs) Handles btnNuevaFac.Click
+        For Each ctrl As Control In Me.Controls
+            ' Limpiar los TextBox
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).Clear()
+            End If
+            If TypeOf ctrl Is Guna2TextBox Then
+                CType(ctrl, Guna2TextBox).Clear()
+            End If
+
+            ' Restablecer los ComboBox a su valor predeterminado
+            If TypeOf ctrl Is ComboBox Then
+                CType(ctrl, ComboBox).SelectedIndex = -1
+            End If
+
+            ' Restablecer los DateTimePicker
+            If TypeOf ctrl Is DateTimePicker Then
+                CType(ctrl, DateTimePicker).Value = DateTime.Now ' O algún valor predeterminado
+            End If
+
+            ' Limpiar NumericUpDown
+            If TypeOf ctrl Is NumericUpDown Then
+                CType(ctrl, NumericUpDown).Value = CType(ctrl, NumericUpDown).Minimum
+            End If
+        Next
+    End Sub
+
 End Class

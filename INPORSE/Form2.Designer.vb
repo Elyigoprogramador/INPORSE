@@ -254,7 +254,7 @@ Partial Class Form2
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.Location = New System.Drawing.Point(267, 77)
+        Me.Panel3.Location = New System.Drawing.Point(267, 79)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1119, 642)
         Me.Panel3.TabIndex = 16

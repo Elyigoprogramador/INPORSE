@@ -24,10 +24,10 @@ Partial Class CON
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CON))
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlconsulta = New System.Windows.Forms.Panel()
         Me.btnmenu = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -104,7 +104,7 @@ Partial Class CON
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(130, 16)
         Me.Label9.TabIndex = 47
-        Me.Label9.Text = "NUMERO DE LICENCIA:"
+        Me.Label9.Text = "NÚMERO DE LICENCIA:"
         '
         'tID
         '
@@ -112,7 +112,8 @@ Partial Class CON
         Me.tID.Enabled = False
         Me.tID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tID.ForeColor = System.Drawing.Color.Black
-        Me.tID.Location = New System.Drawing.Point(207, 211)
+        Me.tID.Location = New System.Drawing.Point(162, 206)
+        Me.tID.MaxLength = 5
         Me.tID.Name = "tID"
         Me.tID.Size = New System.Drawing.Size(65, 21)
         Me.tID.TabIndex = 42
@@ -123,7 +124,7 @@ Partial Class CON
         Me.Tlicencia.Enabled = False
         Me.Tlicencia.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tlicencia.ForeColor = System.Drawing.Color.Black
-        Me.Tlicencia.Location = New System.Drawing.Point(207, 309)
+        Me.Tlicencia.Location = New System.Drawing.Point(162, 304)
         Me.Tlicencia.Name = "Tlicencia"
         Me.Tlicencia.Size = New System.Drawing.Size(65, 21)
         Me.Tlicencia.TabIndex = 46
@@ -158,7 +159,7 @@ Partial Class CON
         Me.Tnombre.Enabled = False
         Me.Tnombre.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tnombre.ForeColor = System.Drawing.Color.Black
-        Me.Tnombre.Location = New System.Drawing.Point(207, 260)
+        Me.Tnombre.Location = New System.Drawing.Point(162, 248)
         Me.Tnombre.Name = "Tnombre"
         Me.Tnombre.Size = New System.Drawing.Size(65, 21)
         Me.Tnombre.TabIndex = 44
@@ -192,6 +193,7 @@ Partial Class CON
         Me.SB.Name = "SB"
         Me.SB.Size = New System.Drawing.Size(141, 21)
         Me.SB.TabIndex = 67
+        Me.SB.Text = "$"
         '
         'Label6
         '
@@ -202,7 +204,7 @@ Partial Class CON
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(73, 16)
         Me.Label6.TabIndex = 66
-        Me.Label6.Text = "DIRECCION:"
+        Me.Label6.Text = "DIRECCIÓN:"
         '
         'DIREC
         '
@@ -254,7 +256,7 @@ Partial Class CON
         Me.DUI.Enabled = False
         Me.DUI.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DUI.ForeColor = System.Drawing.Color.Black
-        Me.DUI.Location = New System.Drawing.Point(761, 437)
+        Me.DUI.Location = New System.Drawing.Point(761, 441)
         Me.DUI.Name = "DUI"
         Me.DUI.Size = New System.Drawing.Size(141, 21)
         Me.DUI.TabIndex = 61
@@ -279,7 +281,7 @@ Partial Class CON
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(130, 16)
         Me.Label3.TabIndex = 58
-        Me.Label3.Text = "NUMERO DE LICENCIA:"
+        Me.Label3.Text = "NÚMERO DE LICENCIA:"
         '
         'NL
         '
@@ -309,7 +311,7 @@ Partial Class CON
         Me.txtNOM.Enabled = False
         Me.txtNOM.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNOM.ForeColor = System.Drawing.Color.Black
-        Me.txtNOM.Location = New System.Drawing.Point(438, 439)
+        Me.txtNOM.Location = New System.Drawing.Point(438, 441)
         Me.txtNOM.Name = "txtNOM"
         Me.txtNOM.Size = New System.Drawing.Size(141, 21)
         Me.txtNOM.TabIndex = 55
@@ -389,42 +391,42 @@ Partial Class CON
         Me.data1.BackgroundColor = System.Drawing.Color.LavenderBlush
         Me.data1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(52, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.LavenderBlush
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(52, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.LavenderBlush
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.data1.ColumnHeadersHeight = 30
         Me.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Tomato
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.data1.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.data1.DefaultCellStyle = DataGridViewCellStyle2
         Me.data1.EnableHeadersVisualStyles = False
         Me.data1.GridColor = System.Drawing.Color.White
         Me.data1.Location = New System.Drawing.Point(11, 12)
         Me.data1.Name = "data1"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.LightPink
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PapayaWhip
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.PapayaWhip
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightPink
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PapayaWhip
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(206, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.PapayaWhip
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.data1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.data1.Size = New System.Drawing.Size(685, 321)
         Me.data1.TabIndex = 49
         '

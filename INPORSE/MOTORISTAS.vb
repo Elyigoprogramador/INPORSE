@@ -461,5 +461,57 @@ Public Class CON
         End If
     End Sub
 
+    Private Sub txtNOM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNOM.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True ' Evita que se agreguen caracteres no permitidos
+        End If
+    End Sub
+
+    Private Sub SB_TextChanged(sender As Object, e As EventArgs) Handles SB.TextChanged
+        If SB.Text.Length > 5 Then
+            SB.Text = SB.Text.Substring(0, 5)
+            SB.SelectionStart = SB.Text.Length
+        End If
+    End Sub
+
+    Private Sub TEL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TEL.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "-" Then
+            e.Handled = True ' Evita que se ingresen caracteres no permitidos
+        End If
+        If e.KeyChar = "-" AndAlso TEL.Text.Length <> 4 Then
+            e.Handled = True ' Solo permite el guion en la 5ª posición
+        End If
+    End Sub
+
+    Private Sub TEL_TextChanged(sender As Object, e As EventArgs) Handles TEL.TextChanged
+        If TEL.Text.Length = 4 AndAlso Not TEL.Text.Contains("-") Then
+            TEL.Text &= "-" ' Añade el guion automáticamente
+            TEL.SelectionStart = TEL.Text.Length ' Coloca el cursor al final del texto
+        End If
+
+        ' Limita el texto a un formato de 0000-0000
+        If TEL.Text.Length > 9 Then
+            TEL.Text = TEL.Text.Substring(0, 9) ' Limita el tamaño del texto a 9 caracteres
+            TEL.SelectionStart = TEL.Text.Length ' Coloca el cursor al final del texto
+        End If
+    End Sub
+
+    Private Sub SB_KeyPress(sender As Object, e As KeyPressEventArgs) Handles SB.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Tnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Tnombre.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub tID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tID.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 
 End Class

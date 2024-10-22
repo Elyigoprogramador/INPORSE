@@ -24,16 +24,6 @@ Public Class CONTENEDORES
             MessageBox.Show("El campo de ID es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
-
-        If String.IsNullOrWhiteSpace(T.Text) Then
-            MessageBox.Show("El campo de Tamaño es obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return False
-        End If
-
-
-
-
-
         Return True
     End Function
 
@@ -59,11 +49,11 @@ Public Class CONTENEDORES
         TID.Visible = False
         TTIPO.Visible = False
         txtID.Visible = False
-        T.Visible = False
+
         cmbTI.Visible = False
         cmbTI.Visible = False
         Label1.Visible = False
-        Label2.Visible = False
+
         Label3.Visible = False
     End Sub
 
@@ -75,18 +65,18 @@ Public Class CONTENEDORES
         If N.Text = "NUEVO" Then
             N.Text = "GUARDAR"
             txtID.Enabled = True
-            T.Enabled = True
+
             N.Image = My.Resources.Save
             N.ImageAlign = ContentAlignment.MiddleCenter
             cmbTI.Enabled = True
             Label1.Visible = True
-            Label2.Visible = True
+
             Label3.Visible = True
             cmbTI.Visible = True
             TID.Visible = True
             TTIPO.Visible = True
             txtID.Visible = True
-            T.Visible = True
+
             TID.Enabled = False
             TTIPO.Enabled = False
             btnmenu.Enabled = False
@@ -97,7 +87,7 @@ Public Class CONTENEDORES
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & T.Text & "','" & TTIPO.Text & "')"
+                sentenciaSQL = "INSERT INTO CONTENEDOR VALUES ('" & txtID.Text & "','" & TTIPO.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
@@ -109,12 +99,12 @@ Public Class CONTENEDORES
             N.Image = My.Resources.Add_properties
             N.ImageAlign = ContentAlignment.MiddleCenter
             txtID.Enabled = False
-            T.Enabled = False
+
             cmbTI.Enabled = False
             cmbTI.Visible = False
-            T.Visible = False
+
             Label1.Visible = False
-            Label2.Visible = False
+
             Label3.Visible = False
             TID.Visible = False
             TTIPO.Visible = False
@@ -131,12 +121,12 @@ Public Class CONTENEDORES
         If M.Text = "EDITAR" Then
             M.Text = "GUARDAR"
             txtID.Enabled = True
-            T.Enabled = True
+
             cmbTI.Enabled = True
             cmbTI.Visible = True
-            T.Visible = True
+
             Label1.Visible = True
-            Label2.Visible = True
+
             Label3.Visible = True
             TID.Visible = True
             TTIPO.Visible = True
@@ -149,7 +139,7 @@ Public Class CONTENEDORES
         Else
             Try
 
-                sentenciaSQL = "UPDATE CONTENEDOR SET TAMANYO='" & T.Text & "', TIPO='" & cmbTI.Text & "' WHERE ID_CONTENEDOR='" & txtID.Text & "'"
+                sentenciaSQL = "UPDATE CONTENEDOR SET TIPO='" & cmbTI.Text & "' WHERE ID_CONTENEDOR='" & txtID.Text & "'"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido modificado.", "Informacion", MessageBoxButtons.OK)
@@ -160,12 +150,12 @@ Public Class CONTENEDORES
             End Try
             M.Text = "EDITAR"
             txtID.Enabled = False
-            T.Enabled = False
+
             cmbTI.Enabled = False
             cmbTI.Visible = False
-            T.Visible = False
+
             Label1.Visible = False
-            Label2.Visible = False
+
             Label3.Visible = False
             TID.Visible = False
             TTIPO.Visible = False
@@ -184,7 +174,7 @@ Public Class CONTENEDORES
             MessageBox.Show("Cancelado")
 
             txtID.Enabled = True
-            T.Enabled = True
+
             cmbTI.Enabled = True
             TID.Enabled = False
             TTIPO.Enabled = False
@@ -206,7 +196,7 @@ Public Class CONTENEDORES
             End Try
 
             txtID.Enabled = False
-            T.Enabled = False
+
             cmbTI.Enabled = False
             TID.Enabled = False
             TTIPO.Enabled = False
@@ -257,7 +247,7 @@ Public Class CONTENEDORES
     End Sub
 
     'nuevo
-    Private Sub TID_KeyUp_1(sender As Object, e As KeyEventArgs) Handles TID.KeyUp
+    Private Sub TID_KeyUp_1(sender As Object, e As KeyEventArgs)
         TTIPO.Clear()
         conjuntoDatos.Clear()
         If TID.Text <> "" Then
@@ -275,7 +265,7 @@ Public Class CONTENEDORES
     End Sub
 
 
-    Private Sub TTIPO_KeyUp_1(sender As Object, e As KeyEventArgs) Handles TTIPO.KeyUp
+    Private Sub TTIPO_KeyUp_1(sender As Object, e As KeyEventArgs)
         TID.Clear()
         conjuntoDatos.Clear()
         If TTIPO.Text <> "" Then
@@ -289,6 +279,19 @@ Public Class CONTENEDORES
             End Try
         Else
             ActualizarGrid()
+        End If
+    End Sub
+
+    Private Sub txtID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtID.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
+        If txtID.Text.Length > 5 Then
+            txtID.Text = txtID.Text.Substring(0, 5)
+            txtID.SelectionStart = txtID.Text.Length
         End If
     End Sub
 End Class

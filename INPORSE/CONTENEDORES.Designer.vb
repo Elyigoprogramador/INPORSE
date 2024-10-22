@@ -31,38 +31,34 @@ Partial Class CONTENEDORES
         Me.pnlconsulta = New System.Windows.Forms.Panel()
         Me.btnmenu = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TID = New System.Windows.Forms.TextBox()
-        Me.TTIPO = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Timercontrae = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.T = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.TextBox()
         Me.Timerdespliega = New System.Windows.Forms.Timer(Me.components)
         Me.Eliminar = New System.Windows.Forms.Button()
         Me.M = New System.Windows.Forms.Button()
         Me.N = New System.Windows.Forms.Button()
         Me.data1 = New System.Windows.Forms.DataGridView()
-        Me.cmbTI = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.HISTORIAL = New System.Windows.Forms.ListBox()
+        Me.cmbTI = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txtID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TTIPO = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnlconsulta.SuspendLayout()
         CType(Me.data1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlconsulta
         '
+        Me.pnlconsulta.Controls.Add(Me.TTIPO)
+        Me.pnlconsulta.Controls.Add(Me.TID)
         Me.pnlconsulta.Controls.Add(Me.btnmenu)
         Me.pnlconsulta.Controls.Add(Me.Label5)
-        Me.pnlconsulta.Controls.Add(Me.TID)
-        Me.pnlconsulta.Controls.Add(Me.TTIPO)
         Me.pnlconsulta.Controls.Add(Me.Label4)
         Me.pnlconsulta.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlconsulta.Location = New System.Drawing.Point(1011, 0)
+        Me.pnlconsulta.Location = New System.Drawing.Point(707, 0)
         Me.pnlconsulta.Name = "pnlconsulta"
-        Me.pnlconsulta.Size = New System.Drawing.Size(359, 749)
+        Me.pnlconsulta.Size = New System.Drawing.Size(245, 749)
         Me.pnlconsulta.TabIndex = 33
         '
         'btnmenu
@@ -74,7 +70,7 @@ Partial Class CONTENEDORES
         Me.btnmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmenu.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu.ForeColor = System.Drawing.Color.White
-        Me.btnmenu.Location = New System.Drawing.Point(19, 3)
+        Me.btnmenu.Location = New System.Drawing.Point(3, 3)
         Me.btnmenu.Name = "btnmenu"
         Me.btnmenu.Size = New System.Drawing.Size(42, 32)
         Me.btnmenu.TabIndex = 17
@@ -83,44 +79,22 @@ Partial Class CONTENEDORES
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(55, 223)
+        Me.Label5.Location = New System.Drawing.Point(25, 167)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 16)
+        Me.Label5.Size = New System.Drawing.Size(57, 23)
         Me.Label5.TabIndex = 21
         Me.Label5.Text = "TIPO:"
-        '
-        'TID
-        '
-        Me.TID.BackColor = System.Drawing.Color.LavenderBlush
-        Me.TID.Enabled = False
-        Me.TID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TID.ForeColor = System.Drawing.Color.Black
-        Me.TID.Location = New System.Drawing.Point(123, 171)
-        Me.TID.Name = "TID"
-        Me.TID.Size = New System.Drawing.Size(65, 21)
-        Me.TID.TabIndex = 18
-        '
-        'TTIPO
-        '
-        Me.TTIPO.BackColor = System.Drawing.Color.LavenderBlush
-        Me.TTIPO.Enabled = False
-        Me.TTIPO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TTIPO.ForeColor = System.Drawing.Color.Black
-        Me.TTIPO.Location = New System.Drawing.Point(123, 216)
-        Me.TTIPO.Name = "TTIPO"
-        Me.TTIPO.Size = New System.Drawing.Size(65, 21)
-        Me.TTIPO.TabIndex = 20
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(69, 178)
+        Me.Label4.Location = New System.Drawing.Point(47, 124)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(21, 16)
+        Me.Label4.Size = New System.Drawing.Size(35, 23)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "ID:"
         '
@@ -131,57 +105,24 @@ Partial Class CONTENEDORES
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(334, 432)
+        Me.Label3.Location = New System.Drawing.Point(333, 394)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 16)
+        Me.Label3.Size = New System.Drawing.Size(57, 23)
         Me.Label3.TabIndex = 32
         Me.Label3.Text = "TIPO:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(334, 376)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 16)
-        Me.Label2.TabIndex = 30
-        Me.Label2.Text = "TAMAÑO:"
-        '
-        'T
-        '
-        Me.T.BackColor = System.Drawing.Color.LavenderBlush
-        Me.T.Enabled = False
-        Me.T.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T.ForeColor = System.Drawing.Color.Black
-        Me.T.Location = New System.Drawing.Point(425, 383)
-        Me.T.Name = "T"
-        Me.T.Size = New System.Drawing.Size(165, 21)
-        Me.T.TabIndex = 29
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(334, 334)
+        Me.Label1.Location = New System.Drawing.Point(355, 334)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(21, 16)
+        Me.Label1.Size = New System.Drawing.Size(35, 23)
         Me.Label1.TabIndex = 28
         Me.Label1.Text = "ID:"
-        '
-        'txtID
-        '
-        Me.txtID.BackColor = System.Drawing.Color.LavenderBlush
-        Me.txtID.Enabled = False
-        Me.txtID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.ForeColor = System.Drawing.Color.Black
-        Me.txtID.Location = New System.Drawing.Point(425, 334)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(165, 21)
-        Me.txtID.TabIndex = 27
         '
         'Timerdespliega
         '
@@ -281,50 +222,96 @@ Partial Class CONTENEDORES
         '
         'cmbTI
         '
-        Me.cmbTI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmbTI.FormattingEnabled = True
-        Me.cmbTI.Location = New System.Drawing.Point(425, 430)
+        Me.cmbTI.AutoRoundedCorners = True
+        Me.cmbTI.BackColor = System.Drawing.Color.Transparent
+        Me.cmbTI.BorderRadius = 17
+        Me.cmbTI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbTI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTI.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbTI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbTI.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbTI.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmbTI.ItemHeight = 30
+        Me.cmbTI.Location = New System.Drawing.Point(405, 381)
         Me.cmbTI.Name = "cmbTI"
-        Me.cmbTI.Size = New System.Drawing.Size(165, 21)
-        Me.cmbTI.TabIndex = 82
+        Me.cmbTI.Size = New System.Drawing.Size(185, 36)
+        Me.cmbTI.TabIndex = 85
         '
-        'Label12
+        'txtID
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Uighur", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(606, 3)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(178, 25)
-        Me.Label12.TabIndex = 84
-        Me.Label12.Text = "HISTORIAL DE REGISTRO"
+        Me.txtID.AutoRoundedCorners = True
+        Me.txtID.BorderRadius = 17
+        Me.txtID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtID.DefaultText = ""
+        Me.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtID.Location = New System.Drawing.Point(405, 321)
+        Me.txtID.MaxLength = 5
+        Me.txtID.Name = "txtID"
+        Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtID.PlaceholderText = ""
+        Me.txtID.SelectedText = ""
+        Me.txtID.Size = New System.Drawing.Size(185, 36)
+        Me.txtID.TabIndex = 86
         '
-        'HISTORIAL
+        'TID
         '
-        Me.HISTORIAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HISTORIAL.FormattingEnabled = True
-        Me.HISTORIAL.ItemHeight = 7
-        Me.HISTORIAL.Location = New System.Drawing.Point(616, 33)
-        Me.HISTORIAL.Margin = New System.Windows.Forms.Padding(2)
-        Me.HISTORIAL.Name = "HISTORIAL"
-        Me.HISTORIAL.Size = New System.Drawing.Size(161, 242)
-        Me.HISTORIAL.TabIndex = 83
+        Me.TID.AutoRoundedCorners = True
+        Me.TID.BorderRadius = 13
+        Me.TID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TID.DefaultText = ""
+        Me.TID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TID.Location = New System.Drawing.Point(102, 124)
+        Me.TID.Name = "TID"
+        Me.TID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TID.PlaceholderText = ""
+        Me.TID.SelectedText = ""
+        Me.TID.Size = New System.Drawing.Size(87, 28)
+        Me.TID.TabIndex = 22
+        '
+        'TTIPO
+        '
+        Me.TTIPO.AutoRoundedCorners = True
+        Me.TTIPO.BorderRadius = 13
+        Me.TTIPO.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TTIPO.DefaultText = ""
+        Me.TTIPO.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TTIPO.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TTIPO.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TTIPO.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TTIPO.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TTIPO.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TTIPO.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TTIPO.Location = New System.Drawing.Point(102, 167)
+        Me.TTIPO.Name = "TTIPO"
+        Me.TTIPO.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TTIPO.PlaceholderText = ""
+        Me.TTIPO.SelectedText = ""
+        Me.TTIPO.Size = New System.Drawing.Size(87, 28)
+        Me.TTIPO.TabIndex = 23
         '
         'CONTENEDORES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LavenderBlush
-        Me.ClientSize = New System.Drawing.Size(1370, 749)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.HISTORIAL)
+        Me.ClientSize = New System.Drawing.Size(952, 749)
+        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.cmbTI)
         Me.Controls.Add(Me.pnlconsulta)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.T)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.Eliminar)
         Me.Controls.Add(Me.M)
         Me.Controls.Add(Me.N)
@@ -344,21 +331,17 @@ Partial Class CONTENEDORES
     Friend WithEvents pnlconsulta As Panel
     Friend WithEvents btnmenu As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents TID As TextBox
-    Friend WithEvents TTIPO As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Timercontrae As Timer
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents T As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtID As TextBox
     Friend WithEvents Timerdespliega As Timer
     Friend WithEvents Eliminar As Button
     Friend WithEvents M As Button
     Friend WithEvents N As Button
     Friend WithEvents data1 As DataGridView
-    Friend WithEvents cmbTI As ComboBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents HISTORIAL As ListBox
+    Friend WithEvents cmbTI As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents txtID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TTIPO As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TID As Guna.UI2.WinForms.Guna2TextBox
 End Class

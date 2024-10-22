@@ -55,6 +55,9 @@ Public Class CABEZALES
 
     End Sub
     Private Sub CABEZALES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtEstado.Items.Add("Cargando")
+        txtEstado.Items.Add("En camino")
+        txtEstado.Items.Add("Finalizado")
         pnlconsulta.Width = 90
         Try
             Module1.funcionConectarBD()
@@ -342,5 +345,15 @@ Public Class CABEZALES
         End If
     End Sub
 
+    Private Sub MEN_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True ' Evita que se agreguen caracteres no permitidos
+        End If
+    End Sub
 
+    Private Sub MR_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True ' Evita que se agreguen caracteres no permitidos
+        End If
+    End Sub
 End Class
