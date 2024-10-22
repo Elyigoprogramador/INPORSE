@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.INPORSE.CON
+            Me.MainForm = Global.INPORSE.Formfactura
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
