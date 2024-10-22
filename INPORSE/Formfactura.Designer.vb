@@ -56,6 +56,16 @@ Partial Class Formfactura
         Me.txtDireccion = New Guna.UI2.WinForms.Guna2TextBox()
         Me.DateTime2 = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnCuadroDialogo = New System.Windows.Forms.Button()
+        Me.btnPrint = New System.Windows.Forms.Button()
+        Me.btnVistaP = New System.Windows.Forms.Button()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.brnPDF = New System.Windows.Forms.Button()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,7 +78,7 @@ Partial Class Formfactura
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(982, 36)
+        Me.Panel1.Size = New System.Drawing.Size(1231, 36)
         Me.Panel1.TabIndex = 11
         '
         'Label5
@@ -91,7 +101,7 @@ Partial Class Formfactura
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnCerrar.Location = New System.Drawing.Point(938, 0)
+        Me.btnCerrar.Location = New System.Drawing.Point(1187, 0)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(40, 32)
         Me.btnCerrar.TabIndex = 11
@@ -220,7 +230,7 @@ Partial Class Formfactura
         '
         'DateTime1
         '
-        Me.DateTime1.Location = New System.Drawing.Point(401, 38)
+        Me.DateTime1.Location = New System.Drawing.Point(340, 41)
         Me.DateTime1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTime1.Name = "DateTime1"
         Me.DateTime1.Size = New System.Drawing.Size(211, 20)
@@ -407,11 +417,86 @@ Partial Class Formfactura
         Me.Label3.TabIndex = 129
         Me.Label3.Text = "Fecha de Viaje:"
         '
+        'btnCuadroDialogo
+        '
+        Me.btnCuadroDialogo.Location = New System.Drawing.Point(1013, 176)
+        Me.btnCuadroDialogo.Name = "btnCuadroDialogo"
+        Me.btnCuadroDialogo.Size = New System.Drawing.Size(138, 57)
+        Me.btnCuadroDialogo.TabIndex = 131
+        Me.btnCuadroDialogo.Text = "Cuadro de diálogo de configuración de página"
+        Me.btnCuadroDialogo.UseVisualStyleBackColor = True
+        '
+        'btnPrint
+        '
+        Me.btnPrint.Location = New System.Drawing.Point(1016, 428)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(123, 32)
+        Me.btnPrint.TabIndex = 132
+        Me.btnPrint.Text = "Imprimir"
+        Me.btnPrint.UseVisualStyleBackColor = True
+        '
+        'btnVistaP
+        '
+        Me.btnVistaP.Location = New System.Drawing.Point(1016, 278)
+        Me.btnVistaP.Name = "btnVistaP"
+        Me.btnVistaP.Size = New System.Drawing.Size(123, 32)
+        Me.btnVistaP.TabIndex = 133
+        Me.btnVistaP.Text = "Vista Previa"
+        Me.btnVistaP.UseVisualStyleBackColor = True
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
+        'PrintDocument1
+        '
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(604, 75)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(403, 511)
+        Me.ListBox1.TabIndex = 134
+        '
+        'brnPDF
+        '
+        Me.brnPDF.Location = New System.Drawing.Point(1013, 77)
+        Me.brnPDF.Name = "brnPDF"
+        Me.brnPDF.Size = New System.Drawing.Size(138, 57)
+        Me.brnPDF.TabIndex = 135
+        Me.brnPDF.Text = "Cargar archivos"
+        Me.brnPDF.UseVisualStyleBackColor = True
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Location = New System.Drawing.Point(376, 101)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(214, 325)
+        Me.WebBrowser1.TabIndex = 136
+        '
         'Formfactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(982, 669)
+        Me.ClientSize = New System.Drawing.Size(1231, 669)
+        Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.brnPDF)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.btnVistaP)
+        Me.Controls.Add(Me.btnPrint)
+        Me.Controls.Add(Me.btnCuadroDialogo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DateTime2)
         Me.Controls.Add(Me.txtDireccion)
@@ -487,4 +572,14 @@ Partial Class Formfactura
     Friend WithEvents txtDireccion As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents DateTime2 As DateTimePicker
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnCuadroDialogo As Button
+    Friend WithEvents btnPrint As Button
+    Friend WithEvents btnVistaP As Button
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents PageSetupDialog1 As PageSetupDialog
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents brnPDF As Button
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

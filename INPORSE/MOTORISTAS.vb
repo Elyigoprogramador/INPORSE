@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports MySql.Data
+Imports System.Text.RegularExpressions
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class CON
     Dim conjuntoDatos As New DataSet
     Dim adaptadorDatos As New MySqlClient.MySqlDataAdapter
@@ -59,6 +61,50 @@ Public Class CON
         End If
         Return True
     End Function
+    'Private Function ValidarDUI(ByVal dui As String) As Boolean
+
+    '    Dim duiR As String = "^\d{8}-\d{1}$"
+
+    '    If Not System.Text.RegularExpressions.Regex.IsMatch(dui, duiR) Then
+    '        MessageBox.Show("Formato de DUI no válido.")
+    '        Return False
+    '    End If
+
+    '    Return True
+    'End Function
+    Private Sub DUI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DUI.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "-" Then
+            e.Handled = True ' Evita que se agregue el carácter no permitido
+            Return
+        End If
+
+        ' Permitir que el guion solo se escriba en la novena posición
+        If e.KeyChar = "-" AndAlso DUI.Text.Length <> 8 Then
+            e.Handled = True ' Evita que se agregue el guion si no está en la novena posición
+        End If
+    End Sub
+    Private Sub DUI_TextChanged(sender As Object, e As EventArgs) Handles DUI.TextChanged
+        If DUI.Text.Length > 10 Then
+            DUI.Text = DUI.Text.Substring(0, 10)
+            DUI.SelectionStart = DUI.Text.Length ' Coloca el cursor al final
+        End If
+
+        ' Asegurarse de que el guion esté en la posición correcta
+        If DUI.Text.Length = 9 AndAlso Not DUI.Text.Contains("-") Then
+            DUI.Text = DUI.Text.Insert(8, "-") ' Agrega el guion en la novena posición
+            DUI.SelectionStart = DUI.Text.Length ' Coloca el cursor al final
+        End If
+    End Sub
+    Private Sub DUI_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles DUI.Validating
+        Dim duiPattern As String = "^\d{8}-\d{1}$" ' Formato 00000000-0
+        Dim isValid As Boolean = Regex.IsMatch(DUI.Text, duiPattern)
+
+        If Not isValid Then
+            MessageBox.Show("El DUI no tiene un formato válido. Debe ser 00000000-0.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            e.Cancel = True ' Cancela el evento si la validación falla
+            DUI.Focus() ' Devuelve el foco al TextBox
+        End If
+    End Sub
 
     Private Function ValidarDatos() As Boolean
 
@@ -69,6 +115,9 @@ Public Class CON
         Return True
     End Function
     Private Sub MOTORISTAS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        cmbDispo.Items.Add("SI")
+        cmbDispo.Items.Add("NO")
         pnlconsulta.Width = 90
         Try
             Module1.funcionConectarBD()
@@ -85,7 +134,7 @@ Public Class CON
         txtID.Visible = False
         txtNOM.Visible = False
         NL.Visible = False
-        DISPO.Visible = False
+        cmbDispo.Visible = False
         DUI.Visible = False
         TEL.Visible = False
         DIREC.Visible = False
@@ -112,7 +161,7 @@ Public Class CON
             txtID.Enabled = True
             txtNOM.Enabled = True
             NL.Enabled = True
-            DISPO.Enabled = True
+            cmbDispo.Enabled = True
             DUI.Enabled = True
             TEL.Enabled = True
             DIREC.Enabled = True
@@ -128,7 +177,7 @@ Public Class CON
             txtID.Visible = True
             txtNOM.Visible = True
             NL.Visible = True
-            DISPO.Visible = True
+            cmbDispo.Visible = True
             DUI.Visible = True
             TEL.Visible = True
             DIREC.Visible = True
@@ -141,7 +190,7 @@ Public Class CON
                 Exit Sub
             End If
             Try
-                sentenciaSQL = "INSERT INTO MOTORISTAS VALUES ('" & txtID.Text & "','" & txtNOM.Text & "','" & NL.Text & "','" & DISPO.Text & "','" & DUI.Text & "','" & TEL.Text & "','" & DIREC.Text & "','" & SB.Text & "')"
+                sentenciaSQL = "INSERT INTO MOTORISTAS VALUES ('" & txtID.Text & "','" & txtNOM.Text & "','" & NL.Text & "','" & cmbDispo.Text & "','" & DUI.Text & "','" & TEL.Text & "','" & DIREC.Text & "','" & SB.Text & "')"
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
                 MessageBox.Show("El registro ha sido creado.", "Informacion", MessageBoxButtons.OK)
@@ -155,7 +204,7 @@ Public Class CON
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
-            DISPO.Enabled = False
+            cmbDispo.Enabled = False
             DUI.Enabled = False
             TEL.Enabled = False
             DIREC.Enabled = False
@@ -171,7 +220,7 @@ Public Class CON
             txtID.Visible = False
             txtNOM.Visible = False
             NL.Visible = False
-            DISPO.Visible = False
+            cmbDispo.Visible = False
             DUI.Visible = False
             TEL.Visible = False
             DIREC.Visible = False
@@ -188,7 +237,7 @@ Public Class CON
             txtID.Enabled = True
             txtNOM.Enabled = True
             NL.Enabled = True
-            DISPO.Enabled = True
+            cmbDispo.Enabled = True
             DUI.Enabled = True
             TEL.Enabled = True
             DIREC.Enabled = True
@@ -204,7 +253,7 @@ Public Class CON
             txtID.Visible = True
             txtNOM.Visible = True
             NL.Visible = True
-            DISPO.Visible = True
+            cmbDispo.Visible = True
             DUI.Visible = True
             TEL.Visible = True
             DIREC.Visible = True
@@ -215,7 +264,7 @@ Public Class CON
         Else
             Try
 
-                sentenciaSQL = "UPDATE MOTORISTAS SET NOMBRE='" & txtNOM.Text & "', NUM_LICENCIA='" & NL.Text & "', DISPONIBILIDAD='" & DISPO.Text & "', DUI='" & DUI.Text & "', TELEFONO='" & TEL.Text & "', DIRECCION='" & DIREC.Text & "', SUELDO_BASE='" & SB.Text & "' WHERE ID_MOTORISTA='" & txtID.Text & "'"
+                sentenciaSQL = "UPDATE MOTORISTAS SET NOMBRE='" & txtNOM.Text & "', NUM_LICENCIA='" & NL.Text & "', DISPONIBILIDAD='" & cmbDispo.Text & "', DUI='" & DUI.Text & "', TELEFONO='" & TEL.Text & "', DIRECCION='" & DIREC.Text & "', SUELDO_BASE='" & SB.Text & "' WHERE ID_MOTORISTA='" & txtID.Text & "'"
 
                 comandoSQL = New MySqlClient.MySqlCommand(sentenciaSQL, mysqlconexion)
                 comandoSQL.ExecuteNonQuery()
@@ -229,7 +278,7 @@ Public Class CON
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
-            DISPO.Enabled = False
+            cmbDispo.Enabled = False
             DUI.Enabled = False
             TEL.Enabled = False
             DIREC.Enabled = False
@@ -245,7 +294,7 @@ Public Class CON
             txtID.Visible = False
             txtNOM.Visible = False
             NL.Visible = False
-            DISPO.Visible = False
+            cmbDispo.Visible = False
             DUI.Visible = False
             TEL.Visible = False
             DIREC.Visible = False
@@ -263,7 +312,7 @@ Public Class CON
             txtID.Enabled = True
             txtNOM.Enabled = True
             NL.Enabled = True
-            DISPO.Enabled = True
+            cmbDispo.Enabled = True
             DUI.Enabled = True
             TEL.Enabled = True
             DIREC.Enabled = True
@@ -288,7 +337,7 @@ Public Class CON
             txtID.Enabled = False
             txtNOM.Enabled = False
             NL.Enabled = False
-            DISPO.Enabled = False
+            cmbDispo.Enabled = False
             DUI.Enabled = False
             TEL.Enabled = False
             DIREC.Enabled = False
@@ -398,4 +447,19 @@ Public Class CON
             ActualizarGrid()
         End If
     End Sub
+
+    Private Sub txtID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtID.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
+        If txtID.Text.Length > 5 Then
+            txtID.Text = txtID.Text.Substring(0, 5)
+            txtID.SelectionStart = txtID.Text.Length
+        End If
+    End Sub
+
+
 End Class

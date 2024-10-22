@@ -2,15 +2,18 @@
 Imports MySql.Data
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
+Imports iTextSharp.text.pdf.parser
 Imports iTextSharp.text.pdf.draw
 Imports iTextSharp
-Imports System.IO
+Imports PdfiumViewer
+Imports System.Drawing.Imaging
 Imports System.Drawing.Printing
-Imports System.Globalization
+Imports System.IO
 
 
 
 Public Class Formfactura
+    Private images As List(Of Image) = New List(Of Image)()
     Private cliente1 As String
     Private destino1 As String
     Private cobroViaje As Decimal
@@ -22,7 +25,7 @@ Public Class Formfactura
     Private Function GenerarCodigoFactura() As String
 
         Dim random As New Random()
-        Return random.Next(100000, 999999).ToString()
+        Return random.Next(1000, 9999).ToString()
     End Function
     Private Sub CargarClientes()
         Try
@@ -250,6 +253,10 @@ Public Class Formfactura
         encabezadoTable.WidthPercentage = 100
         encabezadoTable.SetWidths(New Single() {1, 3})
 
+        Dim Fact As New PdfPTable(2)
+        Fact.WidthPercentage = 100
+        Fact.SetWidths(New Single() {1, 3})
+
         Dim codigoFac = GenerarCodigoFactura()
         Dim fechaFactura As DateTime = DateTime1.Value
         Dim fechahora As String = DateTime.Now.ToString("yyyyMMdd_HHmmss")
@@ -266,7 +273,7 @@ Public Class Formfactura
         Dim logo As iTextSharp.text.Image
         Try
             logo = iTextSharp.text.Image.GetInstance("C:\Users\josia\Downloads\Yigo prueba\LOGO_INPORSE1.PNG")
-            logo.ScaleToFit(70, 70)
+            logo.ScaleToFit(75, 75)
             logo.Alignment = Element.ALIGN_RIGHT
             encabezadoTable.AddCell(New PdfPCell(logo) With {.Border = PdfPCell.NO_BORDER})
         Catch ex As Exception
@@ -296,23 +303,27 @@ Public Class Formfactura
         encabezadoTable.AddCell(New PdfPCell(empresaInfo) With {.Border = PdfPCell.NO_BORDER})
 
         doc.Add(encabezadoTable)
-
+        Dim ESPACIO As New PdfPTable(1)
+        ESPACIO.AddCell(New PdfPCell(New Phrase(" ", fuenteNormal)) With {.Border = PdfPCell.NO_BORDER})
+        doc.Add(ESPACIO)
         ' Factura Exportadora
-        Dim facturaTitulo As New Paragraph("FACTURA", fuenteSubTitulo)
-        facturaTitulo.Alignment = Element.ALIGN_RIGHT
+        Dim facturaTitulo As New Paragraph(1)
+        doc.Add(New Paragraph("Factura", fuenteSubTitulo))
+        facturaTitulo.Alignment = Element.ALIGN_LEFT
         doc.Add(facturaTitulo)
-
         ' Número de Factura
-        Dim numeroFactura As New Paragraph("N° de factura: " & codigoFac.ToString, CodFac)
-        numeroFactura.Alignment = Element.ALIGN_RIGHT
+        Dim numeroFactura As New Paragraph("N° de factura: " &
+                                           codigoFac.ToString, CodFac)
+        numeroFactura.Alignment = Element.ALIGN_LEFT
         doc.Add(numeroFactura)
 
         ' Registro y DUI
-        Dim registroDUI As New Paragraph("REGISTRO No. 
+        Dim registroDatos As New Paragraph("REGISTRO No. 
                                            25319-5" & Environment.NewLine & "DUI
-                                                                          07488415-9", fuenteNormal)
-        registroDUI.Alignment = Element.ALIGN_RIGHT
-        doc.Add(registroDUI)
+                                                                          07488415-9" & Environment.NewLine & "Nit
+                                                                                                               0301-060702-101-1", fuenteNormal)
+        registroDatos.Alignment = Element.ALIGN_RIGHT
+        doc.Add(registroDatos)
 
         ' Cliente y Fecha
         ' Crear una tabla de dos columnas para organizar los detalles del cliente y del viaje
@@ -412,6 +423,85 @@ Public Class Formfactura
 
     Private Sub btnimprimirfact_Click(sender As Object, e As EventArgs) Handles btnimprimirfact.Click
 
+
+    End Sub
+    'Private Sub LoadDocuments()
+    '    ' Abre el cuadro de diálogo para seleccionar la carpeta
+    '    Dim folderDialog As New FolderBrowserDialog()
+
+    '    If folderDialog.ShowDialog() = DialogResult.OK Then
+    '        ' Obtén todos los archivos de la carpeta seleccionada
+    '        Dim files() As String = System.IO.Directory.GetFiles(folderDialog.SelectedPath)
+
+    '        ' Agrega los archivos al ListBox
+    '        ListBox1.Items.Clear()
+    '        For Each file As String In files
+    '            ListBox1.Items.Add(System.IO.Path.GetFileName(file))
+    '        Next
+    '    End If
+    'End Sub
+
+    Private Sub brnPDF_Click(sender As Object, e As EventArgs) Handles brnPDF.Click
+        Dim rutaPDFs As String = "C:\Users\josia\Downloads\Yigo prueba\"
+
+        If Not Directory.Exists(rutaPDFs) Then
+            MessageBox.Show("La carpeta especificada no existe: " & rutaPDFs)
+            Return
+        End If
+
+        ' Listar archivos PDF en la carpeta especificada
+        Dim pdfFiles As String() = Directory.GetFiles(rutaPDFs, "*.pdf", SearchOption.TopDirectoryOnly)
+        ListBox1.Items.Clear() ' ListBox para mostrar archivos PDF
+        For Each file As String In pdfFiles
+            ListBox1.Items.Add(file)
+        Next
+    End Sub
+
+    Private Sub btnVistaP_Click(sender As Object, e As EventArgs) Handles btnVistaP.Click
+        If ListBox1.SelectedItem Is Nothing Then
+            MessageBox.Show("Selecciona un archivo PDF para vista previa.")
+            Return
+        End If
+
+        ' Establece el archivo PDF seleccionado
+        Dim selectedFile As String = ListBox1.SelectedItem.ToString()
+        PrintDocument1.DocumentName = selectedFile
+
+        ' Muestra la vista previa
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.ShowDialog()
+    End Sub
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        If ListBox1.SelectedItem IsNot Nothing Then
+            Dim selectedFile As String = ListBox1.SelectedItem.ToString()
+            ' Cargar el PDF en el control WebBrowser
+            WebBrowser1.Navigate(selectedFile)
+        End If
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        If ListBox1.SelectedItem Is Nothing Then
+            MessageBox.Show("Selecciona un archivo PDF para imprimir.")
+            Return
+        End If
+
+        Dim selectedFile As String = ListBox1.SelectedItem.ToString()
+
+
+        ' Configura el PrintDocument
+        PrintDocument1.DocumentName = selectedFile
+        If PrintDialog1.ShowDialog() = DialogResult.OK Then
+            PrintDocument1.Print()
+        End If
+    End Sub
+    Private Sub btnCuadroDialogo_Click(sender As Object, e As EventArgs) Handles btnCuadroDialogo.Click
+        PageSetupDialog1.Document = PrintDocument1
+        PageSetupDialog1.Document.DefaultPageSettings.Color = False
+        PageSetupDialog1.ShowDialog()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim selectedFile As String = PrintDocument1.DocumentName
+        'e.Graphics.DrawImage("Imprimiendo: " & selectedFile.ToString, New Font("Arial", 12), Brushes.Black, 100, 100)
 
     End Sub
 End Class

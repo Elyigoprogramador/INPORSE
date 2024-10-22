@@ -7,6 +7,8 @@ Imports iTextSharp.text.pdf.draw
 Imports System.Net.Mail
 Imports System.Runtime.InteropServices
 Imports System.Web.UI.WebControls
+Imports System.Web
+Imports System.Text.RegularExpressions
 Public Class VIAJES
     Private cliente1 As String
     Private destino1 As String
@@ -652,6 +654,30 @@ Public Class VIAJES
 
         Formfactura.Show()
 
+    End Sub
+
+    Private Sub txtDui_TextChanged(sender As Object, e As EventArgs) Handles txtDui.TextChanged
+        If txtDui.Text.Length > 10 Then
+            txtDui.Text = txtDui.Text.Substring(0, 10)
+            txtDui.SelectionStart = txtDui.Text.Length ' Coloca el cursor al final
+        End If
+
+        ' Asegurarse de que el guion esté en la posición correcta
+        If txtDui.Text.Length = 9 AndAlso Not txtDui.Text.Contains("-") Then
+            txtDui.Text = txtDui.Text.Insert(8, "-") ' Agrega el guion en la novena posición
+            txtDui.SelectionStart = txtDui.Text.Length ' Coloca el cursor al final
+        End If
+    End Sub
+
+    Private Sub txtDui_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtDui.Validating
+        Dim duiPattern As String = "^\d{8}-\d{1}$" ' Formato 00000000-0
+        Dim isValid As Boolean = Regex.IsMatch(txtDui.Text, duiPattern)
+
+        If Not isValid Then
+            MessageBox.Show("El DUI no tiene un formato válido. Debe ser 00000000-0.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            e.Cancel = True ' Cancela el evento si la validación falla
+            txtDui.Focus() ' Devuelve el foco al TextBox
+        End If
     End Sub
 
 
